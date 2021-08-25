@@ -17,3 +17,7 @@
 12.可以使用channel加上生产者消费者模式进行master和worker的并发
 处理
 13. map和reduce都要加入防crash机制
+
+14. 重构的建议：worker端加入等待机制(10s后quit)、channel 生产者消费者
+workerId 分配的优化、master增加等待某个task完成的机制，超时则重新
+分配

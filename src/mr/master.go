@@ -14,7 +14,8 @@ import (
 type Master struct {
 	// Your definitions here.
 
-	mu sync.Mutex
+	mu   sync.Mutex
+	cond *sync.Cond
 
 	MapTasks    []string
 	ReduceTasks []int //储存reduce task每一部分都是由
@@ -97,7 +98,7 @@ func (m *Master) RequestHandler(args *StateArgs, reply *StateReply) error {
 
 func (m *Master) assignTask(reply *StateReply) {
 
-	time.Sleep(100 * time.Millisecond)
+	//time.Sleep(100 * time.Millisecond)
 
 	if m.MapFinished > 0 {
 
@@ -133,7 +134,9 @@ func (m *Master) assignTask(reply *StateReply) {
 
 			if task == m.ReduceHead { //一开始我写成了MapHead
 
-				//time.Sleep(500 * time.Millisecond)
+				time.Sleep(50 * time.Millisecond)
+
+				//m.cond.Wait()
 
 			} else if m.ReduceStatus[task.taskId] {
 
@@ -270,6 +273,8 @@ func MakeMaster(files []string, nReduce int) *Master {
 
 	m.MapPointer = m.MapHead.next
 	m.ReducePointer = m.ReduceHead.next
+
+	m.cond = sync.NewCond(&m.mu) //为什么会传一个pointer
 
 	os.Mkdir("lab_interFiles", 0755)
 
