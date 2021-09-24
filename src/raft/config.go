@@ -8,17 +8,21 @@ package raft
 // test with the original before submitting.
 //
 
-import "../labrpc"
-import "log"
-import "sync"
-import "testing"
-import "runtime"
-import "math/rand"
-import crand "crypto/rand"
-import "math/big"
-import "encoding/base64"
-import "time"
-import "fmt"
+import (
+	"log"
+	"math/rand"
+	"runtime"
+	"sync"
+	"testing"
+
+	"../labrpc"
+
+	crand "crypto/rand"
+	"encoding/base64"
+	"fmt"
+	"math/big"
+	"time"
+)
 
 func randstring(n int) string {
 	b := make([]byte, 2*n)
@@ -134,6 +138,8 @@ func (cfg *config) crash1(i int) {
 // this server. since we cannot really kill it.
 //
 func (cfg *config) start1(i int) {
+
+	log.Printf("restart %v", i)
 	cfg.crash1(i)
 
 	// a fresh set of outgoing ClientEnd names.
@@ -370,6 +376,7 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 
 		cfg.mu.Lock()
 		cmd1, ok := cfg.logs[i][index]
+		//log.Printf("cmd is %v,%v", cmd1, ok)
 		cfg.mu.Unlock()
 
 		if ok {
@@ -379,6 +386,8 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 			}
 			count += 1
 			cmd = cmd1
+
+			//log.Printf("count is %v", count)
 		}
 	}
 	return count, cmd
@@ -431,6 +440,8 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 	t0 := time.Now()
 	starts := 0
 	for time.Since(t0).Seconds() < 10 {
+
+		log.Printf("time passed:%v", time.Since(t0).Seconds())
 		// try all the servers, maybe one is the leader.
 		index := -1
 		for si := 0; si < cfg.n; si++ {
@@ -453,11 +464,17 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 		if index != -1 {
 			// somebody claimed to be the leader and to have
 			// submitted our command; wait a while for agreement.
+
+			log.Println("have a leader")
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
+
+				//log.Printf("haha,%v,%v", nd, cmd1)
+
 				if nd > 0 && nd >= expectedServers {
 					// committed
+					//log.Printf("haha")
 					if cmd1 == cmd {
 						// and it was the command we submitted.
 						return index
@@ -466,12 +483,15 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				time.Sleep(20 * time.Millisecond)
 			}
 			if retry == false {
+				log.Println("fail 1")
 				cfg.t.Fatalf("one(%v) failed to reach agreement", cmd)
 			}
 		} else {
 			time.Sleep(50 * time.Millisecond)
 		}
 	}
+	log.Printf("time passed:%v", time.Since(t0).Seconds())
+	log.Println("fail 2")
 	cfg.t.Fatalf("one(%v) failed to reach agreement", cmd)
 	return -1
 }

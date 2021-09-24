@@ -1,0 +1,575 @@
+Test (2B): basic agreement ...
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 id:1,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:0,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:1,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:0,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:1,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:0,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:1,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:0,term:0,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:0,tp:0,starting an election 
+2021/09/14 19:09:18 id:2,term:1,tp:1,sending vote request to 0,round:1
+2021/09/14 19:09:18 id:2,term:1,tp:1,sending vote request to 1,round:1
+2021/09/14 19:09:18 id:0,term:0,tp:0,receive vote request from 2(term:1)
+2021/09/14 19:09:18 id:1,term:0,tp:0,receive vote request from 2(term:1)
+2021/09/14 19:09:18 id:2,term:1,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/14 19:09:18 id:2,term:1,tp:1,sending vote request to  1,true,grand:true,round:1
+2021/09/14 19:09:18 id:1,term:1,tp:0,reject the client
+2021/09/14 19:09:18 id:2,term:1,tp:2,become a leader
+2021/09/14 19:09:18 id:2,term:1,tp:2,release lock
+2021/09/14 19:09:18 id:2,term:1,tp:2,receive a log from client
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 haha,0,<nil>
+2021/09/14 19:09:18 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  1,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  2,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  0,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:18 id:2,term:1,tp:2,appended from 2(term:1),append result:[{<nil> 0} {100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  2,true,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,updateing commit index 
+2021/09/14 19:09:18 id:2,term:1,tp:2,new commitIndex 0
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 <nil>
+2021/09/14 19:09:18 haha,0,<nil>
+2021/09/14 19:09:18 id:1,term:1,tp:0,appended from 2(term:1),append result:[{<nil> 0} {100 1}]
+2021/09/14 19:09:18 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:18 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:18 id:0,term:1,tp:0,appended from 2(term:1),append result:[{<nil> 0} {100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  1,true,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,updateing commit index 
+2021/09/14 19:09:18 id:2,term:1,tp:2,new commitIndex 1
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:18 id:2,term:1,tp:2,sending append request to  0,true,[{100 1}]
+2021/09/14 19:09:18 id:2,term:1,tp:2,updateing commit index 
+2021/09/14 19:09:18 id:2,term:1,tp:2,new commitIndex 1
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:19 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:19 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:19 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 <nil>
+2021/09/14 19:09:19 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:2,term:1,tp:2,start heartbeat
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  1
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending heartbeat to  0
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 id:1,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  1,true
+2021/09/14 19:09:20 id:0,term:1,tp:0,receive heartbeat 2(term:1)
+2021/09/14 19:09:20 id:2,term:1,tp:2,sending hearbeat to  0,true
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 <nil>
+2021/09/14 19:09:20 haha,0,<nil>
+--- FAIL: TestBasicAgree2B (2.45s)
+    config.go:478: one(100) failed to reach agreement
+FAIL
+exit status 1
+FAIL	_/home/han/study/6.824/6.824/src/raft	2.451s

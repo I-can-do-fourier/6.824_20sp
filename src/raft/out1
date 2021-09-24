@@ -1,0 +1,2147 @@
+Test (2A): initial election ...
+2021/09/08 16:29:47 id:0,term:0,tp:0,starting an election 
+2021/09/08 16:29:47 id:0,term:1,tp:1,sending vote request to 2
+2021/09/08 16:29:47 id:0,term:1,tp:1,sending vote request to 1
+2021/09/08 16:29:47 id:2,term:0,tp:0,receive vote request from 0(term:1)
+2021/09/08 16:29:47 id:1,term:0,tp:0,receive vote request from 0(term:1)
+2021/09/08 16:29:47 id:0,term:1,tp:1,sending vote request to  1,true,grand:true
+2021/09/08 16:29:47 id:0,term:1,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:47 id:0,term:1,tp:1,finish sending a vote request a round,vote3
+2021/09/08 16:29:47 id:0,term:1,tp:2,become a leader
+2021/09/08 16:29:48 id:1,term:1,tp:0,starting an election 
+2021/09/08 16:29:48 id:1,term:2,tp:1,sending vote request to 2
+2021/09/08 16:29:48 id:1,term:2,tp:1,sending vote request to 0
+2021/09/08 16:29:48 id:2,term:1,tp:0,receive vote request from 1(term:2)
+2021/09/08 16:29:48 id:1,term:2,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:48 id:1,term:2,tp:1,starting an election 
+2021/09/08 16:29:48 id:1,term:3,tp:1,sending vote request to 2
+2021/09/08 16:29:48 id:1,term:3,tp:1,sending vote request to 0
+2021/09/08 16:29:48 id:2,term:2,tp:0,receive vote request from 1(term:3)
+2021/09/08 16:29:48 id:1,term:3,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:49 id:1,term:3,tp:1,starting an election 
+2021/09/08 16:29:49 id:1,term:4,tp:1,sending vote request to 2
+2021/09/08 16:29:49 id:1,term:4,tp:1,sending vote request to 0
+2021/09/08 16:29:49 id:2,term:3,tp:0,receive vote request from 1(term:4)
+2021/09/08 16:29:49 id:1,term:4,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:49 id:1,term:4,tp:1,starting an election 
+2021/09/08 16:29:49 id:1,term:5,tp:1,sending vote request to 2
+2021/09/08 16:29:49 id:1,term:5,tp:1,sending vote request to 0
+2021/09/08 16:29:49 id:2,term:4,tp:0,receive vote request from 1(term:5)
+2021/09/08 16:29:49 id:1,term:5,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:50 id:1,term:5,tp:1,starting an election 
+2021/09/08 16:29:50 id:1,term:6,tp:1,sending vote request to 2
+2021/09/08 16:29:50 id:1,term:6,tp:1,sending vote request to 0
+2021/09/08 16:29:50 id:2,term:5,tp:0,receive vote request from 1(term:6)
+2021/09/08 16:29:50 id:1,term:6,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:50 id:1,term:6,tp:1,starting an election 
+2021/09/08 16:29:50 id:1,term:7,tp:1,sending vote request to 2
+2021/09/08 16:29:50 id:1,term:7,tp:1,sending vote request to 0
+2021/09/08 16:29:50 id:2,term:6,tp:0,receive vote request from 1(term:7)
+2021/09/08 16:29:50 id:1,term:7,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:51 id:1,term:7,tp:1,starting an election 
+2021/09/08 16:29:51 id:1,term:8,tp:1,sending vote request to 2
+2021/09/08 16:29:51 id:1,term:8,tp:1,sending vote request to 0
+2021/09/08 16:29:51 id:2,term:7,tp:0,receive vote request from 1(term:8)
+2021/09/08 16:29:51 id:1,term:8,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:51 id:1,term:8,tp:1,starting an election 
+2021/09/08 16:29:51 id:1,term:9,tp:1,sending vote request to 2
+2021/09/08 16:29:51 id:1,term:9,tp:1,sending vote request to 0
+2021/09/08 16:29:51 id:2,term:8,tp:0,receive vote request from 1(term:9)
+2021/09/08 16:29:51 id:1,term:9,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:52 id:1,term:9,tp:1,starting an election 
+2021/09/08 16:29:52 id:1,term:10,tp:1,sending vote request to 2
+2021/09/08 16:29:52 id:1,term:10,tp:1,sending vote request to 0
+2021/09/08 16:29:52 id:2,term:9,tp:0,receive vote request from 1(term:10)
+2021/09/08 16:29:52 id:1,term:10,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:52 id:1,term:10,tp:1,starting an election 
+2021/09/08 16:29:52 id:1,term:11,tp:1,sending vote request to 2
+2021/09/08 16:29:52 id:1,term:11,tp:1,sending vote request to 0
+2021/09/08 16:29:52 id:2,term:10,tp:0,receive vote request from 1(term:11)
+2021/09/08 16:29:52 id:1,term:11,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:53 id:1,term:11,tp:1,starting an election 
+2021/09/08 16:29:53 id:1,term:12,tp:1,sending vote request to 2
+2021/09/08 16:29:53 id:1,term:12,tp:1,sending vote request to 0
+2021/09/08 16:29:53 id:2,term:11,tp:0,receive vote request from 1(term:12)
+2021/09/08 16:29:53 id:1,term:12,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:53 id:1,term:12,tp:1,starting an election 
+2021/09/08 16:29:53 id:1,term:13,tp:1,sending vote request to 2
+2021/09/08 16:29:53 id:1,term:13,tp:1,sending vote request to 0
+2021/09/08 16:29:53 id:2,term:12,tp:0,receive vote request from 1(term:13)
+2021/09/08 16:29:53 id:1,term:13,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:54 id:1,term:13,tp:1,starting an election 
+2021/09/08 16:29:54 id:1,term:14,tp:1,sending vote request to 2
+2021/09/08 16:29:54 id:1,term:14,tp:1,sending vote request to 0
+2021/09/08 16:29:54 id:2,term:13,tp:0,receive vote request from 1(term:14)
+2021/09/08 16:29:54 id:1,term:14,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:54 id:1,term:14,tp:1,starting an election 
+2021/09/08 16:29:54 id:1,term:15,tp:1,sending vote request to 2
+2021/09/08 16:29:54 id:1,term:15,tp:1,sending vote request to 0
+2021/09/08 16:29:54 id:2,term:14,tp:0,receive vote request from 1(term:15)
+2021/09/08 16:29:54 id:1,term:15,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:55 id:1,term:15,tp:1,starting an election 
+2021/09/08 16:29:55 id:1,term:16,tp:1,sending vote request to 2
+2021/09/08 16:29:55 id:1,term:16,tp:1,sending vote request to 0
+2021/09/08 16:29:55 id:2,term:15,tp:0,receive vote request from 1(term:16)
+2021/09/08 16:29:55 id:1,term:16,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:55 id:1,term:16,tp:1,starting an election 
+2021/09/08 16:29:55 id:1,term:17,tp:1,sending vote request to 2
+2021/09/08 16:29:55 id:1,term:17,tp:1,sending vote request to 0
+2021/09/08 16:29:55 id:2,term:16,tp:0,receive vote request from 1(term:17)
+2021/09/08 16:29:55 id:1,term:17,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:56 id:1,term:17,tp:1,starting an election 
+2021/09/08 16:29:56 id:1,term:18,tp:1,sending vote request to 2
+2021/09/08 16:29:56 id:1,term:18,tp:1,sending vote request to 0
+2021/09/08 16:29:56 id:2,term:17,tp:0,receive vote request from 1(term:18)
+2021/09/08 16:29:56 id:1,term:18,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:56 id:1,term:18,tp:1,starting an election 
+2021/09/08 16:29:56 id:1,term:19,tp:1,sending vote request to 2
+2021/09/08 16:29:56 id:1,term:19,tp:1,sending vote request to 0
+2021/09/08 16:29:56 id:2,term:18,tp:0,receive vote request from 1(term:19)
+2021/09/08 16:29:56 id:1,term:19,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:57 id:1,term:19,tp:1,starting an election 
+2021/09/08 16:29:57 id:1,term:20,tp:1,sending vote request to 2
+2021/09/08 16:29:57 id:1,term:20,tp:1,sending vote request to 0
+2021/09/08 16:29:57 id:2,term:19,tp:0,receive vote request from 1(term:20)
+2021/09/08 16:29:57 id:1,term:20,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:57 id:1,term:20,tp:1,starting an election 
+2021/09/08 16:29:57 id:1,term:21,tp:1,sending vote request to 2
+2021/09/08 16:29:57 id:1,term:21,tp:1,sending vote request to 0
+2021/09/08 16:29:57 id:2,term:20,tp:0,receive vote request from 1(term:21)
+2021/09/08 16:29:57 id:1,term:21,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:58 id:1,term:21,tp:1,starting an election 
+2021/09/08 16:29:58 id:1,term:22,tp:1,sending vote request to 2
+2021/09/08 16:29:58 id:1,term:22,tp:1,sending vote request to 0
+2021/09/08 16:29:58 id:2,term:21,tp:0,receive vote request from 1(term:22)
+2021/09/08 16:29:58 id:1,term:22,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:58 id:1,term:22,tp:1,starting an election 
+2021/09/08 16:29:58 id:1,term:23,tp:1,sending vote request to 2
+2021/09/08 16:29:58 id:1,term:23,tp:1,sending vote request to 0
+2021/09/08 16:29:58 id:2,term:22,tp:0,receive vote request from 1(term:23)
+2021/09/08 16:29:58 id:1,term:23,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:59 id:1,term:23,tp:1,starting an election 
+2021/09/08 16:29:59 id:1,term:24,tp:1,sending vote request to 2
+2021/09/08 16:29:59 id:1,term:24,tp:1,sending vote request to 0
+2021/09/08 16:29:59 id:2,term:23,tp:0,receive vote request from 1(term:24)
+2021/09/08 16:29:59 id:1,term:24,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:29:59 id:1,term:24,tp:1,starting an election 
+2021/09/08 16:29:59 id:1,term:25,tp:1,sending vote request to 2
+2021/09/08 16:29:59 id:1,term:25,tp:1,sending vote request to 0
+2021/09/08 16:29:59 id:2,term:24,tp:0,receive vote request from 1(term:25)
+2021/09/08 16:29:59 id:1,term:25,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:00 id:1,term:25,tp:1,starting an election 
+2021/09/08 16:30:00 id:1,term:26,tp:1,sending vote request to 2
+2021/09/08 16:30:00 id:1,term:26,tp:1,sending vote request to 0
+2021/09/08 16:30:00 id:2,term:25,tp:0,receive vote request from 1(term:26)
+2021/09/08 16:30:00 id:1,term:26,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:00 id:1,term:26,tp:1,starting an election 
+2021/09/08 16:30:00 id:1,term:27,tp:1,sending vote request to 2
+2021/09/08 16:30:00 id:1,term:27,tp:1,sending vote request to 0
+2021/09/08 16:30:00 id:2,term:26,tp:0,receive vote request from 1(term:27)
+2021/09/08 16:30:00 id:1,term:27,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:01 id:1,term:27,tp:1,starting an election 
+2021/09/08 16:30:01 id:1,term:28,tp:1,sending vote request to 2
+2021/09/08 16:30:01 id:1,term:28,tp:1,sending vote request to 0
+2021/09/08 16:30:01 id:2,term:27,tp:0,receive vote request from 1(term:28)
+2021/09/08 16:30:01 id:1,term:28,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:01 id:1,term:28,tp:1,starting an election 
+2021/09/08 16:30:01 id:1,term:29,tp:1,sending vote request to 2
+2021/09/08 16:30:01 id:1,term:29,tp:1,sending vote request to 0
+2021/09/08 16:30:01 id:2,term:28,tp:0,receive vote request from 1(term:29)
+2021/09/08 16:30:01 id:1,term:29,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:02 id:1,term:29,tp:1,starting an election 
+2021/09/08 16:30:02 id:1,term:30,tp:1,sending vote request to 2
+2021/09/08 16:30:02 id:1,term:30,tp:1,sending vote request to 0
+2021/09/08 16:30:02 id:2,term:29,tp:0,receive vote request from 1(term:30)
+2021/09/08 16:30:02 id:1,term:30,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:02 id:1,term:30,tp:1,starting an election 
+2021/09/08 16:30:02 id:1,term:31,tp:1,sending vote request to 2
+2021/09/08 16:30:02 id:1,term:31,tp:1,sending vote request to 0
+2021/09/08 16:30:02 id:2,term:30,tp:0,receive vote request from 1(term:31)
+2021/09/08 16:30:02 id:1,term:31,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:03 id:1,term:31,tp:1,starting an election 
+2021/09/08 16:30:03 id:1,term:32,tp:1,sending vote request to 2
+2021/09/08 16:30:03 id:1,term:32,tp:1,sending vote request to 0
+2021/09/08 16:30:03 id:2,term:31,tp:0,receive vote request from 1(term:32)
+2021/09/08 16:30:03 id:1,term:32,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:03 id:1,term:32,tp:1,starting an election 
+2021/09/08 16:30:03 id:1,term:33,tp:1,sending vote request to 2
+2021/09/08 16:30:03 id:1,term:33,tp:1,sending vote request to 0
+2021/09/08 16:30:03 id:2,term:32,tp:0,receive vote request from 1(term:33)
+2021/09/08 16:30:03 id:1,term:33,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:04 id:1,term:33,tp:1,starting an election 
+2021/09/08 16:30:04 id:1,term:34,tp:1,sending vote request to 2
+2021/09/08 16:30:04 id:1,term:34,tp:1,sending vote request to 0
+2021/09/08 16:30:04 id:2,term:33,tp:0,receive vote request from 1(term:34)
+2021/09/08 16:30:04 id:1,term:34,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:05 id:1,term:34,tp:1,starting an election 
+2021/09/08 16:30:05 id:1,term:35,tp:1,sending vote request to 2
+2021/09/08 16:30:05 id:1,term:35,tp:1,sending vote request to 0
+2021/09/08 16:30:05 id:2,term:34,tp:0,receive vote request from 1(term:35)
+2021/09/08 16:30:05 id:1,term:35,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:05 id:1,term:35,tp:1,starting an election 
+2021/09/08 16:30:05 id:1,term:36,tp:1,sending vote request to 2
+2021/09/08 16:30:05 id:1,term:36,tp:1,sending vote request to 0
+2021/09/08 16:30:05 id:2,term:35,tp:0,receive vote request from 1(term:36)
+2021/09/08 16:30:05 id:1,term:36,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:06 id:1,term:36,tp:1,starting an election 
+2021/09/08 16:30:06 id:1,term:37,tp:1,sending vote request to 2
+2021/09/08 16:30:06 id:1,term:37,tp:1,sending vote request to 0
+2021/09/08 16:30:06 id:2,term:36,tp:0,receive vote request from 1(term:37)
+2021/09/08 16:30:06 id:1,term:37,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:06 id:1,term:37,tp:1,starting an election 
+2021/09/08 16:30:06 id:1,term:38,tp:1,sending vote request to 2
+2021/09/08 16:30:06 id:1,term:38,tp:1,sending vote request to 0
+2021/09/08 16:30:06 id:2,term:37,tp:0,receive vote request from 1(term:38)
+2021/09/08 16:30:06 id:1,term:38,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:07 id:1,term:38,tp:1,starting an election 
+2021/09/08 16:30:07 id:1,term:39,tp:1,sending vote request to 2
+2021/09/08 16:30:07 id:1,term:39,tp:1,sending vote request to 0
+2021/09/08 16:30:07 id:2,term:38,tp:0,receive vote request from 1(term:39)
+2021/09/08 16:30:07 id:1,term:39,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:08 id:1,term:39,tp:1,starting an election 
+2021/09/08 16:30:08 id:1,term:40,tp:1,sending vote request to 2
+2021/09/08 16:30:08 id:1,term:40,tp:1,sending vote request to 0
+2021/09/08 16:30:08 id:2,term:39,tp:0,receive vote request from 1(term:40)
+2021/09/08 16:30:08 id:1,term:40,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:08 id:1,term:40,tp:1,starting an election 
+2021/09/08 16:30:08 id:1,term:41,tp:1,sending vote request to 2
+2021/09/08 16:30:08 id:1,term:41,tp:1,sending vote request to 0
+2021/09/08 16:30:08 id:2,term:40,tp:0,receive vote request from 1(term:41)
+2021/09/08 16:30:08 id:1,term:41,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:09 id:1,term:41,tp:1,starting an election 
+2021/09/08 16:30:09 id:1,term:42,tp:1,sending vote request to 2
+2021/09/08 16:30:09 id:1,term:42,tp:1,sending vote request to 0
+2021/09/08 16:30:09 id:2,term:41,tp:0,receive vote request from 1(term:42)
+2021/09/08 16:30:09 id:1,term:42,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:09 id:1,term:42,tp:1,starting an election 
+2021/09/08 16:30:09 id:1,term:43,tp:1,sending vote request to 2
+2021/09/08 16:30:09 id:1,term:43,tp:1,sending vote request to 0
+2021/09/08 16:30:09 id:2,term:42,tp:0,receive vote request from 1(term:43)
+2021/09/08 16:30:09 id:1,term:43,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:10 id:1,term:43,tp:1,starting an election 
+2021/09/08 16:30:10 id:1,term:44,tp:1,sending vote request to 2
+2021/09/08 16:30:10 id:1,term:44,tp:1,sending vote request to 0
+2021/09/08 16:30:10 id:2,term:43,tp:0,receive vote request from 1(term:44)
+2021/09/08 16:30:10 id:1,term:44,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:10 id:1,term:44,tp:1,starting an election 
+2021/09/08 16:30:10 id:1,term:45,tp:1,sending vote request to 2
+2021/09/08 16:30:10 id:1,term:45,tp:1,sending vote request to 0
+2021/09/08 16:30:10 id:2,term:44,tp:0,receive vote request from 1(term:45)
+2021/09/08 16:30:10 id:1,term:45,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:11 id:1,term:45,tp:1,starting an election 
+2021/09/08 16:30:11 id:1,term:46,tp:1,sending vote request to 2
+2021/09/08 16:30:11 id:1,term:46,tp:1,sending vote request to 0
+2021/09/08 16:30:11 id:2,term:45,tp:0,receive vote request from 1(term:46)
+2021/09/08 16:30:11 id:1,term:46,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:11 id:1,term:46,tp:1,starting an election 
+2021/09/08 16:30:11 id:1,term:47,tp:1,sending vote request to 2
+2021/09/08 16:30:11 id:1,term:47,tp:1,sending vote request to 0
+2021/09/08 16:30:11 id:2,term:46,tp:0,receive vote request from 1(term:47)
+2021/09/08 16:30:11 id:1,term:47,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:12 id:1,term:47,tp:1,starting an election 
+2021/09/08 16:30:12 id:1,term:48,tp:1,sending vote request to 2
+2021/09/08 16:30:12 id:1,term:48,tp:1,sending vote request to 0
+2021/09/08 16:30:12 id:2,term:47,tp:0,receive vote request from 1(term:48)
+2021/09/08 16:30:12 id:1,term:48,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:12 id:1,term:48,tp:1,starting an election 
+2021/09/08 16:30:12 id:1,term:49,tp:1,sending vote request to 2
+2021/09/08 16:30:12 id:1,term:49,tp:1,sending vote request to 0
+2021/09/08 16:30:12 id:2,term:48,tp:0,receive vote request from 1(term:49)
+2021/09/08 16:30:12 id:1,term:49,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:13 id:1,term:49,tp:1,starting an election 
+2021/09/08 16:30:13 id:1,term:50,tp:1,sending vote request to 2
+2021/09/08 16:30:13 id:1,term:50,tp:1,sending vote request to 0
+2021/09/08 16:30:13 id:2,term:49,tp:0,receive vote request from 1(term:50)
+2021/09/08 16:30:13 id:1,term:50,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:13 id:1,term:50,tp:1,starting an election 
+2021/09/08 16:30:13 id:1,term:51,tp:1,sending vote request to 2
+2021/09/08 16:30:13 id:1,term:51,tp:1,sending vote request to 0
+2021/09/08 16:30:13 id:2,term:50,tp:0,receive vote request from 1(term:51)
+2021/09/08 16:30:13 id:1,term:51,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:13 id:1,term:51,tp:1,starting an election 
+2021/09/08 16:30:13 id:1,term:52,tp:1,sending vote request to 2
+2021/09/08 16:30:13 id:1,term:52,tp:1,sending vote request to 0
+2021/09/08 16:30:13 id:2,term:51,tp:0,receive vote request from 1(term:52)
+2021/09/08 16:30:13 id:1,term:52,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:14 id:1,term:52,tp:1,starting an election 
+2021/09/08 16:30:14 id:1,term:53,tp:1,sending vote request to 2
+2021/09/08 16:30:14 id:1,term:53,tp:1,sending vote request to 0
+2021/09/08 16:30:14 id:2,term:52,tp:0,receive vote request from 1(term:53)
+2021/09/08 16:30:14 id:1,term:53,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:14 id:1,term:53,tp:1,starting an election 
+2021/09/08 16:30:14 id:1,term:54,tp:1,sending vote request to 2
+2021/09/08 16:30:14 id:1,term:54,tp:1,sending vote request to 0
+2021/09/08 16:30:14 id:2,term:53,tp:0,receive vote request from 1(term:54)
+2021/09/08 16:30:14 id:1,term:54,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:15 id:1,term:54,tp:1,starting an election 
+2021/09/08 16:30:15 id:1,term:55,tp:1,sending vote request to 2
+2021/09/08 16:30:15 id:1,term:55,tp:1,sending vote request to 0
+2021/09/08 16:30:15 id:2,term:54,tp:0,receive vote request from 1(term:55)
+2021/09/08 16:30:15 id:1,term:55,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:16 id:1,term:55,tp:1,starting an election 
+2021/09/08 16:30:16 id:1,term:56,tp:1,sending vote request to 2
+2021/09/08 16:30:16 id:1,term:56,tp:1,sending vote request to 0
+2021/09/08 16:30:16 id:2,term:55,tp:0,receive vote request from 1(term:56)
+2021/09/08 16:30:16 id:1,term:56,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:16 id:1,term:56,tp:1,starting an election 
+2021/09/08 16:30:16 id:1,term:57,tp:1,sending vote request to 2
+2021/09/08 16:30:16 id:1,term:57,tp:1,sending vote request to 0
+2021/09/08 16:30:16 id:2,term:56,tp:0,receive vote request from 1(term:57)
+2021/09/08 16:30:16 id:1,term:57,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:17 id:1,term:57,tp:1,starting an election 
+2021/09/08 16:30:17 id:1,term:58,tp:1,sending vote request to 2
+2021/09/08 16:30:17 id:1,term:58,tp:1,sending vote request to 0
+2021/09/08 16:30:17 id:2,term:57,tp:0,receive vote request from 1(term:58)
+2021/09/08 16:30:17 id:1,term:58,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:17 id:1,term:58,tp:1,starting an election 
+2021/09/08 16:30:17 id:1,term:59,tp:1,sending vote request to 2
+2021/09/08 16:30:17 id:1,term:59,tp:1,sending vote request to 0
+2021/09/08 16:30:17 id:2,term:58,tp:0,receive vote request from 1(term:59)
+2021/09/08 16:30:17 id:1,term:59,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:18 id:1,term:59,tp:1,starting an election 
+2021/09/08 16:30:18 id:1,term:60,tp:1,sending vote request to 2
+2021/09/08 16:30:18 id:1,term:60,tp:1,sending vote request to 0
+2021/09/08 16:30:18 id:2,term:59,tp:0,receive vote request from 1(term:60)
+2021/09/08 16:30:18 id:1,term:60,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:18 id:1,term:60,tp:1,starting an election 
+2021/09/08 16:30:18 id:1,term:61,tp:1,sending vote request to 2
+2021/09/08 16:30:18 id:1,term:61,tp:1,sending vote request to 0
+2021/09/08 16:30:18 id:2,term:60,tp:0,receive vote request from 1(term:61)
+2021/09/08 16:30:18 id:1,term:61,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:19 id:1,term:61,tp:1,starting an election 
+2021/09/08 16:30:19 id:1,term:62,tp:1,sending vote request to 2
+2021/09/08 16:30:19 id:1,term:62,tp:1,sending vote request to 0
+2021/09/08 16:30:19 id:2,term:61,tp:0,receive vote request from 1(term:62)
+2021/09/08 16:30:19 id:1,term:62,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:19 id:1,term:62,tp:1,starting an election 
+2021/09/08 16:30:19 id:1,term:63,tp:1,sending vote request to 2
+2021/09/08 16:30:19 id:1,term:63,tp:1,sending vote request to 0
+2021/09/08 16:30:19 id:2,term:62,tp:0,receive vote request from 1(term:63)
+2021/09/08 16:30:19 id:1,term:63,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:20 id:1,term:63,tp:1,starting an election 
+2021/09/08 16:30:20 id:1,term:64,tp:1,sending vote request to 2
+2021/09/08 16:30:20 id:1,term:64,tp:1,sending vote request to 0
+2021/09/08 16:30:20 id:2,term:63,tp:0,receive vote request from 1(term:64)
+2021/09/08 16:30:20 id:1,term:64,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:21 id:1,term:64,tp:1,starting an election 
+2021/09/08 16:30:21 id:1,term:65,tp:1,sending vote request to 2
+2021/09/08 16:30:21 id:1,term:65,tp:1,sending vote request to 0
+2021/09/08 16:30:21 id:2,term:64,tp:0,receive vote request from 1(term:65)
+2021/09/08 16:30:21 id:1,term:65,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:21 id:1,term:65,tp:1,starting an election 
+2021/09/08 16:30:21 id:1,term:66,tp:1,sending vote request to 2
+2021/09/08 16:30:21 id:1,term:66,tp:1,sending vote request to 0
+2021/09/08 16:30:21 id:2,term:65,tp:0,receive vote request from 1(term:66)
+2021/09/08 16:30:21 id:1,term:66,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:22 id:1,term:66,tp:1,starting an election 
+2021/09/08 16:30:22 id:1,term:67,tp:1,sending vote request to 2
+2021/09/08 16:30:22 id:1,term:67,tp:1,sending vote request to 0
+2021/09/08 16:30:22 id:2,term:66,tp:0,receive vote request from 1(term:67)
+2021/09/08 16:30:22 id:1,term:67,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:22 id:1,term:67,tp:1,starting an election 
+2021/09/08 16:30:22 id:1,term:68,tp:1,sending vote request to 2
+2021/09/08 16:30:22 id:1,term:68,tp:1,sending vote request to 0
+2021/09/08 16:30:22 id:2,term:67,tp:0,receive vote request from 1(term:68)
+2021/09/08 16:30:22 id:1,term:68,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:23 id:1,term:68,tp:1,starting an election 
+2021/09/08 16:30:23 id:1,term:69,tp:1,sending vote request to 2
+2021/09/08 16:30:23 id:1,term:69,tp:1,sending vote request to 0
+2021/09/08 16:30:23 id:2,term:68,tp:0,receive vote request from 1(term:69)
+2021/09/08 16:30:23 id:1,term:69,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:23 id:1,term:69,tp:1,starting an election 
+2021/09/08 16:30:23 id:1,term:70,tp:1,sending vote request to 2
+2021/09/08 16:30:23 id:1,term:70,tp:1,sending vote request to 0
+2021/09/08 16:30:23 id:2,term:69,tp:0,receive vote request from 1(term:70)
+2021/09/08 16:30:23 id:1,term:70,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:24 id:1,term:70,tp:1,starting an election 
+2021/09/08 16:30:24 id:1,term:71,tp:1,sending vote request to 2
+2021/09/08 16:30:24 id:1,term:71,tp:1,sending vote request to 0
+2021/09/08 16:30:24 id:2,term:70,tp:0,receive vote request from 1(term:71)
+2021/09/08 16:30:24 id:1,term:71,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:24 id:1,term:71,tp:1,starting an election 
+2021/09/08 16:30:24 id:1,term:72,tp:1,sending vote request to 2
+2021/09/08 16:30:24 id:1,term:72,tp:1,sending vote request to 0
+2021/09/08 16:30:24 id:2,term:71,tp:0,receive vote request from 1(term:72)
+2021/09/08 16:30:24 id:1,term:72,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:25 id:1,term:72,tp:1,starting an election 
+2021/09/08 16:30:25 id:1,term:73,tp:1,sending vote request to 2
+2021/09/08 16:30:25 id:1,term:73,tp:1,sending vote request to 0
+2021/09/08 16:30:25 id:2,term:72,tp:0,receive vote request from 1(term:73)
+2021/09/08 16:30:25 id:1,term:73,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:25 id:1,term:73,tp:1,starting an election 
+2021/09/08 16:30:25 id:1,term:74,tp:1,sending vote request to 2
+2021/09/08 16:30:25 id:1,term:74,tp:1,sending vote request to 0
+2021/09/08 16:30:25 id:2,term:73,tp:0,receive vote request from 1(term:74)
+2021/09/08 16:30:25 id:1,term:74,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:26 id:1,term:74,tp:1,starting an election 
+2021/09/08 16:30:26 id:1,term:75,tp:1,sending vote request to 2
+2021/09/08 16:30:26 id:1,term:75,tp:1,sending vote request to 0
+2021/09/08 16:30:26 id:2,term:74,tp:0,receive vote request from 1(term:75)
+2021/09/08 16:30:26 id:1,term:75,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:26 id:1,term:75,tp:1,starting an election 
+2021/09/08 16:30:26 id:1,term:76,tp:1,sending vote request to 2
+2021/09/08 16:30:26 id:1,term:76,tp:1,sending vote request to 0
+2021/09/08 16:30:26 id:2,term:75,tp:0,receive vote request from 1(term:76)
+2021/09/08 16:30:26 id:1,term:76,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:27 id:1,term:76,tp:1,starting an election 
+2021/09/08 16:30:27 id:1,term:77,tp:1,sending vote request to 2
+2021/09/08 16:30:27 id:1,term:77,tp:1,sending vote request to 0
+2021/09/08 16:30:27 id:2,term:76,tp:0,receive vote request from 1(term:77)
+2021/09/08 16:30:27 id:1,term:77,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:27 id:1,term:77,tp:1,starting an election 
+2021/09/08 16:30:27 id:1,term:78,tp:1,sending vote request to 2
+2021/09/08 16:30:27 id:1,term:78,tp:1,sending vote request to 0
+2021/09/08 16:30:27 id:2,term:77,tp:0,receive vote request from 1(term:78)
+2021/09/08 16:30:27 id:1,term:78,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:28 id:1,term:78,tp:1,starting an election 
+2021/09/08 16:30:28 id:1,term:79,tp:1,sending vote request to 2
+2021/09/08 16:30:28 id:1,term:79,tp:1,sending vote request to 0
+2021/09/08 16:30:28 id:2,term:78,tp:0,receive vote request from 1(term:79)
+2021/09/08 16:30:28 id:1,term:79,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:28 id:1,term:79,tp:1,starting an election 
+2021/09/08 16:30:28 id:1,term:80,tp:1,sending vote request to 2
+2021/09/08 16:30:28 id:1,term:80,tp:1,sending vote request to 0
+2021/09/08 16:30:28 id:2,term:79,tp:0,receive vote request from 1(term:80)
+2021/09/08 16:30:28 id:1,term:80,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:29 id:1,term:80,tp:1,starting an election 
+2021/09/08 16:30:29 id:1,term:81,tp:1,sending vote request to 2
+2021/09/08 16:30:29 id:1,term:81,tp:1,sending vote request to 0
+2021/09/08 16:30:29 id:2,term:80,tp:0,receive vote request from 1(term:81)
+2021/09/08 16:30:29 id:1,term:81,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:30 id:1,term:81,tp:1,starting an election 
+2021/09/08 16:30:30 id:1,term:82,tp:1,sending vote request to 2
+2021/09/08 16:30:30 id:1,term:82,tp:1,sending vote request to 0
+2021/09/08 16:30:30 id:2,term:81,tp:0,receive vote request from 1(term:82)
+2021/09/08 16:30:30 id:1,term:82,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:30 id:1,term:82,tp:1,starting an election 
+2021/09/08 16:30:30 id:1,term:83,tp:1,sending vote request to 2
+2021/09/08 16:30:30 id:1,term:83,tp:1,sending vote request to 0
+2021/09/08 16:30:30 id:2,term:82,tp:0,receive vote request from 1(term:83)
+2021/09/08 16:30:30 id:1,term:83,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:31 id:1,term:83,tp:1,starting an election 
+2021/09/08 16:30:31 id:1,term:84,tp:1,sending vote request to 2
+2021/09/08 16:30:31 id:1,term:84,tp:1,sending vote request to 0
+2021/09/08 16:30:31 id:2,term:83,tp:0,receive vote request from 1(term:84)
+2021/09/08 16:30:31 id:1,term:84,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:31 id:1,term:84,tp:1,starting an election 
+2021/09/08 16:30:31 id:1,term:85,tp:1,sending vote request to 2
+2021/09/08 16:30:31 id:1,term:85,tp:1,sending vote request to 0
+2021/09/08 16:30:31 id:2,term:84,tp:0,receive vote request from 1(term:85)
+2021/09/08 16:30:31 id:1,term:85,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:32 id:1,term:85,tp:1,starting an election 
+2021/09/08 16:30:32 id:1,term:86,tp:1,sending vote request to 2
+2021/09/08 16:30:32 id:1,term:86,tp:1,sending vote request to 0
+2021/09/08 16:30:32 id:2,term:85,tp:0,receive vote request from 1(term:86)
+2021/09/08 16:30:32 id:1,term:86,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:32 id:1,term:86,tp:1,starting an election 
+2021/09/08 16:30:32 id:1,term:87,tp:1,sending vote request to 2
+2021/09/08 16:30:32 id:1,term:87,tp:1,sending vote request to 0
+2021/09/08 16:30:32 id:2,term:86,tp:0,receive vote request from 1(term:87)
+2021/09/08 16:30:32 id:1,term:87,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:33 id:1,term:87,tp:1,starting an election 
+2021/09/08 16:30:33 id:1,term:88,tp:1,sending vote request to 2
+2021/09/08 16:30:33 id:1,term:88,tp:1,sending vote request to 0
+2021/09/08 16:30:33 id:2,term:87,tp:0,receive vote request from 1(term:88)
+2021/09/08 16:30:33 id:1,term:88,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:33 id:1,term:88,tp:1,starting an election 
+2021/09/08 16:30:33 id:1,term:89,tp:1,sending vote request to 2
+2021/09/08 16:30:33 id:1,term:89,tp:1,sending vote request to 0
+2021/09/08 16:30:33 id:2,term:88,tp:0,receive vote request from 1(term:89)
+2021/09/08 16:30:33 id:1,term:89,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:34 id:1,term:89,tp:1,starting an election 
+2021/09/08 16:30:34 id:1,term:90,tp:1,sending vote request to 2
+2021/09/08 16:30:34 id:1,term:90,tp:1,sending vote request to 0
+2021/09/08 16:30:34 id:2,term:89,tp:0,receive vote request from 1(term:90)
+2021/09/08 16:30:34 id:1,term:90,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:34 id:1,term:90,tp:1,starting an election 
+2021/09/08 16:30:34 id:1,term:91,tp:1,sending vote request to 2
+2021/09/08 16:30:34 id:1,term:91,tp:1,sending vote request to 0
+2021/09/08 16:30:34 id:2,term:90,tp:0,receive vote request from 1(term:91)
+2021/09/08 16:30:34 id:1,term:91,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:35 id:1,term:91,tp:1,starting an election 
+2021/09/08 16:30:35 id:1,term:92,tp:1,sending vote request to 2
+2021/09/08 16:30:35 id:1,term:92,tp:1,sending vote request to 0
+2021/09/08 16:30:35 id:2,term:91,tp:0,receive vote request from 1(term:92)
+2021/09/08 16:30:35 id:1,term:92,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:36 id:1,term:92,tp:1,starting an election 
+2021/09/08 16:30:36 id:1,term:93,tp:1,sending vote request to 2
+2021/09/08 16:30:36 id:1,term:93,tp:1,sending vote request to 0
+2021/09/08 16:30:36 id:2,term:92,tp:0,receive vote request from 1(term:93)
+2021/09/08 16:30:36 id:1,term:93,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:36 id:1,term:93,tp:1,starting an election 
+2021/09/08 16:30:36 id:1,term:94,tp:1,sending vote request to 2
+2021/09/08 16:30:36 id:1,term:94,tp:1,sending vote request to 0
+2021/09/08 16:30:36 id:2,term:93,tp:0,receive vote request from 1(term:94)
+2021/09/08 16:30:36 id:1,term:94,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:37 id:1,term:94,tp:1,starting an election 
+2021/09/08 16:30:37 id:1,term:95,tp:1,sending vote request to 2
+2021/09/08 16:30:37 id:1,term:95,tp:1,sending vote request to 0
+2021/09/08 16:30:37 id:2,term:94,tp:0,receive vote request from 1(term:95)
+2021/09/08 16:30:37 id:1,term:95,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:37 id:1,term:95,tp:1,starting an election 
+2021/09/08 16:30:37 id:1,term:96,tp:1,sending vote request to 2
+2021/09/08 16:30:37 id:1,term:96,tp:1,sending vote request to 0
+2021/09/08 16:30:37 id:2,term:95,tp:0,receive vote request from 1(term:96)
+2021/09/08 16:30:37 id:1,term:96,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:38 id:1,term:96,tp:1,starting an election 
+2021/09/08 16:30:38 id:1,term:97,tp:1,sending vote request to 2
+2021/09/08 16:30:38 id:1,term:97,tp:1,sending vote request to 0
+2021/09/08 16:30:38 id:2,term:96,tp:0,receive vote request from 1(term:97)
+2021/09/08 16:30:38 id:1,term:97,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:38 id:1,term:97,tp:1,starting an election 
+2021/09/08 16:30:38 id:1,term:98,tp:1,sending vote request to 2
+2021/09/08 16:30:38 id:1,term:98,tp:1,sending vote request to 0
+2021/09/08 16:30:38 id:2,term:97,tp:0,receive vote request from 1(term:98)
+2021/09/08 16:30:38 id:1,term:98,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:39 id:1,term:98,tp:1,starting an election 
+2021/09/08 16:30:39 id:1,term:99,tp:1,sending vote request to 2
+2021/09/08 16:30:39 id:1,term:99,tp:1,sending vote request to 0
+2021/09/08 16:30:39 id:2,term:98,tp:0,receive vote request from 1(term:99)
+2021/09/08 16:30:39 id:1,term:99,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:39 id:1,term:99,tp:1,starting an election 
+2021/09/08 16:30:39 id:1,term:100,tp:1,sending vote request to 2
+2021/09/08 16:30:39 id:1,term:100,tp:1,sending vote request to 0
+2021/09/08 16:30:39 id:2,term:99,tp:0,receive vote request from 1(term:100)
+2021/09/08 16:30:39 id:1,term:100,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:40 id:1,term:100,tp:1,starting an election 
+2021/09/08 16:30:40 id:1,term:101,tp:1,sending vote request to 2
+2021/09/08 16:30:40 id:1,term:101,tp:1,sending vote request to 0
+2021/09/08 16:30:40 id:2,term:100,tp:0,receive vote request from 1(term:101)
+2021/09/08 16:30:40 id:1,term:101,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:40 id:1,term:101,tp:1,starting an election 
+2021/09/08 16:30:40 id:1,term:102,tp:1,sending vote request to 2
+2021/09/08 16:30:40 id:1,term:102,tp:1,sending vote request to 0
+2021/09/08 16:30:40 id:2,term:101,tp:0,receive vote request from 1(term:102)
+2021/09/08 16:30:40 id:1,term:102,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:41 id:1,term:102,tp:1,starting an election 
+2021/09/08 16:30:41 id:1,term:103,tp:1,sending vote request to 2
+2021/09/08 16:30:41 id:1,term:103,tp:1,sending vote request to 0
+2021/09/08 16:30:41 id:2,term:102,tp:0,receive vote request from 1(term:103)
+2021/09/08 16:30:41 id:1,term:103,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:41 id:1,term:103,tp:1,starting an election 
+2021/09/08 16:30:41 id:1,term:104,tp:1,sending vote request to 2
+2021/09/08 16:30:41 id:1,term:104,tp:1,sending vote request to 0
+2021/09/08 16:30:41 id:2,term:103,tp:0,receive vote request from 1(term:104)
+2021/09/08 16:30:41 id:1,term:104,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:42 id:1,term:104,tp:1,starting an election 
+2021/09/08 16:30:42 id:1,term:105,tp:1,sending vote request to 2
+2021/09/08 16:30:42 id:1,term:105,tp:1,sending vote request to 0
+2021/09/08 16:30:42 id:2,term:104,tp:0,receive vote request from 1(term:105)
+2021/09/08 16:30:42 id:1,term:105,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:42 id:1,term:105,tp:1,starting an election 
+2021/09/08 16:30:42 id:1,term:106,tp:1,sending vote request to 2
+2021/09/08 16:30:42 id:1,term:106,tp:1,sending vote request to 0
+2021/09/08 16:30:42 id:2,term:105,tp:0,receive vote request from 1(term:106)
+2021/09/08 16:30:42 id:1,term:106,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:43 id:1,term:106,tp:1,starting an election 
+2021/09/08 16:30:43 id:1,term:107,tp:1,sending vote request to 2
+2021/09/08 16:30:43 id:1,term:107,tp:1,sending vote request to 0
+2021/09/08 16:30:43 id:2,term:106,tp:0,receive vote request from 1(term:107)
+2021/09/08 16:30:43 id:1,term:107,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:43 id:1,term:107,tp:1,starting an election 
+2021/09/08 16:30:43 id:1,term:108,tp:1,sending vote request to 2
+2021/09/08 16:30:43 id:1,term:108,tp:1,sending vote request to 0
+2021/09/08 16:30:43 id:2,term:107,tp:0,receive vote request from 1(term:108)
+2021/09/08 16:30:43 id:1,term:108,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:44 id:1,term:108,tp:1,starting an election 
+2021/09/08 16:30:44 id:1,term:109,tp:1,sending vote request to 2
+2021/09/08 16:30:44 id:1,term:109,tp:1,sending vote request to 0
+2021/09/08 16:30:44 id:2,term:108,tp:0,receive vote request from 1(term:109)
+2021/09/08 16:30:44 id:1,term:109,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:44 id:1,term:109,tp:1,starting an election 
+2021/09/08 16:30:44 id:1,term:110,tp:1,sending vote request to 2
+2021/09/08 16:30:44 id:1,term:110,tp:1,sending vote request to 0
+2021/09/08 16:30:44 id:2,term:109,tp:0,receive vote request from 1(term:110)
+2021/09/08 16:30:44 id:1,term:110,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:45 id:1,term:110,tp:1,starting an election 
+2021/09/08 16:30:45 id:1,term:111,tp:1,sending vote request to 2
+2021/09/08 16:30:45 id:1,term:111,tp:1,sending vote request to 0
+2021/09/08 16:30:45 id:2,term:110,tp:0,receive vote request from 1(term:111)
+2021/09/08 16:30:45 id:1,term:111,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:45 id:1,term:111,tp:1,starting an election 
+2021/09/08 16:30:45 id:1,term:112,tp:1,sending vote request to 2
+2021/09/08 16:30:45 id:1,term:112,tp:1,sending vote request to 0
+2021/09/08 16:30:45 id:2,term:111,tp:0,receive vote request from 1(term:112)
+2021/09/08 16:30:45 id:1,term:112,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:46 id:1,term:112,tp:1,starting an election 
+2021/09/08 16:30:46 id:1,term:113,tp:1,sending vote request to 2
+2021/09/08 16:30:46 id:1,term:113,tp:1,sending vote request to 0
+2021/09/08 16:30:46 id:2,term:112,tp:0,receive vote request from 1(term:113)
+2021/09/08 16:30:46 id:1,term:113,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:46 id:1,term:113,tp:1,starting an election 
+2021/09/08 16:30:46 id:1,term:114,tp:1,sending vote request to 2
+2021/09/08 16:30:46 id:1,term:114,tp:1,sending vote request to 0
+2021/09/08 16:30:46 id:2,term:113,tp:0,receive vote request from 1(term:114)
+2021/09/08 16:30:46 id:1,term:114,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:47 id:1,term:114,tp:1,starting an election 
+2021/09/08 16:30:47 id:1,term:115,tp:1,sending vote request to 2
+2021/09/08 16:30:47 id:1,term:115,tp:1,sending vote request to 0
+2021/09/08 16:30:47 id:2,term:114,tp:0,receive vote request from 1(term:115)
+2021/09/08 16:30:47 id:1,term:115,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:47 id:1,term:115,tp:1,starting an election 
+2021/09/08 16:30:47 id:1,term:116,tp:1,sending vote request to 2
+2021/09/08 16:30:47 id:1,term:116,tp:1,sending vote request to 0
+2021/09/08 16:30:47 id:2,term:115,tp:0,receive vote request from 1(term:116)
+2021/09/08 16:30:47 id:1,term:116,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:48 id:1,term:116,tp:1,starting an election 
+2021/09/08 16:30:48 id:1,term:117,tp:1,sending vote request to 2
+2021/09/08 16:30:48 id:1,term:117,tp:1,sending vote request to 0
+2021/09/08 16:30:48 id:2,term:116,tp:0,receive vote request from 1(term:117)
+2021/09/08 16:30:48 id:1,term:117,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:48 id:1,term:117,tp:1,starting an election 
+2021/09/08 16:30:48 id:1,term:118,tp:1,sending vote request to 2
+2021/09/08 16:30:48 id:1,term:118,tp:1,sending vote request to 0
+2021/09/08 16:30:48 id:2,term:117,tp:0,receive vote request from 1(term:118)
+2021/09/08 16:30:48 id:1,term:118,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:49 id:1,term:118,tp:1,starting an election 
+2021/09/08 16:30:49 id:1,term:119,tp:1,sending vote request to 2
+2021/09/08 16:30:49 id:1,term:119,tp:1,sending vote request to 0
+2021/09/08 16:30:49 id:2,term:118,tp:0,receive vote request from 1(term:119)
+2021/09/08 16:30:49 id:1,term:119,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:49 id:1,term:119,tp:1,starting an election 
+2021/09/08 16:30:49 id:1,term:120,tp:1,sending vote request to 2
+2021/09/08 16:30:49 id:1,term:120,tp:1,sending vote request to 0
+2021/09/08 16:30:49 id:2,term:119,tp:0,receive vote request from 1(term:120)
+2021/09/08 16:30:49 id:1,term:120,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:50 id:1,term:120,tp:1,starting an election 
+2021/09/08 16:30:50 id:1,term:121,tp:1,sending vote request to 2
+2021/09/08 16:30:50 id:1,term:121,tp:1,sending vote request to 0
+2021/09/08 16:30:50 id:2,term:120,tp:0,receive vote request from 1(term:121)
+2021/09/08 16:30:50 id:1,term:121,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:51 id:1,term:121,tp:1,starting an election 
+2021/09/08 16:30:51 id:1,term:122,tp:1,sending vote request to 2
+2021/09/08 16:30:51 id:1,term:122,tp:1,sending vote request to 0
+2021/09/08 16:30:51 id:2,term:121,tp:0,receive vote request from 1(term:122)
+2021/09/08 16:30:51 id:1,term:122,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:51 id:1,term:122,tp:1,starting an election 
+2021/09/08 16:30:51 id:1,term:123,tp:1,sending vote request to 2
+2021/09/08 16:30:51 id:1,term:123,tp:1,sending vote request to 0
+2021/09/08 16:30:51 id:2,term:122,tp:0,receive vote request from 1(term:123)
+2021/09/08 16:30:51 id:1,term:123,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:52 id:1,term:123,tp:1,starting an election 
+2021/09/08 16:30:52 id:1,term:124,tp:1,sending vote request to 2
+2021/09/08 16:30:52 id:1,term:124,tp:1,sending vote request to 0
+2021/09/08 16:30:52 id:2,term:123,tp:0,receive vote request from 1(term:124)
+2021/09/08 16:30:52 id:1,term:124,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:52 id:1,term:124,tp:1,starting an election 
+2021/09/08 16:30:52 id:1,term:125,tp:1,sending vote request to 0
+2021/09/08 16:30:52 id:1,term:125,tp:1,sending vote request to 2
+2021/09/08 16:30:52 id:2,term:124,tp:0,receive vote request from 1(term:125)
+2021/09/08 16:30:52 id:1,term:125,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:53 id:1,term:125,tp:1,starting an election 
+2021/09/08 16:30:53 id:1,term:126,tp:1,sending vote request to 2
+2021/09/08 16:30:53 id:1,term:126,tp:1,sending vote request to 0
+2021/09/08 16:30:53 id:2,term:125,tp:0,receive vote request from 1(term:126)
+2021/09/08 16:30:53 id:1,term:126,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:53 id:1,term:126,tp:1,starting an election 
+2021/09/08 16:30:53 id:1,term:127,tp:1,sending vote request to 2
+2021/09/08 16:30:53 id:1,term:127,tp:1,sending vote request to 0
+2021/09/08 16:30:53 id:2,term:126,tp:0,receive vote request from 1(term:127)
+2021/09/08 16:30:53 id:1,term:127,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:54 id:1,term:127,tp:1,starting an election 
+2021/09/08 16:30:54 id:1,term:128,tp:1,sending vote request to 2
+2021/09/08 16:30:54 id:1,term:128,tp:1,sending vote request to 0
+2021/09/08 16:30:54 id:2,term:127,tp:0,receive vote request from 1(term:128)
+2021/09/08 16:30:54 id:1,term:128,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:54 id:1,term:128,tp:1,starting an election 
+2021/09/08 16:30:54 id:1,term:129,tp:1,sending vote request to 2
+2021/09/08 16:30:54 id:1,term:129,tp:1,sending vote request to 0
+2021/09/08 16:30:54 id:2,term:128,tp:0,receive vote request from 1(term:129)
+2021/09/08 16:30:54 id:1,term:129,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:55 id:1,term:129,tp:1,starting an election 
+2021/09/08 16:30:55 id:1,term:130,tp:1,sending vote request to 2
+2021/09/08 16:30:55 id:1,term:130,tp:1,sending vote request to 0
+2021/09/08 16:30:55 id:2,term:129,tp:0,receive vote request from 1(term:130)
+2021/09/08 16:30:55 id:1,term:130,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:55 id:1,term:130,tp:1,starting an election 
+2021/09/08 16:30:55 id:1,term:131,tp:1,sending vote request to 2
+2021/09/08 16:30:55 id:1,term:131,tp:1,sending vote request to 0
+2021/09/08 16:30:55 id:2,term:130,tp:0,receive vote request from 1(term:131)
+2021/09/08 16:30:55 id:1,term:131,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:56 id:1,term:131,tp:1,starting an election 
+2021/09/08 16:30:56 id:1,term:132,tp:1,sending vote request to 2
+2021/09/08 16:30:56 id:1,term:132,tp:1,sending vote request to 0
+2021/09/08 16:30:56 id:2,term:131,tp:0,receive vote request from 1(term:132)
+2021/09/08 16:30:56 id:1,term:132,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:56 id:1,term:132,tp:1,starting an election 
+2021/09/08 16:30:56 id:1,term:133,tp:1,sending vote request to 2
+2021/09/08 16:30:56 id:1,term:133,tp:1,sending vote request to 0
+2021/09/08 16:30:56 id:2,term:132,tp:0,receive vote request from 1(term:133)
+2021/09/08 16:30:56 id:1,term:133,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:57 id:1,term:133,tp:1,starting an election 
+2021/09/08 16:30:57 id:1,term:134,tp:1,sending vote request to 2
+2021/09/08 16:30:57 id:1,term:134,tp:1,sending vote request to 0
+2021/09/08 16:30:57 id:2,term:133,tp:0,receive vote request from 1(term:134)
+2021/09/08 16:30:57 id:1,term:134,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:57 id:1,term:134,tp:1,starting an election 
+2021/09/08 16:30:57 id:1,term:135,tp:1,sending vote request to 2
+2021/09/08 16:30:57 id:1,term:135,tp:1,sending vote request to 0
+2021/09/08 16:30:57 id:2,term:134,tp:0,receive vote request from 1(term:135)
+2021/09/08 16:30:57 id:1,term:135,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:58 id:1,term:135,tp:1,starting an election 
+2021/09/08 16:30:58 id:1,term:136,tp:1,sending vote request to 2
+2021/09/08 16:30:58 id:1,term:136,tp:1,sending vote request to 0
+2021/09/08 16:30:58 id:2,term:135,tp:0,receive vote request from 1(term:136)
+2021/09/08 16:30:58 id:1,term:136,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:58 id:1,term:136,tp:1,starting an election 
+2021/09/08 16:30:58 id:1,term:137,tp:1,sending vote request to 2
+2021/09/08 16:30:58 id:1,term:137,tp:1,sending vote request to 0
+2021/09/08 16:30:58 id:2,term:136,tp:0,receive vote request from 1(term:137)
+2021/09/08 16:30:58 id:1,term:137,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:59 id:1,term:137,tp:1,starting an election 
+2021/09/08 16:30:59 id:1,term:138,tp:1,sending vote request to 2
+2021/09/08 16:30:59 id:1,term:138,tp:1,sending vote request to 0
+2021/09/08 16:30:59 id:2,term:137,tp:0,receive vote request from 1(term:138)
+2021/09/08 16:30:59 id:1,term:138,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:30:59 id:1,term:138,tp:1,starting an election 
+2021/09/08 16:30:59 id:1,term:139,tp:1,sending vote request to 2
+2021/09/08 16:30:59 id:1,term:139,tp:1,sending vote request to 0
+2021/09/08 16:30:59 id:2,term:138,tp:0,receive vote request from 1(term:139)
+2021/09/08 16:30:59 id:1,term:139,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:00 id:1,term:139,tp:1,starting an election 
+2021/09/08 16:31:00 id:1,term:140,tp:1,sending vote request to 2
+2021/09/08 16:31:00 id:1,term:140,tp:1,sending vote request to 0
+2021/09/08 16:31:00 id:2,term:139,tp:0,receive vote request from 1(term:140)
+2021/09/08 16:31:00 id:1,term:140,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:00 id:1,term:140,tp:1,starting an election 
+2021/09/08 16:31:00 id:1,term:141,tp:1,sending vote request to 2
+2021/09/08 16:31:00 id:1,term:141,tp:1,sending vote request to 0
+2021/09/08 16:31:00 id:2,term:140,tp:0,receive vote request from 1(term:141)
+2021/09/08 16:31:00 id:1,term:141,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:01 id:1,term:141,tp:1,starting an election 
+2021/09/08 16:31:01 id:1,term:142,tp:1,sending vote request to 2
+2021/09/08 16:31:01 id:1,term:142,tp:1,sending vote request to 0
+2021/09/08 16:31:01 id:2,term:141,tp:0,receive vote request from 1(term:142)
+2021/09/08 16:31:01 id:1,term:142,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:01 id:1,term:142,tp:1,starting an election 
+2021/09/08 16:31:01 id:1,term:143,tp:1,sending vote request to 2
+2021/09/08 16:31:01 id:1,term:143,tp:1,sending vote request to 0
+2021/09/08 16:31:01 id:2,term:142,tp:0,receive vote request from 1(term:143)
+2021/09/08 16:31:01 id:1,term:143,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:02 id:1,term:143,tp:1,starting an election 
+2021/09/08 16:31:02 id:1,term:144,tp:1,sending vote request to 2
+2021/09/08 16:31:02 id:1,term:144,tp:1,sending vote request to 0
+2021/09/08 16:31:02 id:2,term:143,tp:0,receive vote request from 1(term:144)
+2021/09/08 16:31:02 id:1,term:144,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:02 id:1,term:144,tp:1,starting an election 
+2021/09/08 16:31:02 id:1,term:145,tp:1,sending vote request to 2
+2021/09/08 16:31:02 id:1,term:145,tp:1,sending vote request to 0
+2021/09/08 16:31:02 id:2,term:144,tp:0,receive vote request from 1(term:145)
+2021/09/08 16:31:02 id:1,term:145,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:03 id:1,term:145,tp:1,starting an election 
+2021/09/08 16:31:03 id:1,term:146,tp:1,sending vote request to 2
+2021/09/08 16:31:03 id:1,term:146,tp:1,sending vote request to 0
+2021/09/08 16:31:03 id:2,term:145,tp:0,receive vote request from 1(term:146)
+2021/09/08 16:31:03 id:1,term:146,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:03 id:1,term:146,tp:1,starting an election 
+2021/09/08 16:31:03 id:1,term:147,tp:1,sending vote request to 2
+2021/09/08 16:31:03 id:1,term:147,tp:1,sending vote request to 0
+2021/09/08 16:31:03 id:2,term:146,tp:0,receive vote request from 1(term:147)
+2021/09/08 16:31:03 id:1,term:147,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:04 id:1,term:147,tp:1,starting an election 
+2021/09/08 16:31:04 id:1,term:148,tp:1,sending vote request to 2
+2021/09/08 16:31:04 id:1,term:148,tp:1,sending vote request to 0
+2021/09/08 16:31:04 id:2,term:147,tp:0,receive vote request from 1(term:148)
+2021/09/08 16:31:04 id:1,term:148,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:04 id:1,term:148,tp:1,starting an election 
+2021/09/08 16:31:04 id:1,term:149,tp:1,sending vote request to 2
+2021/09/08 16:31:04 id:1,term:149,tp:1,sending vote request to 0
+2021/09/08 16:31:04 id:2,term:148,tp:0,receive vote request from 1(term:149)
+2021/09/08 16:31:04 id:1,term:149,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:05 id:1,term:149,tp:1,starting an election 
+2021/09/08 16:31:05 id:1,term:150,tp:1,sending vote request to 2
+2021/09/08 16:31:05 id:1,term:150,tp:1,sending vote request to 0
+2021/09/08 16:31:05 id:2,term:149,tp:0,receive vote request from 1(term:150)
+2021/09/08 16:31:05 id:1,term:150,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:05 id:1,term:150,tp:1,starting an election 
+2021/09/08 16:31:05 id:1,term:151,tp:1,sending vote request to 2
+2021/09/08 16:31:05 id:1,term:151,tp:1,sending vote request to 0
+2021/09/08 16:31:05 id:2,term:150,tp:0,receive vote request from 1(term:151)
+2021/09/08 16:31:05 id:1,term:151,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:06 id:1,term:151,tp:1,starting an election 
+2021/09/08 16:31:06 id:1,term:152,tp:1,sending vote request to 2
+2021/09/08 16:31:06 id:1,term:152,tp:1,sending vote request to 0
+2021/09/08 16:31:06 id:2,term:151,tp:0,receive vote request from 1(term:152)
+2021/09/08 16:31:06 id:1,term:152,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:06 id:1,term:152,tp:1,starting an election 
+2021/09/08 16:31:06 id:1,term:153,tp:1,sending vote request to 2
+2021/09/08 16:31:06 id:1,term:153,tp:1,sending vote request to 0
+2021/09/08 16:31:06 id:2,term:152,tp:0,receive vote request from 1(term:153)
+2021/09/08 16:31:06 id:1,term:153,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:07 id:1,term:153,tp:1,starting an election 
+2021/09/08 16:31:07 id:1,term:154,tp:1,sending vote request to 2
+2021/09/08 16:31:07 id:1,term:154,tp:1,sending vote request to 0
+2021/09/08 16:31:07 id:2,term:153,tp:0,receive vote request from 1(term:154)
+2021/09/08 16:31:07 id:1,term:154,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:07 id:1,term:154,tp:1,starting an election 
+2021/09/08 16:31:07 id:1,term:155,tp:1,sending vote request to 2
+2021/09/08 16:31:07 id:1,term:155,tp:1,sending vote request to 0
+2021/09/08 16:31:07 id:2,term:154,tp:0,receive vote request from 1(term:155)
+2021/09/08 16:31:07 id:1,term:155,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:08 id:1,term:155,tp:1,starting an election 
+2021/09/08 16:31:08 id:1,term:156,tp:1,sending vote request to 2
+2021/09/08 16:31:08 id:1,term:156,tp:1,sending vote request to 0
+2021/09/08 16:31:08 id:2,term:155,tp:0,receive vote request from 1(term:156)
+2021/09/08 16:31:08 id:1,term:156,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:09 id:1,term:156,tp:1,starting an election 
+2021/09/08 16:31:09 id:1,term:157,tp:1,sending vote request to 2
+2021/09/08 16:31:09 id:1,term:157,tp:1,sending vote request to 0
+2021/09/08 16:31:09 id:2,term:156,tp:0,receive vote request from 1(term:157)
+2021/09/08 16:31:09 id:1,term:157,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:09 id:1,term:157,tp:1,starting an election 
+2021/09/08 16:31:09 id:1,term:158,tp:1,sending vote request to 2
+2021/09/08 16:31:09 id:1,term:158,tp:1,sending vote request to 0
+2021/09/08 16:31:09 id:2,term:157,tp:0,receive vote request from 1(term:158)
+2021/09/08 16:31:09 id:1,term:158,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:10 id:1,term:158,tp:1,starting an election 
+2021/09/08 16:31:10 id:1,term:159,tp:1,sending vote request to 2
+2021/09/08 16:31:10 id:1,term:159,tp:1,sending vote request to 0
+2021/09/08 16:31:10 id:2,term:158,tp:0,receive vote request from 1(term:159)
+2021/09/08 16:31:10 id:1,term:159,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:10 id:1,term:159,tp:1,starting an election 
+2021/09/08 16:31:10 id:1,term:160,tp:1,sending vote request to 2
+2021/09/08 16:31:10 id:1,term:160,tp:1,sending vote request to 0
+2021/09/08 16:31:10 id:2,term:159,tp:0,receive vote request from 1(term:160)
+2021/09/08 16:31:10 id:1,term:160,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:11 id:1,term:160,tp:1,starting an election 
+2021/09/08 16:31:11 id:1,term:161,tp:1,sending vote request to 2
+2021/09/08 16:31:11 id:1,term:161,tp:1,sending vote request to 0
+2021/09/08 16:31:11 id:2,term:160,tp:0,receive vote request from 1(term:161)
+2021/09/08 16:31:11 id:1,term:161,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:11 id:1,term:161,tp:1,starting an election 
+2021/09/08 16:31:11 id:1,term:162,tp:1,sending vote request to 2
+2021/09/08 16:31:11 id:1,term:162,tp:1,sending vote request to 0
+2021/09/08 16:31:11 id:2,term:161,tp:0,receive vote request from 1(term:162)
+2021/09/08 16:31:11 id:1,term:162,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:12 id:1,term:162,tp:1,starting an election 
+2021/09/08 16:31:12 id:1,term:163,tp:1,sending vote request to 2
+2021/09/08 16:31:12 id:1,term:163,tp:1,sending vote request to 0
+2021/09/08 16:31:12 id:2,term:162,tp:0,receive vote request from 1(term:163)
+2021/09/08 16:31:12 id:1,term:163,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:12 id:1,term:163,tp:1,starting an election 
+2021/09/08 16:31:12 id:1,term:164,tp:1,sending vote request to 2
+2021/09/08 16:31:12 id:1,term:164,tp:1,sending vote request to 0
+2021/09/08 16:31:12 id:2,term:163,tp:0,receive vote request from 1(term:164)
+2021/09/08 16:31:12 id:1,term:164,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:13 id:1,term:164,tp:1,starting an election 
+2021/09/08 16:31:13 id:1,term:165,tp:1,sending vote request to 2
+2021/09/08 16:31:13 id:1,term:165,tp:1,sending vote request to 0
+2021/09/08 16:31:13 id:2,term:164,tp:0,receive vote request from 1(term:165)
+2021/09/08 16:31:13 id:1,term:165,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:13 id:1,term:165,tp:1,starting an election 
+2021/09/08 16:31:13 id:1,term:166,tp:1,sending vote request to 2
+2021/09/08 16:31:13 id:1,term:166,tp:1,sending vote request to 0
+2021/09/08 16:31:13 id:2,term:165,tp:0,receive vote request from 1(term:166)
+2021/09/08 16:31:13 id:1,term:166,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:14 id:1,term:166,tp:1,starting an election 
+2021/09/08 16:31:14 id:1,term:167,tp:1,sending vote request to 2
+2021/09/08 16:31:14 id:1,term:167,tp:1,sending vote request to 0
+2021/09/08 16:31:14 id:2,term:166,tp:0,receive vote request from 1(term:167)
+2021/09/08 16:31:14 id:1,term:167,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:14 id:1,term:167,tp:1,starting an election 
+2021/09/08 16:31:14 id:1,term:168,tp:1,sending vote request to 2
+2021/09/08 16:31:14 id:1,term:168,tp:1,sending vote request to 0
+2021/09/08 16:31:14 id:2,term:167,tp:0,receive vote request from 1(term:168)
+2021/09/08 16:31:14 id:1,term:168,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:15 id:1,term:168,tp:1,starting an election 
+2021/09/08 16:31:15 id:1,term:169,tp:1,sending vote request to 2
+2021/09/08 16:31:15 id:1,term:169,tp:1,sending vote request to 0
+2021/09/08 16:31:15 id:2,term:168,tp:0,receive vote request from 1(term:169)
+2021/09/08 16:31:15 id:1,term:169,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:15 id:1,term:169,tp:1,starting an election 
+2021/09/08 16:31:15 id:1,term:170,tp:1,sending vote request to 2
+2021/09/08 16:31:15 id:1,term:170,tp:1,sending vote request to 0
+2021/09/08 16:31:15 id:2,term:169,tp:0,receive vote request from 1(term:170)
+2021/09/08 16:31:15 id:1,term:170,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:16 id:1,term:170,tp:1,starting an election 
+2021/09/08 16:31:16 id:1,term:171,tp:1,sending vote request to 2
+2021/09/08 16:31:16 id:1,term:171,tp:1,sending vote request to 0
+2021/09/08 16:31:16 id:2,term:170,tp:0,receive vote request from 1(term:171)
+2021/09/08 16:31:16 id:1,term:171,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:16 id:1,term:171,tp:1,starting an election 
+2021/09/08 16:31:16 id:1,term:172,tp:1,sending vote request to 2
+2021/09/08 16:31:16 id:1,term:172,tp:1,sending vote request to 0
+2021/09/08 16:31:16 id:2,term:171,tp:0,receive vote request from 1(term:172)
+2021/09/08 16:31:16 id:1,term:172,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:17 id:1,term:172,tp:1,starting an election 
+2021/09/08 16:31:17 id:1,term:173,tp:1,sending vote request to 2
+2021/09/08 16:31:17 id:1,term:173,tp:1,sending vote request to 0
+2021/09/08 16:31:17 id:2,term:172,tp:0,receive vote request from 1(term:173)
+2021/09/08 16:31:17 id:1,term:173,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:17 id:1,term:173,tp:1,starting an election 
+2021/09/08 16:31:17 id:1,term:174,tp:1,sending vote request to 2
+2021/09/08 16:31:17 id:1,term:174,tp:1,sending vote request to 0
+2021/09/08 16:31:17 id:2,term:173,tp:0,receive vote request from 1(term:174)
+2021/09/08 16:31:17 id:1,term:174,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:18 id:1,term:174,tp:1,starting an election 
+2021/09/08 16:31:18 id:1,term:175,tp:1,sending vote request to 2
+2021/09/08 16:31:18 id:1,term:175,tp:1,sending vote request to 0
+2021/09/08 16:31:18 id:2,term:174,tp:0,receive vote request from 1(term:175)
+2021/09/08 16:31:18 id:1,term:175,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:18 id:1,term:175,tp:1,starting an election 
+2021/09/08 16:31:18 id:1,term:176,tp:1,sending vote request to 2
+2021/09/08 16:31:18 id:1,term:176,tp:1,sending vote request to 0
+2021/09/08 16:31:18 id:2,term:175,tp:0,receive vote request from 1(term:176)
+2021/09/08 16:31:18 id:1,term:176,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:19 id:1,term:176,tp:1,starting an election 
+2021/09/08 16:31:19 id:1,term:177,tp:1,sending vote request to 2
+2021/09/08 16:31:19 id:1,term:177,tp:1,sending vote request to 0
+2021/09/08 16:31:19 id:2,term:176,tp:0,receive vote request from 1(term:177)
+2021/09/08 16:31:19 id:1,term:177,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:19 id:1,term:177,tp:1,starting an election 
+2021/09/08 16:31:19 id:1,term:178,tp:1,sending vote request to 2
+2021/09/08 16:31:19 id:1,term:178,tp:1,sending vote request to 0
+2021/09/08 16:31:19 id:2,term:177,tp:0,receive vote request from 1(term:178)
+2021/09/08 16:31:19 id:1,term:178,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:20 id:1,term:178,tp:1,starting an election 
+2021/09/08 16:31:20 id:1,term:179,tp:1,sending vote request to 2
+2021/09/08 16:31:20 id:1,term:179,tp:1,sending vote request to 0
+2021/09/08 16:31:20 id:2,term:178,tp:0,receive vote request from 1(term:179)
+2021/09/08 16:31:20 id:1,term:179,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:20 id:1,term:179,tp:1,starting an election 
+2021/09/08 16:31:20 id:1,term:180,tp:1,sending vote request to 2
+2021/09/08 16:31:20 id:1,term:180,tp:1,sending vote request to 0
+2021/09/08 16:31:20 id:2,term:179,tp:0,receive vote request from 1(term:180)
+2021/09/08 16:31:20 id:1,term:180,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:21 id:1,term:180,tp:1,starting an election 
+2021/09/08 16:31:21 id:1,term:181,tp:1,sending vote request to 2
+2021/09/08 16:31:21 id:1,term:181,tp:1,sending vote request to 0
+2021/09/08 16:31:21 id:2,term:180,tp:0,receive vote request from 1(term:181)
+2021/09/08 16:31:21 id:1,term:181,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:21 id:1,term:181,tp:1,starting an election 
+2021/09/08 16:31:21 id:1,term:182,tp:1,sending vote request to 2
+2021/09/08 16:31:21 id:1,term:182,tp:1,sending vote request to 0
+2021/09/08 16:31:21 id:2,term:181,tp:0,receive vote request from 1(term:182)
+2021/09/08 16:31:21 id:1,term:182,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:22 id:1,term:182,tp:1,starting an election 
+2021/09/08 16:31:22 id:1,term:183,tp:1,sending vote request to 2
+2021/09/08 16:31:22 id:1,term:183,tp:1,sending vote request to 0
+2021/09/08 16:31:22 id:2,term:182,tp:0,receive vote request from 1(term:183)
+2021/09/08 16:31:22 id:1,term:183,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:22 id:1,term:183,tp:1,starting an election 
+2021/09/08 16:31:22 id:1,term:184,tp:1,sending vote request to 2
+2021/09/08 16:31:22 id:1,term:184,tp:1,sending vote request to 0
+2021/09/08 16:31:22 id:2,term:183,tp:0,receive vote request from 1(term:184)
+2021/09/08 16:31:22 id:1,term:184,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:23 id:1,term:184,tp:1,starting an election 
+2021/09/08 16:31:23 id:1,term:185,tp:1,sending vote request to 2
+2021/09/08 16:31:23 id:1,term:185,tp:1,sending vote request to 0
+2021/09/08 16:31:23 id:2,term:184,tp:0,receive vote request from 1(term:185)
+2021/09/08 16:31:23 id:1,term:185,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:23 id:1,term:185,tp:1,starting an election 
+2021/09/08 16:31:23 id:1,term:186,tp:1,sending vote request to 2
+2021/09/08 16:31:23 id:1,term:186,tp:1,sending vote request to 0
+2021/09/08 16:31:23 id:2,term:185,tp:0,receive vote request from 1(term:186)
+2021/09/08 16:31:23 id:1,term:186,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:24 id:1,term:186,tp:1,starting an election 
+2021/09/08 16:31:24 id:1,term:187,tp:1,sending vote request to 2
+2021/09/08 16:31:24 id:1,term:187,tp:1,sending vote request to 0
+2021/09/08 16:31:24 id:2,term:186,tp:0,receive vote request from 1(term:187)
+2021/09/08 16:31:24 id:1,term:187,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:24 id:1,term:187,tp:1,starting an election 
+2021/09/08 16:31:24 id:1,term:188,tp:1,sending vote request to 2
+2021/09/08 16:31:24 id:1,term:188,tp:1,sending vote request to 0
+2021/09/08 16:31:24 id:2,term:187,tp:0,receive vote request from 1(term:188)
+2021/09/08 16:31:24 id:1,term:188,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:25 id:1,term:188,tp:1,starting an election 
+2021/09/08 16:31:25 id:1,term:189,tp:1,sending vote request to 2
+2021/09/08 16:31:25 id:1,term:189,tp:1,sending vote request to 0
+2021/09/08 16:31:25 id:2,term:188,tp:0,receive vote request from 1(term:189)
+2021/09/08 16:31:25 id:1,term:189,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:25 id:1,term:189,tp:1,starting an election 
+2021/09/08 16:31:25 id:1,term:190,tp:1,sending vote request to 2
+2021/09/08 16:31:25 id:1,term:190,tp:1,sending vote request to 0
+2021/09/08 16:31:25 id:2,term:189,tp:0,receive vote request from 1(term:190)
+2021/09/08 16:31:25 id:1,term:190,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:26 id:1,term:190,tp:1,starting an election 
+2021/09/08 16:31:26 id:1,term:191,tp:1,sending vote request to 2
+2021/09/08 16:31:26 id:1,term:191,tp:1,sending vote request to 0
+2021/09/08 16:31:26 id:2,term:190,tp:0,receive vote request from 1(term:191)
+2021/09/08 16:31:26 id:1,term:191,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:26 id:1,term:191,tp:1,starting an election 
+2021/09/08 16:31:26 id:1,term:192,tp:1,sending vote request to 2
+2021/09/08 16:31:26 id:1,term:192,tp:1,sending vote request to 0
+2021/09/08 16:31:26 id:2,term:191,tp:0,receive vote request from 1(term:192)
+2021/09/08 16:31:26 id:1,term:192,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:27 id:1,term:192,tp:1,starting an election 
+2021/09/08 16:31:27 id:1,term:193,tp:1,sending vote request to 2
+2021/09/08 16:31:27 id:1,term:193,tp:1,sending vote request to 0
+2021/09/08 16:31:27 id:2,term:192,tp:0,receive vote request from 1(term:193)
+2021/09/08 16:31:27 id:1,term:193,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:27 id:1,term:193,tp:1,starting an election 
+2021/09/08 16:31:27 id:1,term:194,tp:1,sending vote request to 2
+2021/09/08 16:31:27 id:1,term:194,tp:1,sending vote request to 0
+2021/09/08 16:31:27 id:2,term:193,tp:0,receive vote request from 1(term:194)
+2021/09/08 16:31:27 id:1,term:194,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:28 id:1,term:194,tp:1,starting an election 
+2021/09/08 16:31:28 id:1,term:195,tp:1,sending vote request to 2
+2021/09/08 16:31:28 id:1,term:195,tp:1,sending vote request to 0
+2021/09/08 16:31:28 id:2,term:194,tp:0,receive vote request from 1(term:195)
+2021/09/08 16:31:28 id:1,term:195,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:28 id:1,term:195,tp:1,starting an election 
+2021/09/08 16:31:28 id:1,term:196,tp:1,sending vote request to 2
+2021/09/08 16:31:28 id:1,term:196,tp:1,sending vote request to 0
+2021/09/08 16:31:28 id:2,term:195,tp:0,receive vote request from 1(term:196)
+2021/09/08 16:31:28 id:1,term:196,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:29 id:1,term:196,tp:1,starting an election 
+2021/09/08 16:31:29 id:1,term:197,tp:1,sending vote request to 2
+2021/09/08 16:31:29 id:1,term:197,tp:1,sending vote request to 0
+2021/09/08 16:31:29 id:2,term:196,tp:0,receive vote request from 1(term:197)
+2021/09/08 16:31:29 id:1,term:197,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:29 id:1,term:197,tp:1,starting an election 
+2021/09/08 16:31:29 id:1,term:198,tp:1,sending vote request to 2
+2021/09/08 16:31:29 id:1,term:198,tp:1,sending vote request to 0
+2021/09/08 16:31:29 id:2,term:197,tp:0,receive vote request from 1(term:198)
+2021/09/08 16:31:29 id:1,term:198,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:30 id:1,term:198,tp:1,starting an election 
+2021/09/08 16:31:30 id:1,term:199,tp:1,sending vote request to 2
+2021/09/08 16:31:30 id:1,term:199,tp:1,sending vote request to 0
+2021/09/08 16:31:30 id:2,term:198,tp:0,receive vote request from 1(term:199)
+2021/09/08 16:31:30 id:1,term:199,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:30 id:1,term:199,tp:1,starting an election 
+2021/09/08 16:31:30 id:1,term:200,tp:1,sending vote request to 2
+2021/09/08 16:31:30 id:1,term:200,tp:1,sending vote request to 0
+2021/09/08 16:31:30 id:2,term:199,tp:0,receive vote request from 1(term:200)
+2021/09/08 16:31:30 id:1,term:200,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:31 id:1,term:200,tp:1,starting an election 
+2021/09/08 16:31:31 id:1,term:201,tp:1,sending vote request to 2
+2021/09/08 16:31:31 id:1,term:201,tp:1,sending vote request to 0
+2021/09/08 16:31:31 id:2,term:200,tp:0,receive vote request from 1(term:201)
+2021/09/08 16:31:31 id:1,term:201,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:31 id:1,term:201,tp:1,starting an election 
+2021/09/08 16:31:31 id:1,term:202,tp:1,sending vote request to 2
+2021/09/08 16:31:31 id:1,term:202,tp:1,sending vote request to 0
+2021/09/08 16:31:32 id:2,term:201,tp:0,receive vote request from 1(term:202)
+2021/09/08 16:31:32 id:1,term:202,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:32 id:1,term:202,tp:1,starting an election 
+2021/09/08 16:31:32 id:1,term:203,tp:1,sending vote request to 2
+2021/09/08 16:31:32 id:1,term:203,tp:1,sending vote request to 0
+2021/09/08 16:31:32 id:2,term:202,tp:0,receive vote request from 1(term:203)
+2021/09/08 16:31:32 id:1,term:203,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:33 id:1,term:203,tp:1,starting an election 
+2021/09/08 16:31:33 id:1,term:204,tp:1,sending vote request to 2
+2021/09/08 16:31:33 id:1,term:204,tp:1,sending vote request to 0
+2021/09/08 16:31:33 id:2,term:203,tp:0,receive vote request from 1(term:204)
+2021/09/08 16:31:33 id:1,term:204,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:33 id:1,term:204,tp:1,starting an election 
+2021/09/08 16:31:33 id:1,term:205,tp:1,sending vote request to 2
+2021/09/08 16:31:33 id:1,term:205,tp:1,sending vote request to 0
+2021/09/08 16:31:33 id:2,term:204,tp:0,receive vote request from 1(term:205)
+2021/09/08 16:31:33 id:1,term:205,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:34 id:1,term:205,tp:1,starting an election 
+2021/09/08 16:31:34 id:1,term:206,tp:1,sending vote request to 2
+2021/09/08 16:31:34 id:1,term:206,tp:1,sending vote request to 0
+2021/09/08 16:31:34 id:2,term:205,tp:0,receive vote request from 1(term:206)
+2021/09/08 16:31:34 id:1,term:206,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:34 id:1,term:206,tp:1,starting an election 
+2021/09/08 16:31:34 id:1,term:207,tp:1,sending vote request to 2
+2021/09/08 16:31:34 id:1,term:207,tp:1,sending vote request to 0
+2021/09/08 16:31:34 id:2,term:206,tp:0,receive vote request from 1(term:207)
+2021/09/08 16:31:34 id:1,term:207,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:35 id:1,term:207,tp:1,starting an election 
+2021/09/08 16:31:35 id:1,term:208,tp:1,sending vote request to 2
+2021/09/08 16:31:35 id:1,term:208,tp:1,sending vote request to 0
+2021/09/08 16:31:35 id:2,term:207,tp:0,receive vote request from 1(term:208)
+2021/09/08 16:31:35 id:1,term:208,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:35 id:1,term:208,tp:1,starting an election 
+2021/09/08 16:31:35 id:1,term:209,tp:1,sending vote request to 2
+2021/09/08 16:31:35 id:1,term:209,tp:1,sending vote request to 0
+2021/09/08 16:31:35 id:2,term:208,tp:0,receive vote request from 1(term:209)
+2021/09/08 16:31:35 id:1,term:209,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:36 id:1,term:209,tp:1,starting an election 
+2021/09/08 16:31:36 id:1,term:210,tp:1,sending vote request to 2
+2021/09/08 16:31:36 id:1,term:210,tp:1,sending vote request to 0
+2021/09/08 16:31:36 id:2,term:209,tp:0,receive vote request from 1(term:210)
+2021/09/08 16:31:36 id:1,term:210,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:36 id:1,term:210,tp:1,starting an election 
+2021/09/08 16:31:36 id:1,term:211,tp:1,sending vote request to 2
+2021/09/08 16:31:36 id:1,term:211,tp:1,sending vote request to 0
+2021/09/08 16:31:36 id:2,term:210,tp:0,receive vote request from 1(term:211)
+2021/09/08 16:31:36 id:1,term:211,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:37 id:1,term:211,tp:1,starting an election 
+2021/09/08 16:31:37 id:1,term:212,tp:1,sending vote request to 2
+2021/09/08 16:31:37 id:1,term:212,tp:1,sending vote request to 0
+2021/09/08 16:31:37 id:2,term:211,tp:0,receive vote request from 1(term:212)
+2021/09/08 16:31:37 id:1,term:212,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:37 id:1,term:212,tp:1,starting an election 
+2021/09/08 16:31:37 id:1,term:213,tp:1,sending vote request to 2
+2021/09/08 16:31:37 id:1,term:213,tp:1,sending vote request to 0
+2021/09/08 16:31:37 id:2,term:212,tp:0,receive vote request from 1(term:213)
+2021/09/08 16:31:37 id:1,term:213,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:38 id:1,term:213,tp:1,starting an election 
+2021/09/08 16:31:38 id:1,term:214,tp:1,sending vote request to 2
+2021/09/08 16:31:38 id:1,term:214,tp:1,sending vote request to 0
+2021/09/08 16:31:38 id:2,term:213,tp:0,receive vote request from 1(term:214)
+2021/09/08 16:31:38 id:1,term:214,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:38 id:1,term:214,tp:1,starting an election 
+2021/09/08 16:31:38 id:1,term:215,tp:1,sending vote request to 2
+2021/09/08 16:31:38 id:1,term:215,tp:1,sending vote request to 0
+2021/09/08 16:31:38 id:2,term:214,tp:0,receive vote request from 1(term:215)
+2021/09/08 16:31:38 id:1,term:215,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:39 id:1,term:215,tp:1,starting an election 
+2021/09/08 16:31:39 id:1,term:216,tp:1,sending vote request to 2
+2021/09/08 16:31:39 id:1,term:216,tp:1,sending vote request to 0
+2021/09/08 16:31:39 id:2,term:215,tp:0,receive vote request from 1(term:216)
+2021/09/08 16:31:39 id:1,term:216,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:39 id:1,term:216,tp:1,starting an election 
+2021/09/08 16:31:39 id:1,term:217,tp:1,sending vote request to 2
+2021/09/08 16:31:39 id:1,term:217,tp:1,sending vote request to 0
+2021/09/08 16:31:39 id:2,term:216,tp:0,receive vote request from 1(term:217)
+2021/09/08 16:31:39 id:1,term:217,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:40 id:1,term:217,tp:1,starting an election 
+2021/09/08 16:31:40 id:1,term:218,tp:1,sending vote request to 2
+2021/09/08 16:31:40 id:1,term:218,tp:1,sending vote request to 0
+2021/09/08 16:31:40 id:2,term:217,tp:0,receive vote request from 1(term:218)
+2021/09/08 16:31:40 id:1,term:218,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:40 id:1,term:218,tp:1,starting an election 
+2021/09/08 16:31:40 id:1,term:219,tp:1,sending vote request to 2
+2021/09/08 16:31:40 id:1,term:219,tp:1,sending vote request to 0
+2021/09/08 16:31:40 id:2,term:218,tp:0,receive vote request from 1(term:219)
+2021/09/08 16:31:40 id:1,term:219,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:41 id:1,term:219,tp:1,starting an election 
+2021/09/08 16:31:41 id:1,term:220,tp:1,sending vote request to 2
+2021/09/08 16:31:41 id:1,term:220,tp:1,sending vote request to 0
+2021/09/08 16:31:41 id:2,term:219,tp:0,receive vote request from 1(term:220)
+2021/09/08 16:31:41 id:1,term:220,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:41 id:1,term:220,tp:1,starting an election 
+2021/09/08 16:31:41 id:1,term:221,tp:1,sending vote request to 2
+2021/09/08 16:31:41 id:1,term:221,tp:1,sending vote request to 0
+2021/09/08 16:31:41 id:2,term:220,tp:0,receive vote request from 1(term:221)
+2021/09/08 16:31:41 id:1,term:221,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:42 id:1,term:221,tp:1,starting an election 
+2021/09/08 16:31:42 id:1,term:222,tp:1,sending vote request to 2
+2021/09/08 16:31:42 id:1,term:222,tp:1,sending vote request to 0
+2021/09/08 16:31:42 id:2,term:221,tp:0,receive vote request from 1(term:222)
+2021/09/08 16:31:42 id:1,term:222,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:42 id:1,term:222,tp:1,starting an election 
+2021/09/08 16:31:42 id:1,term:223,tp:1,sending vote request to 2
+2021/09/08 16:31:42 id:1,term:223,tp:1,sending vote request to 0
+2021/09/08 16:31:42 id:2,term:222,tp:0,receive vote request from 1(term:223)
+2021/09/08 16:31:42 id:1,term:223,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:43 id:1,term:223,tp:1,starting an election 
+2021/09/08 16:31:43 id:1,term:224,tp:1,sending vote request to 2
+2021/09/08 16:31:43 id:1,term:224,tp:1,sending vote request to 0
+2021/09/08 16:31:43 id:2,term:223,tp:0,receive vote request from 1(term:224)
+2021/09/08 16:31:43 id:1,term:224,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:43 id:1,term:224,tp:1,starting an election 
+2021/09/08 16:31:43 id:1,term:225,tp:1,sending vote request to 2
+2021/09/08 16:31:43 id:1,term:225,tp:1,sending vote request to 0
+2021/09/08 16:31:43 id:2,term:224,tp:0,receive vote request from 1(term:225)
+2021/09/08 16:31:43 id:1,term:225,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:44 id:1,term:225,tp:1,starting an election 
+2021/09/08 16:31:44 id:1,term:226,tp:1,sending vote request to 2
+2021/09/08 16:31:44 id:1,term:226,tp:1,sending vote request to 0
+2021/09/08 16:31:44 id:2,term:225,tp:0,receive vote request from 1(term:226)
+2021/09/08 16:31:44 id:1,term:226,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:44 id:1,term:226,tp:1,starting an election 
+2021/09/08 16:31:44 id:1,term:227,tp:1,sending vote request to 0
+2021/09/08 16:31:44 id:1,term:227,tp:1,sending vote request to 2
+2021/09/08 16:31:44 id:2,term:226,tp:0,receive vote request from 1(term:227)
+2021/09/08 16:31:44 id:1,term:227,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:45 id:1,term:227,tp:1,starting an election 
+2021/09/08 16:31:45 id:1,term:228,tp:1,sending vote request to 2
+2021/09/08 16:31:45 id:1,term:228,tp:1,sending vote request to 0
+2021/09/08 16:31:45 id:2,term:227,tp:0,receive vote request from 1(term:228)
+2021/09/08 16:31:45 id:1,term:228,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:45 id:1,term:228,tp:1,starting an election 
+2021/09/08 16:31:45 id:1,term:229,tp:1,sending vote request to 2
+2021/09/08 16:31:45 id:1,term:229,tp:1,sending vote request to 0
+2021/09/08 16:31:45 id:2,term:228,tp:0,receive vote request from 1(term:229)
+2021/09/08 16:31:45 id:1,term:229,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:46 id:1,term:229,tp:1,starting an election 
+2021/09/08 16:31:46 id:1,term:230,tp:1,sending vote request to 2
+2021/09/08 16:31:46 id:1,term:230,tp:1,sending vote request to 0
+2021/09/08 16:31:46 id:2,term:229,tp:0,receive vote request from 1(term:230)
+2021/09/08 16:31:46 id:1,term:230,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:46 id:1,term:230,tp:1,starting an election 
+2021/09/08 16:31:46 id:1,term:231,tp:1,sending vote request to 2
+2021/09/08 16:31:46 id:1,term:231,tp:1,sending vote request to 0
+2021/09/08 16:31:46 id:2,term:230,tp:0,receive vote request from 1(term:231)
+2021/09/08 16:31:46 id:1,term:231,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:47 id:1,term:231,tp:1,starting an election 
+2021/09/08 16:31:47 id:1,term:232,tp:1,sending vote request to 2
+2021/09/08 16:31:47 id:1,term:232,tp:1,sending vote request to 0
+2021/09/08 16:31:47 id:2,term:231,tp:0,receive vote request from 1(term:232)
+2021/09/08 16:31:47 id:1,term:232,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:47 id:1,term:232,tp:1,starting an election 
+2021/09/08 16:31:47 id:1,term:233,tp:1,sending vote request to 2
+2021/09/08 16:31:47 id:1,term:233,tp:1,sending vote request to 0
+2021/09/08 16:31:47 id:2,term:232,tp:0,receive vote request from 1(term:233)
+2021/09/08 16:31:47 id:1,term:233,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:48 id:1,term:233,tp:1,starting an election 
+2021/09/08 16:31:48 id:1,term:234,tp:1,sending vote request to 2
+2021/09/08 16:31:48 id:1,term:234,tp:1,sending vote request to 0
+2021/09/08 16:31:48 id:2,term:233,tp:0,receive vote request from 1(term:234)
+2021/09/08 16:31:48 id:1,term:234,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:48 id:1,term:234,tp:1,starting an election 
+2021/09/08 16:31:48 id:1,term:235,tp:1,sending vote request to 0
+2021/09/08 16:31:48 id:1,term:235,tp:1,sending vote request to 2
+2021/09/08 16:31:48 id:2,term:234,tp:0,receive vote request from 1(term:235)
+2021/09/08 16:31:48 id:1,term:235,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:49 id:1,term:235,tp:1,starting an election 
+2021/09/08 16:31:49 id:1,term:236,tp:1,sending vote request to 2
+2021/09/08 16:31:49 id:1,term:236,tp:1,sending vote request to 0
+2021/09/08 16:31:49 id:2,term:235,tp:0,receive vote request from 1(term:236)
+2021/09/08 16:31:49 id:1,term:236,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:49 id:1,term:236,tp:1,starting an election 
+2021/09/08 16:31:49 id:1,term:237,tp:1,sending vote request to 2
+2021/09/08 16:31:49 id:1,term:237,tp:1,sending vote request to 0
+2021/09/08 16:31:49 id:2,term:236,tp:0,receive vote request from 1(term:237)
+2021/09/08 16:31:49 id:1,term:237,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:50 id:1,term:237,tp:1,starting an election 
+2021/09/08 16:31:50 id:1,term:238,tp:1,sending vote request to 2
+2021/09/08 16:31:50 id:1,term:238,tp:1,sending vote request to 0
+2021/09/08 16:31:50 id:2,term:237,tp:0,receive vote request from 1(term:238)
+2021/09/08 16:31:50 id:1,term:238,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:50 id:1,term:238,tp:1,starting an election 
+2021/09/08 16:31:50 id:1,term:239,tp:1,sending vote request to 2
+2021/09/08 16:31:50 id:1,term:239,tp:1,sending vote request to 0
+2021/09/08 16:31:50 id:2,term:238,tp:0,receive vote request from 1(term:239)
+2021/09/08 16:31:50 id:1,term:239,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:51 id:1,term:239,tp:1,starting an election 
+2021/09/08 16:31:51 id:1,term:240,tp:1,sending vote request to 2
+2021/09/08 16:31:51 id:1,term:240,tp:1,sending vote request to 0
+2021/09/08 16:31:51 id:2,term:239,tp:0,receive vote request from 1(term:240)
+2021/09/08 16:31:51 id:1,term:240,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:51 id:1,term:240,tp:1,starting an election 
+2021/09/08 16:31:51 id:1,term:241,tp:1,sending vote request to 2
+2021/09/08 16:31:51 id:1,term:241,tp:1,sending vote request to 0
+2021/09/08 16:31:51 id:2,term:240,tp:0,receive vote request from 1(term:241)
+2021/09/08 16:31:51 id:1,term:241,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:52 id:1,term:241,tp:1,starting an election 
+2021/09/08 16:31:52 id:1,term:242,tp:1,sending vote request to 2
+2021/09/08 16:31:52 id:1,term:242,tp:1,sending vote request to 0
+2021/09/08 16:31:52 id:2,term:241,tp:0,receive vote request from 1(term:242)
+2021/09/08 16:31:52 id:1,term:242,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:52 id:1,term:242,tp:1,starting an election 
+2021/09/08 16:31:52 id:1,term:243,tp:1,sending vote request to 2
+2021/09/08 16:31:52 id:1,term:243,tp:1,sending vote request to 0
+2021/09/08 16:31:52 id:2,term:242,tp:0,receive vote request from 1(term:243)
+2021/09/08 16:31:52 id:1,term:243,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:53 id:1,term:243,tp:1,starting an election 
+2021/09/08 16:31:53 id:1,term:244,tp:1,sending vote request to 2
+2021/09/08 16:31:53 id:1,term:244,tp:1,sending vote request to 0
+2021/09/08 16:31:53 id:2,term:243,tp:0,receive vote request from 1(term:244)
+2021/09/08 16:31:53 id:1,term:244,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:53 id:1,term:244,tp:1,starting an election 
+2021/09/08 16:31:53 id:1,term:245,tp:1,sending vote request to 2
+2021/09/08 16:31:53 id:1,term:245,tp:1,sending vote request to 0
+2021/09/08 16:31:53 id:2,term:244,tp:0,receive vote request from 1(term:245)
+2021/09/08 16:31:53 id:1,term:245,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:54 id:1,term:245,tp:1,starting an election 
+2021/09/08 16:31:54 id:1,term:246,tp:1,sending vote request to 2
+2021/09/08 16:31:54 id:1,term:246,tp:1,sending vote request to 0
+2021/09/08 16:31:54 id:2,term:245,tp:0,receive vote request from 1(term:246)
+2021/09/08 16:31:54 id:1,term:246,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:54 id:1,term:246,tp:1,starting an election 
+2021/09/08 16:31:54 id:1,term:247,tp:1,sending vote request to 2
+2021/09/08 16:31:54 id:1,term:247,tp:1,sending vote request to 0
+2021/09/08 16:31:54 id:2,term:246,tp:0,receive vote request from 1(term:247)
+2021/09/08 16:31:54 id:1,term:247,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:55 id:1,term:247,tp:1,starting an election 
+2021/09/08 16:31:55 id:1,term:248,tp:1,sending vote request to 2
+2021/09/08 16:31:55 id:1,term:248,tp:1,sending vote request to 0
+2021/09/08 16:31:55 id:2,term:247,tp:0,receive vote request from 1(term:248)
+2021/09/08 16:31:55 id:1,term:248,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:55 id:1,term:248,tp:1,starting an election 
+2021/09/08 16:31:55 id:1,term:249,tp:1,sending vote request to 2
+2021/09/08 16:31:55 id:1,term:249,tp:1,sending vote request to 0
+2021/09/08 16:31:55 id:2,term:248,tp:0,receive vote request from 1(term:249)
+2021/09/08 16:31:55 id:1,term:249,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:56 id:1,term:249,tp:1,starting an election 
+2021/09/08 16:31:56 id:1,term:250,tp:1,sending vote request to 2
+2021/09/08 16:31:56 id:1,term:250,tp:1,sending vote request to 0
+2021/09/08 16:31:56 id:2,term:249,tp:0,receive vote request from 1(term:250)
+2021/09/08 16:31:56 id:1,term:250,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:56 id:1,term:250,tp:1,starting an election 
+2021/09/08 16:31:56 id:1,term:251,tp:1,sending vote request to 2
+2021/09/08 16:31:56 id:1,term:251,tp:1,sending vote request to 0
+2021/09/08 16:31:56 id:2,term:250,tp:0,receive vote request from 1(term:251)
+2021/09/08 16:31:56 id:1,term:251,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:57 id:1,term:251,tp:1,starting an election 
+2021/09/08 16:31:57 id:1,term:252,tp:1,sending vote request to 2
+2021/09/08 16:31:57 id:1,term:252,tp:1,sending vote request to 0
+2021/09/08 16:31:57 id:2,term:251,tp:0,receive vote request from 1(term:252)
+2021/09/08 16:31:57 id:1,term:252,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:57 id:1,term:252,tp:1,starting an election 
+2021/09/08 16:31:57 id:1,term:253,tp:1,sending vote request to 2
+2021/09/08 16:31:57 id:1,term:253,tp:1,sending vote request to 0
+2021/09/08 16:31:57 id:2,term:252,tp:0,receive vote request from 1(term:253)
+2021/09/08 16:31:57 id:1,term:253,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:58 id:1,term:253,tp:1,starting an election 
+2021/09/08 16:31:58 id:1,term:254,tp:1,sending vote request to 2
+2021/09/08 16:31:58 id:1,term:254,tp:1,sending vote request to 0
+2021/09/08 16:31:58 id:2,term:253,tp:0,receive vote request from 1(term:254)
+2021/09/08 16:31:58 id:1,term:254,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:58 id:1,term:254,tp:1,starting an election 
+2021/09/08 16:31:58 id:1,term:255,tp:1,sending vote request to 2
+2021/09/08 16:31:58 id:1,term:255,tp:1,sending vote request to 0
+2021/09/08 16:31:58 id:2,term:254,tp:0,receive vote request from 1(term:255)
+2021/09/08 16:31:58 id:1,term:255,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:59 id:1,term:255,tp:1,starting an election 
+2021/09/08 16:31:59 id:1,term:256,tp:1,sending vote request to 2
+2021/09/08 16:31:59 id:1,term:256,tp:1,sending vote request to 0
+2021/09/08 16:31:59 id:2,term:255,tp:0,receive vote request from 1(term:256)
+2021/09/08 16:31:59 id:1,term:256,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:31:59 id:1,term:256,tp:1,starting an election 
+2021/09/08 16:31:59 id:1,term:257,tp:1,sending vote request to 2
+2021/09/08 16:31:59 id:1,term:257,tp:1,sending vote request to 0
+2021/09/08 16:31:59 id:2,term:256,tp:0,receive vote request from 1(term:257)
+2021/09/08 16:31:59 id:1,term:257,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:00 id:1,term:257,tp:1,starting an election 
+2021/09/08 16:32:00 id:1,term:258,tp:1,sending vote request to 2
+2021/09/08 16:32:00 id:1,term:258,tp:1,sending vote request to 0
+2021/09/08 16:32:00 id:2,term:257,tp:0,receive vote request from 1(term:258)
+2021/09/08 16:32:00 id:1,term:258,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:00 id:1,term:258,tp:1,starting an election 
+2021/09/08 16:32:00 id:1,term:259,tp:1,sending vote request to 2
+2021/09/08 16:32:00 id:1,term:259,tp:1,sending vote request to 0
+2021/09/08 16:32:00 id:2,term:258,tp:0,receive vote request from 1(term:259)
+2021/09/08 16:32:00 id:1,term:259,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:01 id:1,term:259,tp:1,starting an election 
+2021/09/08 16:32:01 id:1,term:260,tp:1,sending vote request to 2
+2021/09/08 16:32:01 id:1,term:260,tp:1,sending vote request to 0
+2021/09/08 16:32:01 id:2,term:259,tp:0,receive vote request from 1(term:260)
+2021/09/08 16:32:01 id:1,term:260,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:02 id:1,term:260,tp:1,starting an election 
+2021/09/08 16:32:02 id:1,term:261,tp:1,sending vote request to 2
+2021/09/08 16:32:02 id:1,term:261,tp:1,sending vote request to 0
+2021/09/08 16:32:02 id:2,term:260,tp:0,receive vote request from 1(term:261)
+2021/09/08 16:32:02 id:1,term:261,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:02 id:1,term:261,tp:1,starting an election 
+2021/09/08 16:32:02 id:1,term:262,tp:1,sending vote request to 2
+2021/09/08 16:32:02 id:1,term:262,tp:1,sending vote request to 0
+2021/09/08 16:32:02 id:2,term:261,tp:0,receive vote request from 1(term:262)
+2021/09/08 16:32:02 id:1,term:262,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:03 id:1,term:262,tp:1,starting an election 
+2021/09/08 16:32:03 id:1,term:263,tp:1,sending vote request to 2
+2021/09/08 16:32:03 id:1,term:263,tp:1,sending vote request to 0
+2021/09/08 16:32:03 id:2,term:262,tp:0,receive vote request from 1(term:263)
+2021/09/08 16:32:03 id:1,term:263,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:03 id:1,term:263,tp:1,starting an election 
+2021/09/08 16:32:03 id:1,term:264,tp:1,sending vote request to 2
+2021/09/08 16:32:03 id:1,term:264,tp:1,sending vote request to 0
+2021/09/08 16:32:03 id:2,term:263,tp:0,receive vote request from 1(term:264)
+2021/09/08 16:32:03 id:1,term:264,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:04 id:1,term:264,tp:1,starting an election 
+2021/09/08 16:32:04 id:1,term:265,tp:1,sending vote request to 2
+2021/09/08 16:32:04 id:1,term:265,tp:1,sending vote request to 0
+2021/09/08 16:32:04 id:2,term:264,tp:0,receive vote request from 1(term:265)
+2021/09/08 16:32:04 id:1,term:265,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:04 id:1,term:265,tp:1,starting an election 
+2021/09/08 16:32:04 id:1,term:266,tp:1,sending vote request to 2
+2021/09/08 16:32:04 id:1,term:266,tp:1,sending vote request to 0
+2021/09/08 16:32:04 id:2,term:265,tp:0,receive vote request from 1(term:266)
+2021/09/08 16:32:04 id:1,term:266,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:05 id:1,term:266,tp:1,starting an election 
+2021/09/08 16:32:05 id:1,term:267,tp:1,sending vote request to 2
+2021/09/08 16:32:05 id:1,term:267,tp:1,sending vote request to 0
+2021/09/08 16:32:05 id:2,term:266,tp:0,receive vote request from 1(term:267)
+2021/09/08 16:32:05 id:1,term:267,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:05 id:1,term:267,tp:1,starting an election 
+2021/09/08 16:32:05 id:1,term:268,tp:1,sending vote request to 2
+2021/09/08 16:32:05 id:1,term:268,tp:1,sending vote request to 0
+2021/09/08 16:32:05 id:2,term:267,tp:0,receive vote request from 1(term:268)
+2021/09/08 16:32:05 id:1,term:268,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:06 id:1,term:268,tp:1,starting an election 
+2021/09/08 16:32:06 id:1,term:269,tp:1,sending vote request to 2
+2021/09/08 16:32:06 id:1,term:269,tp:1,sending vote request to 0
+2021/09/08 16:32:06 id:2,term:268,tp:0,receive vote request from 1(term:269)
+2021/09/08 16:32:06 id:1,term:269,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:06 id:1,term:269,tp:1,starting an election 
+2021/09/08 16:32:06 id:1,term:270,tp:1,sending vote request to 2
+2021/09/08 16:32:06 id:1,term:270,tp:1,sending vote request to 0
+2021/09/08 16:32:06 id:2,term:269,tp:0,receive vote request from 1(term:270)
+2021/09/08 16:32:06 id:1,term:270,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:07 id:1,term:270,tp:1,starting an election 
+2021/09/08 16:32:07 id:1,term:271,tp:1,sending vote request to 2
+2021/09/08 16:32:07 id:1,term:271,tp:1,sending vote request to 0
+2021/09/08 16:32:07 id:2,term:270,tp:0,receive vote request from 1(term:271)
+2021/09/08 16:32:07 id:1,term:271,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:07 id:1,term:271,tp:1,starting an election 
+2021/09/08 16:32:07 id:1,term:272,tp:1,sending vote request to 2
+2021/09/08 16:32:07 id:1,term:272,tp:1,sending vote request to 0
+2021/09/08 16:32:07 id:2,term:271,tp:0,receive vote request from 1(term:272)
+2021/09/08 16:32:07 id:1,term:272,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:08 id:1,term:272,tp:1,starting an election 
+2021/09/08 16:32:08 id:1,term:273,tp:1,sending vote request to 2
+2021/09/08 16:32:08 id:1,term:273,tp:1,sending vote request to 0
+2021/09/08 16:32:08 id:2,term:272,tp:0,receive vote request from 1(term:273)
+2021/09/08 16:32:08 id:1,term:273,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:08 id:1,term:273,tp:1,starting an election 
+2021/09/08 16:32:08 id:1,term:274,tp:1,sending vote request to 2
+2021/09/08 16:32:08 id:1,term:274,tp:1,sending vote request to 0
+2021/09/08 16:32:08 id:2,term:273,tp:0,receive vote request from 1(term:274)
+2021/09/08 16:32:08 id:1,term:274,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:09 id:1,term:274,tp:1,starting an election 
+2021/09/08 16:32:09 id:1,term:275,tp:1,sending vote request to 2
+2021/09/08 16:32:09 id:1,term:275,tp:1,sending vote request to 0
+2021/09/08 16:32:09 id:2,term:274,tp:0,receive vote request from 1(term:275)
+2021/09/08 16:32:09 id:1,term:275,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:09 id:1,term:275,tp:1,starting an election 
+2021/09/08 16:32:09 id:1,term:276,tp:1,sending vote request to 2
+2021/09/08 16:32:09 id:1,term:276,tp:1,sending vote request to 0
+2021/09/08 16:32:09 id:2,term:275,tp:0,receive vote request from 1(term:276)
+2021/09/08 16:32:09 id:1,term:276,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:10 id:1,term:276,tp:1,starting an election 
+2021/09/08 16:32:10 id:1,term:277,tp:1,sending vote request to 2
+2021/09/08 16:32:10 id:1,term:277,tp:1,sending vote request to 0
+2021/09/08 16:32:10 id:2,term:276,tp:0,receive vote request from 1(term:277)
+2021/09/08 16:32:10 id:1,term:277,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:10 id:1,term:277,tp:1,starting an election 
+2021/09/08 16:32:10 id:1,term:278,tp:1,sending vote request to 2
+2021/09/08 16:32:10 id:1,term:278,tp:1,sending vote request to 0
+2021/09/08 16:32:10 id:2,term:277,tp:0,receive vote request from 1(term:278)
+2021/09/08 16:32:10 id:1,term:278,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:11 id:1,term:278,tp:1,starting an election 
+2021/09/08 16:32:11 id:1,term:279,tp:1,sending vote request to 2
+2021/09/08 16:32:11 id:1,term:279,tp:1,sending vote request to 0
+2021/09/08 16:32:11 id:2,term:278,tp:0,receive vote request from 1(term:279)
+2021/09/08 16:32:11 id:1,term:279,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:11 id:1,term:279,tp:1,starting an election 
+2021/09/08 16:32:11 id:1,term:280,tp:1,sending vote request to 2
+2021/09/08 16:32:11 id:1,term:280,tp:1,sending vote request to 0
+2021/09/08 16:32:11 id:2,term:279,tp:0,receive vote request from 1(term:280)
+2021/09/08 16:32:11 id:1,term:280,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:12 id:1,term:280,tp:1,starting an election 
+2021/09/08 16:32:12 id:1,term:281,tp:1,sending vote request to 2
+2021/09/08 16:32:12 id:1,term:281,tp:1,sending vote request to 0
+2021/09/08 16:32:12 id:2,term:280,tp:0,receive vote request from 1(term:281)
+2021/09/08 16:32:12 id:1,term:281,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:12 id:1,term:281,tp:1,starting an election 
+2021/09/08 16:32:12 id:1,term:282,tp:1,sending vote request to 2
+2021/09/08 16:32:12 id:1,term:282,tp:1,sending vote request to 0
+2021/09/08 16:32:12 id:2,term:281,tp:0,receive vote request from 1(term:282)
+2021/09/08 16:32:12 id:1,term:282,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:13 id:1,term:282,tp:1,starting an election 
+2021/09/08 16:32:13 id:1,term:283,tp:1,sending vote request to 2
+2021/09/08 16:32:13 id:1,term:283,tp:1,sending vote request to 0
+2021/09/08 16:32:13 id:2,term:282,tp:0,receive vote request from 1(term:283)
+2021/09/08 16:32:13 id:1,term:283,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:14 id:1,term:283,tp:1,starting an election 
+2021/09/08 16:32:14 id:1,term:284,tp:1,sending vote request to 2
+2021/09/08 16:32:14 id:1,term:284,tp:1,sending vote request to 0
+2021/09/08 16:32:14 id:2,term:283,tp:0,receive vote request from 1(term:284)
+2021/09/08 16:32:14 id:1,term:284,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:14 id:1,term:284,tp:1,starting an election 
+2021/09/08 16:32:14 id:1,term:285,tp:1,sending vote request to 2
+2021/09/08 16:32:14 id:1,term:285,tp:1,sending vote request to 0
+2021/09/08 16:32:14 id:2,term:284,tp:0,receive vote request from 1(term:285)
+2021/09/08 16:32:14 id:1,term:285,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:15 id:1,term:285,tp:1,starting an election 
+2021/09/08 16:32:15 id:1,term:286,tp:1,sending vote request to 2
+2021/09/08 16:32:15 id:1,term:286,tp:1,sending vote request to 0
+2021/09/08 16:32:15 id:2,term:285,tp:0,receive vote request from 1(term:286)
+2021/09/08 16:32:15 id:1,term:286,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:15 id:1,term:286,tp:1,starting an election 
+2021/09/08 16:32:15 id:1,term:287,tp:1,sending vote request to 2
+2021/09/08 16:32:15 id:1,term:287,tp:1,sending vote request to 0
+2021/09/08 16:32:15 id:2,term:286,tp:0,receive vote request from 1(term:287)
+2021/09/08 16:32:15 id:1,term:287,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:16 id:1,term:287,tp:1,starting an election 
+2021/09/08 16:32:16 id:1,term:288,tp:1,sending vote request to 2
+2021/09/08 16:32:16 id:1,term:288,tp:1,sending vote request to 0
+2021/09/08 16:32:16 id:2,term:287,tp:0,receive vote request from 1(term:288)
+2021/09/08 16:32:16 id:1,term:288,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:16 id:1,term:288,tp:1,starting an election 
+2021/09/08 16:32:16 id:1,term:289,tp:1,sending vote request to 2
+2021/09/08 16:32:16 id:1,term:289,tp:1,sending vote request to 0
+2021/09/08 16:32:16 id:2,term:288,tp:0,receive vote request from 1(term:289)
+2021/09/08 16:32:16 id:1,term:289,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:16 id:1,term:289,tp:1,starting an election 
+2021/09/08 16:32:16 id:1,term:290,tp:1,sending vote request to 2
+2021/09/08 16:32:16 id:1,term:290,tp:1,sending vote request to 0
+2021/09/08 16:32:16 id:2,term:289,tp:0,receive vote request from 1(term:290)
+2021/09/08 16:32:16 id:1,term:290,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:17 id:1,term:290,tp:1,starting an election 
+2021/09/08 16:32:17 id:1,term:291,tp:1,sending vote request to 2
+2021/09/08 16:32:17 id:1,term:291,tp:1,sending vote request to 0
+2021/09/08 16:32:17 id:2,term:290,tp:0,receive vote request from 1(term:291)
+2021/09/08 16:32:17 id:1,term:291,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:17 id:1,term:291,tp:1,starting an election 
+2021/09/08 16:32:17 id:1,term:292,tp:1,sending vote request to 2
+2021/09/08 16:32:17 id:1,term:292,tp:1,sending vote request to 0
+2021/09/08 16:32:17 id:2,term:291,tp:0,receive vote request from 1(term:292)
+2021/09/08 16:32:17 id:1,term:292,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:18 id:1,term:292,tp:1,starting an election 
+2021/09/08 16:32:18 id:1,term:293,tp:1,sending vote request to 2
+2021/09/08 16:32:18 id:1,term:293,tp:1,sending vote request to 0
+2021/09/08 16:32:18 id:2,term:292,tp:0,receive vote request from 1(term:293)
+2021/09/08 16:32:18 id:1,term:293,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:19 id:1,term:293,tp:1,starting an election 
+2021/09/08 16:32:19 id:1,term:294,tp:1,sending vote request to 2
+2021/09/08 16:32:19 id:1,term:294,tp:1,sending vote request to 0
+2021/09/08 16:32:19 id:2,term:293,tp:0,receive vote request from 1(term:294)
+2021/09/08 16:32:19 id:1,term:294,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:19 id:1,term:294,tp:1,starting an election 
+2021/09/08 16:32:19 id:1,term:295,tp:1,sending vote request to 2
+2021/09/08 16:32:19 id:1,term:295,tp:1,sending vote request to 0
+2021/09/08 16:32:19 id:2,term:294,tp:0,receive vote request from 1(term:295)
+2021/09/08 16:32:19 id:1,term:295,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:20 id:1,term:295,tp:1,starting an election 
+2021/09/08 16:32:20 id:1,term:296,tp:1,sending vote request to 2
+2021/09/08 16:32:20 id:1,term:296,tp:1,sending vote request to 0
+2021/09/08 16:32:20 id:2,term:295,tp:0,receive vote request from 1(term:296)
+2021/09/08 16:32:20 id:1,term:296,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:20 id:1,term:296,tp:1,starting an election 
+2021/09/08 16:32:20 id:1,term:297,tp:1,sending vote request to 2
+2021/09/08 16:32:20 id:1,term:297,tp:1,sending vote request to 0
+2021/09/08 16:32:20 id:2,term:296,tp:0,receive vote request from 1(term:297)
+2021/09/08 16:32:20 id:1,term:297,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:21 id:1,term:297,tp:1,starting an election 
+2021/09/08 16:32:21 id:1,term:298,tp:1,sending vote request to 2
+2021/09/08 16:32:21 id:1,term:298,tp:1,sending vote request to 0
+2021/09/08 16:32:21 id:2,term:297,tp:0,receive vote request from 1(term:298)
+2021/09/08 16:32:21 id:1,term:298,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:21 id:1,term:298,tp:1,starting an election 
+2021/09/08 16:32:21 id:1,term:299,tp:1,sending vote request to 2
+2021/09/08 16:32:21 id:1,term:299,tp:1,sending vote request to 0
+2021/09/08 16:32:21 id:2,term:298,tp:0,receive vote request from 1(term:299)
+2021/09/08 16:32:21 id:1,term:299,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:22 id:1,term:299,tp:1,starting an election 
+2021/09/08 16:32:22 id:1,term:300,tp:1,sending vote request to 2
+2021/09/08 16:32:22 id:1,term:300,tp:1,sending vote request to 0
+2021/09/08 16:32:22 id:2,term:299,tp:0,receive vote request from 1(term:300)
+2021/09/08 16:32:22 id:1,term:300,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:22 id:1,term:300,tp:1,starting an election 
+2021/09/08 16:32:22 id:1,term:301,tp:1,sending vote request to 2
+2021/09/08 16:32:22 id:1,term:301,tp:1,sending vote request to 0
+2021/09/08 16:32:22 id:2,term:300,tp:0,receive vote request from 1(term:301)
+2021/09/08 16:32:22 id:1,term:301,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:23 id:1,term:301,tp:1,starting an election 
+2021/09/08 16:32:23 id:1,term:302,tp:1,sending vote request to 2
+2021/09/08 16:32:23 id:1,term:302,tp:1,sending vote request to 0
+2021/09/08 16:32:23 id:2,term:301,tp:0,receive vote request from 1(term:302)
+2021/09/08 16:32:23 id:1,term:302,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:23 id:1,term:302,tp:1,starting an election 
+2021/09/08 16:32:23 id:1,term:303,tp:1,sending vote request to 2
+2021/09/08 16:32:23 id:1,term:303,tp:1,sending vote request to 0
+2021/09/08 16:32:23 id:2,term:302,tp:0,receive vote request from 1(term:303)
+2021/09/08 16:32:23 id:1,term:303,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:23 id:1,term:303,tp:1,starting an election 
+2021/09/08 16:32:23 id:1,term:304,tp:1,sending vote request to 2
+2021/09/08 16:32:23 id:1,term:304,tp:1,sending vote request to 0
+2021/09/08 16:32:23 id:2,term:303,tp:0,receive vote request from 1(term:304)
+2021/09/08 16:32:23 id:1,term:304,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:24 id:1,term:304,tp:1,starting an election 
+2021/09/08 16:32:24 id:1,term:305,tp:1,sending vote request to 2
+2021/09/08 16:32:24 id:1,term:305,tp:1,sending vote request to 0
+2021/09/08 16:32:24 id:2,term:304,tp:0,receive vote request from 1(term:305)
+2021/09/08 16:32:24 id:1,term:305,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:24 id:1,term:305,tp:1,starting an election 
+2021/09/08 16:32:24 id:1,term:306,tp:1,sending vote request to 2
+2021/09/08 16:32:24 id:1,term:306,tp:1,sending vote request to 0
+2021/09/08 16:32:24 id:2,term:305,tp:0,receive vote request from 1(term:306)
+2021/09/08 16:32:24 id:1,term:306,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:25 id:1,term:306,tp:1,starting an election 
+2021/09/08 16:32:25 id:1,term:307,tp:1,sending vote request to 2
+2021/09/08 16:32:25 id:1,term:307,tp:1,sending vote request to 0
+2021/09/08 16:32:25 id:2,term:306,tp:0,receive vote request from 1(term:307)
+2021/09/08 16:32:25 id:1,term:307,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:25 id:1,term:307,tp:1,starting an election 
+2021/09/08 16:32:25 id:1,term:308,tp:1,sending vote request to 2
+2021/09/08 16:32:25 id:1,term:308,tp:1,sending vote request to 0
+2021/09/08 16:32:25 id:2,term:307,tp:0,receive vote request from 1(term:308)
+2021/09/08 16:32:25 id:1,term:308,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:26 id:1,term:308,tp:1,starting an election 
+2021/09/08 16:32:26 id:1,term:309,tp:1,sending vote request to 2
+2021/09/08 16:32:26 id:1,term:309,tp:1,sending vote request to 0
+2021/09/08 16:32:26 id:2,term:308,tp:0,receive vote request from 1(term:309)
+2021/09/08 16:32:26 id:1,term:309,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:26 id:1,term:309,tp:1,starting an election 
+2021/09/08 16:32:26 id:1,term:310,tp:1,sending vote request to 2
+2021/09/08 16:32:26 id:1,term:310,tp:1,sending vote request to 0
+2021/09/08 16:32:26 id:2,term:309,tp:0,receive vote request from 1(term:310)
+2021/09/08 16:32:26 id:1,term:310,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:27 id:1,term:310,tp:1,starting an election 
+2021/09/08 16:32:27 id:1,term:311,tp:1,sending vote request to 2
+2021/09/08 16:32:27 id:1,term:311,tp:1,sending vote request to 0
+2021/09/08 16:32:27 id:2,term:310,tp:0,receive vote request from 1(term:311)
+2021/09/08 16:32:27 id:1,term:311,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:27 id:1,term:311,tp:1,starting an election 
+2021/09/08 16:32:27 id:1,term:312,tp:1,sending vote request to 2
+2021/09/08 16:32:27 id:1,term:312,tp:1,sending vote request to 0
+2021/09/08 16:32:27 id:2,term:311,tp:0,receive vote request from 1(term:312)
+2021/09/08 16:32:27 id:1,term:312,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:28 id:1,term:312,tp:1,starting an election 
+2021/09/08 16:32:28 id:1,term:313,tp:1,sending vote request to 2
+2021/09/08 16:32:28 id:1,term:313,tp:1,sending vote request to 0
+2021/09/08 16:32:28 id:2,term:312,tp:0,receive vote request from 1(term:313)
+2021/09/08 16:32:28 id:1,term:313,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:28 id:1,term:313,tp:1,starting an election 
+2021/09/08 16:32:28 id:1,term:314,tp:1,sending vote request to 2
+2021/09/08 16:32:28 id:1,term:314,tp:1,sending vote request to 0
+2021/09/08 16:32:28 id:2,term:313,tp:0,receive vote request from 1(term:314)
+2021/09/08 16:32:28 id:1,term:314,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:29 id:1,term:314,tp:1,starting an election 
+2021/09/08 16:32:29 id:1,term:315,tp:1,sending vote request to 2
+2021/09/08 16:32:29 id:1,term:315,tp:1,sending vote request to 0
+2021/09/08 16:32:29 id:2,term:314,tp:0,receive vote request from 1(term:315)
+2021/09/08 16:32:29 id:1,term:315,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:29 id:1,term:315,tp:1,starting an election 
+2021/09/08 16:32:29 id:1,term:316,tp:1,sending vote request to 2
+2021/09/08 16:32:29 id:1,term:316,tp:1,sending vote request to 0
+2021/09/08 16:32:29 id:2,term:315,tp:0,receive vote request from 1(term:316)
+2021/09/08 16:32:29 id:1,term:316,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:30 id:1,term:316,tp:1,starting an election 
+2021/09/08 16:32:30 id:1,term:317,tp:1,sending vote request to 2
+2021/09/08 16:32:30 id:1,term:317,tp:1,sending vote request to 0
+2021/09/08 16:32:30 id:2,term:316,tp:0,receive vote request from 1(term:317)
+2021/09/08 16:32:30 id:1,term:317,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:30 id:1,term:317,tp:1,starting an election 
+2021/09/08 16:32:30 id:1,term:318,tp:1,sending vote request to 2
+2021/09/08 16:32:30 id:1,term:318,tp:1,sending vote request to 0
+2021/09/08 16:32:31 id:2,term:317,tp:0,receive vote request from 1(term:318)
+2021/09/08 16:32:31 id:1,term:318,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:31 id:1,term:318,tp:1,starting an election 
+2021/09/08 16:32:31 id:1,term:319,tp:1,sending vote request to 2
+2021/09/08 16:32:31 id:1,term:319,tp:1,sending vote request to 0
+2021/09/08 16:32:31 id:2,term:318,tp:0,receive vote request from 1(term:319)
+2021/09/08 16:32:31 id:1,term:319,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:32 id:1,term:319,tp:1,starting an election 
+2021/09/08 16:32:32 id:1,term:320,tp:1,sending vote request to 2
+2021/09/08 16:32:32 id:1,term:320,tp:1,sending vote request to 0
+2021/09/08 16:32:32 id:2,term:319,tp:0,receive vote request from 1(term:320)
+2021/09/08 16:32:32 id:1,term:320,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:32 id:1,term:320,tp:1,starting an election 
+2021/09/08 16:32:32 id:1,term:321,tp:1,sending vote request to 2
+2021/09/08 16:32:32 id:1,term:321,tp:1,sending vote request to 0
+2021/09/08 16:32:32 id:2,term:320,tp:0,receive vote request from 1(term:321)
+2021/09/08 16:32:32 id:1,term:321,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:33 id:1,term:321,tp:1,starting an election 
+2021/09/08 16:32:33 id:1,term:322,tp:1,sending vote request to 2
+2021/09/08 16:32:33 id:1,term:322,tp:1,sending vote request to 0
+2021/09/08 16:32:33 id:2,term:321,tp:0,receive vote request from 1(term:322)
+2021/09/08 16:32:33 id:1,term:322,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:33 id:1,term:322,tp:1,starting an election 
+2021/09/08 16:32:33 id:1,term:323,tp:1,sending vote request to 2
+2021/09/08 16:32:33 id:1,term:323,tp:1,sending vote request to 0
+2021/09/08 16:32:33 id:2,term:322,tp:0,receive vote request from 1(term:323)
+2021/09/08 16:32:33 id:1,term:323,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:33 id:1,term:323,tp:1,starting an election 
+2021/09/08 16:32:33 id:1,term:324,tp:1,sending vote request to 2
+2021/09/08 16:32:33 id:1,term:324,tp:1,sending vote request to 0
+2021/09/08 16:32:34 id:2,term:323,tp:0,receive vote request from 1(term:324)
+2021/09/08 16:32:34 id:1,term:324,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:34 id:1,term:324,tp:1,starting an election 
+2021/09/08 16:32:34 id:1,term:325,tp:1,sending vote request to 2
+2021/09/08 16:32:34 id:1,term:325,tp:1,sending vote request to 0
+2021/09/08 16:32:34 id:2,term:324,tp:0,receive vote request from 1(term:325)
+2021/09/08 16:32:34 id:1,term:325,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:34 id:1,term:325,tp:1,starting an election 
+2021/09/08 16:32:34 id:1,term:326,tp:1,sending vote request to 2
+2021/09/08 16:32:34 id:1,term:326,tp:1,sending vote request to 0
+2021/09/08 16:32:34 id:2,term:325,tp:0,receive vote request from 1(term:326)
+2021/09/08 16:32:34 id:1,term:326,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:35 id:1,term:326,tp:1,starting an election 
+2021/09/08 16:32:35 id:1,term:327,tp:1,sending vote request to 2
+2021/09/08 16:32:35 id:1,term:327,tp:1,sending vote request to 0
+2021/09/08 16:32:35 id:2,term:326,tp:0,receive vote request from 1(term:327)
+2021/09/08 16:32:35 id:1,term:327,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:36 id:1,term:327,tp:1,starting an election 
+2021/09/08 16:32:36 id:1,term:328,tp:1,sending vote request to 2
+2021/09/08 16:32:36 id:1,term:328,tp:1,sending vote request to 0
+2021/09/08 16:32:36 id:2,term:327,tp:0,receive vote request from 1(term:328)
+2021/09/08 16:32:36 id:1,term:328,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:36 id:1,term:328,tp:1,starting an election 
+2021/09/08 16:32:36 id:1,term:329,tp:1,sending vote request to 2
+2021/09/08 16:32:36 id:1,term:329,tp:1,sending vote request to 0
+2021/09/08 16:32:36 id:2,term:328,tp:0,receive vote request from 1(term:329)
+2021/09/08 16:32:36 id:1,term:329,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:37 id:1,term:329,tp:1,starting an election 
+2021/09/08 16:32:37 id:1,term:330,tp:1,sending vote request to 2
+2021/09/08 16:32:37 id:1,term:330,tp:1,sending vote request to 0
+2021/09/08 16:32:37 id:2,term:329,tp:0,receive vote request from 1(term:330)
+2021/09/08 16:32:37 id:1,term:330,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:37 id:1,term:330,tp:1,starting an election 
+2021/09/08 16:32:37 id:1,term:331,tp:1,sending vote request to 2
+2021/09/08 16:32:37 id:1,term:331,tp:1,sending vote request to 0
+2021/09/08 16:32:37 id:2,term:330,tp:0,receive vote request from 1(term:331)
+2021/09/08 16:32:37 id:1,term:331,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:38 id:1,term:331,tp:1,starting an election 
+2021/09/08 16:32:38 id:1,term:332,tp:1,sending vote request to 2
+2021/09/08 16:32:38 id:1,term:332,tp:1,sending vote request to 0
+2021/09/08 16:32:38 id:2,term:331,tp:0,receive vote request from 1(term:332)
+2021/09/08 16:32:38 id:1,term:332,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:38 id:1,term:332,tp:1,starting an election 
+2021/09/08 16:32:38 id:1,term:333,tp:1,sending vote request to 2
+2021/09/08 16:32:38 id:1,term:333,tp:1,sending vote request to 0
+2021/09/08 16:32:38 id:2,term:332,tp:0,receive vote request from 1(term:333)
+2021/09/08 16:32:38 id:1,term:333,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:39 id:1,term:333,tp:1,starting an election 
+2021/09/08 16:32:39 id:1,term:334,tp:1,sending vote request to 2
+2021/09/08 16:32:39 id:1,term:334,tp:1,sending vote request to 0
+2021/09/08 16:32:39 id:2,term:333,tp:0,receive vote request from 1(term:334)
+2021/09/08 16:32:39 id:1,term:334,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:39 id:1,term:334,tp:1,starting an election 
+2021/09/08 16:32:39 id:1,term:335,tp:1,sending vote request to 2
+2021/09/08 16:32:39 id:1,term:335,tp:1,sending vote request to 0
+2021/09/08 16:32:39 id:2,term:334,tp:0,receive vote request from 1(term:335)
+2021/09/08 16:32:39 id:1,term:335,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:40 id:1,term:335,tp:1,starting an election 
+2021/09/08 16:32:40 id:1,term:336,tp:1,sending vote request to 2
+2021/09/08 16:32:40 id:1,term:336,tp:1,sending vote request to 0
+2021/09/08 16:32:40 id:2,term:335,tp:0,receive vote request from 1(term:336)
+2021/09/08 16:32:40 id:1,term:336,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:40 id:1,term:336,tp:1,starting an election 
+2021/09/08 16:32:40 id:1,term:337,tp:1,sending vote request to 2
+2021/09/08 16:32:40 id:1,term:337,tp:1,sending vote request to 0
+2021/09/08 16:32:40 id:2,term:336,tp:0,receive vote request from 1(term:337)
+2021/09/08 16:32:40 id:1,term:337,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:41 id:1,term:337,tp:1,starting an election 
+2021/09/08 16:32:41 id:1,term:338,tp:1,sending vote request to 2
+2021/09/08 16:32:41 id:1,term:338,tp:1,sending vote request to 0
+2021/09/08 16:32:41 id:2,term:337,tp:0,receive vote request from 1(term:338)
+2021/09/08 16:32:41 id:1,term:338,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:41 id:1,term:338,tp:1,starting an election 
+2021/09/08 16:32:41 id:1,term:339,tp:1,sending vote request to 2
+2021/09/08 16:32:41 id:1,term:339,tp:1,sending vote request to 0
+2021/09/08 16:32:41 id:2,term:338,tp:0,receive vote request from 1(term:339)
+2021/09/08 16:32:41 id:1,term:339,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:42 id:1,term:339,tp:1,starting an election 
+2021/09/08 16:32:42 id:1,term:340,tp:1,sending vote request to 2
+2021/09/08 16:32:42 id:1,term:340,tp:1,sending vote request to 0
+2021/09/08 16:32:42 id:2,term:339,tp:0,receive vote request from 1(term:340)
+2021/09/08 16:32:42 id:1,term:340,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:42 id:1,term:340,tp:1,starting an election 
+2021/09/08 16:32:42 id:1,term:341,tp:1,sending vote request to 2
+2021/09/08 16:32:42 id:1,term:341,tp:1,sending vote request to 0
+2021/09/08 16:32:42 id:2,term:340,tp:0,receive vote request from 1(term:341)
+2021/09/08 16:32:42 id:1,term:341,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:43 id:1,term:341,tp:1,starting an election 
+2021/09/08 16:32:43 id:1,term:342,tp:1,sending vote request to 2
+2021/09/08 16:32:43 id:1,term:342,tp:1,sending vote request to 0
+2021/09/08 16:32:43 id:2,term:341,tp:0,receive vote request from 1(term:342)
+2021/09/08 16:32:43 id:1,term:342,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:43 id:1,term:342,tp:1,starting an election 
+2021/09/08 16:32:43 id:1,term:343,tp:1,sending vote request to 2
+2021/09/08 16:32:43 id:1,term:343,tp:1,sending vote request to 0
+2021/09/08 16:32:43 id:2,term:342,tp:0,receive vote request from 1(term:343)
+2021/09/08 16:32:43 id:1,term:343,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:44 id:1,term:343,tp:1,starting an election 
+2021/09/08 16:32:44 id:1,term:344,tp:1,sending vote request to 2
+2021/09/08 16:32:44 id:1,term:344,tp:1,sending vote request to 0
+2021/09/08 16:32:44 id:2,term:343,tp:0,receive vote request from 1(term:344)
+2021/09/08 16:32:44 id:1,term:344,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:44 id:1,term:344,tp:1,starting an election 
+2021/09/08 16:32:44 id:1,term:345,tp:1,sending vote request to 2
+2021/09/08 16:32:44 id:1,term:345,tp:1,sending vote request to 0
+2021/09/08 16:32:44 id:2,term:344,tp:0,receive vote request from 1(term:345)
+2021/09/08 16:32:44 id:1,term:345,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:45 id:1,term:345,tp:1,starting an election 
+2021/09/08 16:32:45 id:1,term:346,tp:1,sending vote request to 2
+2021/09/08 16:32:45 id:1,term:346,tp:1,sending vote request to 0
+2021/09/08 16:32:45 id:2,term:345,tp:0,receive vote request from 1(term:346)
+2021/09/08 16:32:45 id:1,term:346,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:45 id:1,term:346,tp:1,starting an election 
+2021/09/08 16:32:45 id:1,term:347,tp:1,sending vote request to 2
+2021/09/08 16:32:45 id:1,term:347,tp:1,sending vote request to 0
+2021/09/08 16:32:45 id:2,term:346,tp:0,receive vote request from 1(term:347)
+2021/09/08 16:32:45 id:1,term:347,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:46 id:1,term:347,tp:1,starting an election 
+2021/09/08 16:32:46 id:1,term:348,tp:1,sending vote request to 2
+2021/09/08 16:32:46 id:1,term:348,tp:1,sending vote request to 0
+2021/09/08 16:32:46 id:2,term:347,tp:0,receive vote request from 1(term:348)
+2021/09/08 16:32:46 id:1,term:348,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:46 id:1,term:348,tp:1,starting an election 
+2021/09/08 16:32:46 id:1,term:349,tp:1,sending vote request to 2
+2021/09/08 16:32:46 id:1,term:349,tp:1,sending vote request to 0
+2021/09/08 16:32:46 id:2,term:348,tp:0,receive vote request from 1(term:349)
+2021/09/08 16:32:46 id:1,term:349,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:47 id:1,term:349,tp:1,starting an election 
+2021/09/08 16:32:47 id:1,term:350,tp:1,sending vote request to 2
+2021/09/08 16:32:47 id:1,term:350,tp:1,sending vote request to 0
+2021/09/08 16:32:47 id:2,term:349,tp:0,receive vote request from 1(term:350)
+2021/09/08 16:32:47 id:1,term:350,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:47 id:1,term:350,tp:1,starting an election 
+2021/09/08 16:32:47 id:1,term:351,tp:1,sending vote request to 2
+2021/09/08 16:32:47 id:1,term:351,tp:1,sending vote request to 0
+2021/09/08 16:32:47 id:2,term:350,tp:0,receive vote request from 1(term:351)
+2021/09/08 16:32:47 id:1,term:351,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:48 id:1,term:351,tp:1,starting an election 
+2021/09/08 16:32:48 id:1,term:352,tp:1,sending vote request to 2
+2021/09/08 16:32:48 id:1,term:352,tp:1,sending vote request to 0
+2021/09/08 16:32:48 id:2,term:351,tp:0,receive vote request from 1(term:352)
+2021/09/08 16:32:48 id:1,term:352,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:48 id:1,term:352,tp:1,starting an election 
+2021/09/08 16:32:48 id:1,term:353,tp:1,sending vote request to 2
+2021/09/08 16:32:48 id:1,term:353,tp:1,sending vote request to 0
+2021/09/08 16:32:48 id:2,term:352,tp:0,receive vote request from 1(term:353)
+2021/09/08 16:32:48 id:1,term:353,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:49 id:1,term:353,tp:1,starting an election 
+2021/09/08 16:32:49 id:1,term:354,tp:1,sending vote request to 2
+2021/09/08 16:32:49 id:1,term:354,tp:1,sending vote request to 0
+2021/09/08 16:32:49 id:2,term:353,tp:0,receive vote request from 1(term:354)
+2021/09/08 16:32:49 id:1,term:354,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:50 id:1,term:354,tp:1,starting an election 
+2021/09/08 16:32:50 id:1,term:355,tp:1,sending vote request to 2
+2021/09/08 16:32:50 id:1,term:355,tp:1,sending vote request to 0
+2021/09/08 16:32:50 id:2,term:354,tp:0,receive vote request from 1(term:355)
+2021/09/08 16:32:50 id:1,term:355,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:50 id:1,term:355,tp:1,starting an election 
+2021/09/08 16:32:50 id:1,term:356,tp:1,sending vote request to 2
+2021/09/08 16:32:50 id:1,term:356,tp:1,sending vote request to 0
+2021/09/08 16:32:50 id:2,term:355,tp:0,receive vote request from 1(term:356)
+2021/09/08 16:32:50 id:1,term:356,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:50 id:1,term:356,tp:1,starting an election 
+2021/09/08 16:32:50 id:1,term:357,tp:1,sending vote request to 2
+2021/09/08 16:32:50 id:1,term:357,tp:1,sending vote request to 0
+2021/09/08 16:32:50 id:2,term:356,tp:0,receive vote request from 1(term:357)
+2021/09/08 16:32:50 id:1,term:357,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:51 id:1,term:357,tp:1,starting an election 
+2021/09/08 16:32:51 id:1,term:358,tp:1,sending vote request to 2
+2021/09/08 16:32:51 id:1,term:358,tp:1,sending vote request to 0
+2021/09/08 16:32:51 id:2,term:357,tp:0,receive vote request from 1(term:358)
+2021/09/08 16:32:51 id:1,term:358,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:51 id:1,term:358,tp:1,starting an election 
+2021/09/08 16:32:51 id:1,term:359,tp:1,sending vote request to 2
+2021/09/08 16:32:51 id:1,term:359,tp:1,sending vote request to 0
+2021/09/08 16:32:51 id:2,term:358,tp:0,receive vote request from 1(term:359)
+2021/09/08 16:32:51 id:1,term:359,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:52 id:1,term:359,tp:1,starting an election 
+2021/09/08 16:32:52 id:1,term:360,tp:1,sending vote request to 2
+2021/09/08 16:32:52 id:1,term:360,tp:1,sending vote request to 0
+2021/09/08 16:32:52 id:2,term:359,tp:0,receive vote request from 1(term:360)
+2021/09/08 16:32:52 id:1,term:360,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:53 id:1,term:360,tp:1,starting an election 
+2021/09/08 16:32:53 id:1,term:361,tp:1,sending vote request to 2
+2021/09/08 16:32:53 id:1,term:361,tp:1,sending vote request to 0
+2021/09/08 16:32:53 id:2,term:360,tp:0,receive vote request from 1(term:361)
+2021/09/08 16:32:53 id:1,term:361,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:53 id:1,term:361,tp:1,starting an election 
+2021/09/08 16:32:53 id:1,term:362,tp:1,sending vote request to 2
+2021/09/08 16:32:53 id:1,term:362,tp:1,sending vote request to 0
+2021/09/08 16:32:53 id:2,term:361,tp:0,receive vote request from 1(term:362)
+2021/09/08 16:32:53 id:1,term:362,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:54 id:1,term:362,tp:1,starting an election 
+2021/09/08 16:32:54 id:1,term:363,tp:1,sending vote request to 2
+2021/09/08 16:32:54 id:1,term:363,tp:1,sending vote request to 0
+2021/09/08 16:32:54 id:2,term:362,tp:0,receive vote request from 1(term:363)
+2021/09/08 16:32:54 id:1,term:363,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:54 id:1,term:363,tp:1,starting an election 
+2021/09/08 16:32:54 id:1,term:364,tp:1,sending vote request to 2
+2021/09/08 16:32:54 id:1,term:364,tp:1,sending vote request to 0
+2021/09/08 16:32:54 id:2,term:363,tp:0,receive vote request from 1(term:364)
+2021/09/08 16:32:54 id:1,term:364,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:55 id:1,term:364,tp:1,starting an election 
+2021/09/08 16:32:55 id:1,term:365,tp:1,sending vote request to 2
+2021/09/08 16:32:55 id:1,term:365,tp:1,sending vote request to 0
+2021/09/08 16:32:55 id:2,term:364,tp:0,receive vote request from 1(term:365)
+2021/09/08 16:32:55 id:1,term:365,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:55 id:1,term:365,tp:1,starting an election 
+2021/09/08 16:32:55 id:1,term:366,tp:1,sending vote request to 2
+2021/09/08 16:32:55 id:1,term:366,tp:1,sending vote request to 0
+2021/09/08 16:32:55 id:2,term:365,tp:0,receive vote request from 1(term:366)
+2021/09/08 16:32:55 id:1,term:366,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:56 id:1,term:366,tp:1,starting an election 
+2021/09/08 16:32:56 id:1,term:367,tp:1,sending vote request to 2
+2021/09/08 16:32:56 id:1,term:367,tp:1,sending vote request to 0
+2021/09/08 16:32:56 id:2,term:366,tp:0,receive vote request from 1(term:367)
+2021/09/08 16:32:56 id:1,term:367,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:56 id:1,term:367,tp:1,starting an election 
+2021/09/08 16:32:56 id:1,term:368,tp:1,sending vote request to 2
+2021/09/08 16:32:56 id:1,term:368,tp:1,sending vote request to 0
+2021/09/08 16:32:56 id:2,term:367,tp:0,receive vote request from 1(term:368)
+2021/09/08 16:32:56 id:1,term:368,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:57 id:1,term:368,tp:1,starting an election 
+2021/09/08 16:32:57 id:1,term:369,tp:1,sending vote request to 2
+2021/09/08 16:32:57 id:1,term:369,tp:1,sending vote request to 0
+2021/09/08 16:32:57 id:2,term:368,tp:0,receive vote request from 1(term:369)
+2021/09/08 16:32:57 id:1,term:369,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:57 id:1,term:369,tp:1,starting an election 
+2021/09/08 16:32:57 id:1,term:370,tp:1,sending vote request to 2
+2021/09/08 16:32:57 id:1,term:370,tp:1,sending vote request to 0
+2021/09/08 16:32:57 id:2,term:369,tp:0,receive vote request from 1(term:370)
+2021/09/08 16:32:57 id:1,term:370,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:58 id:1,term:370,tp:1,starting an election 
+2021/09/08 16:32:58 id:1,term:371,tp:1,sending vote request to 2
+2021/09/08 16:32:58 id:1,term:371,tp:1,sending vote request to 0
+2021/09/08 16:32:58 id:2,term:370,tp:0,receive vote request from 1(term:371)
+2021/09/08 16:32:58 id:1,term:371,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:58 id:1,term:371,tp:1,starting an election 
+2021/09/08 16:32:58 id:1,term:372,tp:1,sending vote request to 2
+2021/09/08 16:32:58 id:1,term:372,tp:1,sending vote request to 0
+2021/09/08 16:32:58 id:2,term:371,tp:0,receive vote request from 1(term:372)
+2021/09/08 16:32:58 id:1,term:372,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:59 id:1,term:372,tp:1,starting an election 
+2021/09/08 16:32:59 id:1,term:373,tp:1,sending vote request to 2
+2021/09/08 16:32:59 id:1,term:373,tp:1,sending vote request to 0
+2021/09/08 16:32:59 id:2,term:372,tp:0,receive vote request from 1(term:373)
+2021/09/08 16:32:59 id:1,term:373,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:32:59 id:1,term:373,tp:1,starting an election 
+2021/09/08 16:32:59 id:1,term:374,tp:1,sending vote request to 2
+2021/09/08 16:32:59 id:1,term:374,tp:1,sending vote request to 0
+2021/09/08 16:32:59 id:2,term:373,tp:0,receive vote request from 1(term:374)
+2021/09/08 16:32:59 id:1,term:374,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:00 id:1,term:374,tp:1,starting an election 
+2021/09/08 16:33:00 id:1,term:375,tp:1,sending vote request to 2
+2021/09/08 16:33:00 id:1,term:375,tp:1,sending vote request to 0
+2021/09/08 16:33:00 id:2,term:374,tp:0,receive vote request from 1(term:375)
+2021/09/08 16:33:00 id:1,term:375,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:00 id:1,term:375,tp:1,starting an election 
+2021/09/08 16:33:00 id:1,term:376,tp:1,sending vote request to 2
+2021/09/08 16:33:00 id:1,term:376,tp:1,sending vote request to 0
+2021/09/08 16:33:00 id:2,term:375,tp:0,receive vote request from 1(term:376)
+2021/09/08 16:33:00 id:1,term:376,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:01 id:1,term:376,tp:1,starting an election 
+2021/09/08 16:33:01 id:1,term:377,tp:1,sending vote request to 2
+2021/09/08 16:33:01 id:1,term:377,tp:1,sending vote request to 0
+2021/09/08 16:33:01 id:2,term:376,tp:0,receive vote request from 1(term:377)
+2021/09/08 16:33:01 id:1,term:377,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:01 id:1,term:377,tp:1,starting an election 
+2021/09/08 16:33:01 id:1,term:378,tp:1,sending vote request to 2
+2021/09/08 16:33:01 id:1,term:378,tp:1,sending vote request to 0
+2021/09/08 16:33:01 id:2,term:377,tp:0,receive vote request from 1(term:378)
+2021/09/08 16:33:01 id:1,term:378,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:02 id:1,term:378,tp:1,starting an election 
+2021/09/08 16:33:02 id:1,term:379,tp:1,sending vote request to 2
+2021/09/08 16:33:02 id:1,term:379,tp:1,sending vote request to 0
+2021/09/08 16:33:02 id:2,term:378,tp:0,receive vote request from 1(term:379)
+2021/09/08 16:33:02 id:1,term:379,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:02 id:1,term:379,tp:1,starting an election 
+2021/09/08 16:33:02 id:1,term:380,tp:1,sending vote request to 2
+2021/09/08 16:33:02 id:1,term:380,tp:1,sending vote request to 0
+2021/09/08 16:33:02 id:2,term:379,tp:0,receive vote request from 1(term:380)
+2021/09/08 16:33:02 id:1,term:380,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:03 id:1,term:380,tp:1,starting an election 
+2021/09/08 16:33:03 id:1,term:381,tp:1,sending vote request to 2
+2021/09/08 16:33:03 id:1,term:381,tp:1,sending vote request to 0
+2021/09/08 16:33:03 id:2,term:380,tp:0,receive vote request from 1(term:381)
+2021/09/08 16:33:03 id:1,term:381,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:04 id:1,term:381,tp:1,starting an election 
+2021/09/08 16:33:04 id:1,term:382,tp:1,sending vote request to 2
+2021/09/08 16:33:04 id:1,term:382,tp:1,sending vote request to 0
+2021/09/08 16:33:04 id:2,term:381,tp:0,receive vote request from 1(term:382)
+2021/09/08 16:33:04 id:1,term:382,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:04 id:1,term:382,tp:1,starting an election 
+2021/09/08 16:33:04 id:1,term:383,tp:1,sending vote request to 2
+2021/09/08 16:33:04 id:1,term:383,tp:1,sending vote request to 0
+2021/09/08 16:33:04 id:2,term:382,tp:0,receive vote request from 1(term:383)
+2021/09/08 16:33:04 id:1,term:383,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:05 id:1,term:383,tp:1,starting an election 
+2021/09/08 16:33:05 id:1,term:384,tp:1,sending vote request to 2
+2021/09/08 16:33:05 id:1,term:384,tp:1,sending vote request to 0
+2021/09/08 16:33:05 id:2,term:383,tp:0,receive vote request from 1(term:384)
+2021/09/08 16:33:05 id:1,term:384,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:05 id:1,term:384,tp:1,starting an election 
+2021/09/08 16:33:05 id:1,term:385,tp:1,sending vote request to 2
+2021/09/08 16:33:05 id:1,term:385,tp:1,sending vote request to 0
+2021/09/08 16:33:05 id:2,term:384,tp:0,receive vote request from 1(term:385)
+2021/09/08 16:33:05 id:1,term:385,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:06 id:1,term:385,tp:1,starting an election 
+2021/09/08 16:33:06 id:1,term:386,tp:1,sending vote request to 2
+2021/09/08 16:33:06 id:1,term:386,tp:1,sending vote request to 0
+2021/09/08 16:33:06 id:2,term:385,tp:0,receive vote request from 1(term:386)
+2021/09/08 16:33:06 id:1,term:386,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:06 id:1,term:386,tp:1,starting an election 
+2021/09/08 16:33:06 id:1,term:387,tp:1,sending vote request to 2
+2021/09/08 16:33:06 id:1,term:387,tp:1,sending vote request to 0
+2021/09/08 16:33:06 id:2,term:386,tp:0,receive vote request from 1(term:387)
+2021/09/08 16:33:06 id:1,term:387,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:07 id:1,term:387,tp:1,starting an election 
+2021/09/08 16:33:07 id:1,term:388,tp:1,sending vote request to 2
+2021/09/08 16:33:07 id:1,term:388,tp:1,sending vote request to 0
+2021/09/08 16:33:07 id:2,term:387,tp:0,receive vote request from 1(term:388)
+2021/09/08 16:33:07 id:1,term:388,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:07 id:1,term:388,tp:1,starting an election 
+2021/09/08 16:33:07 id:1,term:389,tp:1,sending vote request to 2
+2021/09/08 16:33:07 id:1,term:389,tp:1,sending vote request to 0
+2021/09/08 16:33:07 id:2,term:388,tp:0,receive vote request from 1(term:389)
+2021/09/08 16:33:07 id:1,term:389,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:07 id:1,term:389,tp:1,starting an election 
+2021/09/08 16:33:07 id:1,term:390,tp:1,sending vote request to 2
+2021/09/08 16:33:07 id:1,term:390,tp:1,sending vote request to 0
+2021/09/08 16:33:08 id:2,term:389,tp:0,receive vote request from 1(term:390)
+2021/09/08 16:33:08 id:1,term:390,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:08 id:1,term:390,tp:1,starting an election 
+2021/09/08 16:33:08 id:1,term:391,tp:1,sending vote request to 2
+2021/09/08 16:33:08 id:1,term:391,tp:1,sending vote request to 0
+2021/09/08 16:33:08 id:2,term:390,tp:0,receive vote request from 1(term:391)
+2021/09/08 16:33:08 id:1,term:391,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:08 id:1,term:391,tp:1,starting an election 
+2021/09/08 16:33:08 id:1,term:392,tp:1,sending vote request to 2
+2021/09/08 16:33:08 id:1,term:392,tp:1,sending vote request to 0
+2021/09/08 16:33:08 id:2,term:391,tp:0,receive vote request from 1(term:392)
+2021/09/08 16:33:08 id:1,term:392,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:09 id:1,term:392,tp:1,starting an election 
+2021/09/08 16:33:09 id:1,term:393,tp:1,sending vote request to 2
+2021/09/08 16:33:09 id:1,term:393,tp:1,sending vote request to 0
+2021/09/08 16:33:09 id:2,term:392,tp:0,receive vote request from 1(term:393)
+2021/09/08 16:33:09 id:1,term:393,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:09 id:1,term:393,tp:1,starting an election 
+2021/09/08 16:33:09 id:1,term:394,tp:1,sending vote request to 2
+2021/09/08 16:33:09 id:1,term:394,tp:1,sending vote request to 0
+2021/09/08 16:33:09 id:2,term:393,tp:0,receive vote request from 1(term:394)
+2021/09/08 16:33:09 id:1,term:394,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:10 id:1,term:394,tp:1,starting an election 
+2021/09/08 16:33:10 id:1,term:395,tp:1,sending vote request to 2
+2021/09/08 16:33:10 id:1,term:395,tp:1,sending vote request to 0
+2021/09/08 16:33:10 id:2,term:394,tp:0,receive vote request from 1(term:395)
+2021/09/08 16:33:10 id:1,term:395,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:10 id:1,term:395,tp:1,starting an election 
+2021/09/08 16:33:10 id:1,term:396,tp:1,sending vote request to 2
+2021/09/08 16:33:10 id:1,term:396,tp:1,sending vote request to 0
+2021/09/08 16:33:10 id:2,term:395,tp:0,receive vote request from 1(term:396)
+2021/09/08 16:33:10 id:1,term:396,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:11 id:1,term:396,tp:1,starting an election 
+2021/09/08 16:33:11 id:1,term:397,tp:1,sending vote request to 2
+2021/09/08 16:33:11 id:1,term:397,tp:1,sending vote request to 0
+2021/09/08 16:33:11 id:2,term:396,tp:0,receive vote request from 1(term:397)
+2021/09/08 16:33:11 id:1,term:397,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:11 id:1,term:397,tp:1,starting an election 
+2021/09/08 16:33:11 id:1,term:398,tp:1,sending vote request to 2
+2021/09/08 16:33:11 id:1,term:398,tp:1,sending vote request to 0
+2021/09/08 16:33:11 id:2,term:397,tp:0,receive vote request from 1(term:398)
+2021/09/08 16:33:11 id:1,term:398,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:12 id:1,term:398,tp:1,starting an election 
+2021/09/08 16:33:12 id:1,term:399,tp:1,sending vote request to 2
+2021/09/08 16:33:12 id:1,term:399,tp:1,sending vote request to 0
+2021/09/08 16:33:12 id:2,term:398,tp:0,receive vote request from 1(term:399)
+2021/09/08 16:33:12 id:1,term:399,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:12 id:1,term:399,tp:1,starting an election 
+2021/09/08 16:33:12 id:1,term:400,tp:1,sending vote request to 2
+2021/09/08 16:33:12 id:1,term:400,tp:1,sending vote request to 0
+2021/09/08 16:33:12 id:2,term:399,tp:0,receive vote request from 1(term:400)
+2021/09/08 16:33:12 id:1,term:400,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:13 id:1,term:400,tp:1,starting an election 
+2021/09/08 16:33:13 id:1,term:401,tp:1,sending vote request to 2
+2021/09/08 16:33:13 id:1,term:401,tp:1,sending vote request to 0
+2021/09/08 16:33:13 id:2,term:400,tp:0,receive vote request from 1(term:401)
+2021/09/08 16:33:13 id:1,term:401,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:14 id:1,term:401,tp:1,starting an election 
+2021/09/08 16:33:14 id:1,term:402,tp:1,sending vote request to 2
+2021/09/08 16:33:14 id:1,term:402,tp:1,sending vote request to 0
+2021/09/08 16:33:14 id:2,term:401,tp:0,receive vote request from 1(term:402)
+2021/09/08 16:33:14 id:1,term:402,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:14 id:1,term:402,tp:1,starting an election 
+2021/09/08 16:33:14 id:1,term:403,tp:1,sending vote request to 2
+2021/09/08 16:33:14 id:1,term:403,tp:1,sending vote request to 0
+2021/09/08 16:33:14 id:2,term:402,tp:0,receive vote request from 1(term:403)
+2021/09/08 16:33:14 id:1,term:403,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:15 id:1,term:403,tp:1,starting an election 
+2021/09/08 16:33:15 id:1,term:404,tp:1,sending vote request to 2
+2021/09/08 16:33:15 id:1,term:404,tp:1,sending vote request to 0
+2021/09/08 16:33:15 id:2,term:403,tp:0,receive vote request from 1(term:404)
+2021/09/08 16:33:15 id:1,term:404,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:15 id:1,term:404,tp:1,starting an election 
+2021/09/08 16:33:15 id:1,term:405,tp:1,sending vote request to 2
+2021/09/08 16:33:15 id:1,term:405,tp:1,sending vote request to 0
+2021/09/08 16:33:15 id:2,term:404,tp:0,receive vote request from 1(term:405)
+2021/09/08 16:33:15 id:1,term:405,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:16 id:1,term:405,tp:1,starting an election 
+2021/09/08 16:33:16 id:1,term:406,tp:1,sending vote request to 2
+2021/09/08 16:33:16 id:1,term:406,tp:1,sending vote request to 0
+2021/09/08 16:33:16 id:2,term:405,tp:0,receive vote request from 1(term:406)
+2021/09/08 16:33:16 id:1,term:406,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:16 id:1,term:406,tp:1,starting an election 
+2021/09/08 16:33:16 id:1,term:407,tp:1,sending vote request to 2
+2021/09/08 16:33:16 id:1,term:407,tp:1,sending vote request to 0
+2021/09/08 16:33:16 id:2,term:406,tp:0,receive vote request from 1(term:407)
+2021/09/08 16:33:16 id:1,term:407,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:17 id:1,term:407,tp:1,starting an election 
+2021/09/08 16:33:17 id:1,term:408,tp:1,sending vote request to 2
+2021/09/08 16:33:17 id:1,term:408,tp:1,sending vote request to 0
+2021/09/08 16:33:17 id:2,term:407,tp:0,receive vote request from 1(term:408)
+2021/09/08 16:33:17 id:1,term:408,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:17 id:1,term:408,tp:1,starting an election 
+2021/09/08 16:33:17 id:1,term:409,tp:1,sending vote request to 2
+2021/09/08 16:33:17 id:1,term:409,tp:1,sending vote request to 0
+2021/09/08 16:33:17 id:2,term:408,tp:0,receive vote request from 1(term:409)
+2021/09/08 16:33:17 id:1,term:409,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:18 id:1,term:409,tp:1,starting an election 
+2021/09/08 16:33:18 id:1,term:410,tp:1,sending vote request to 2
+2021/09/08 16:33:18 id:1,term:410,tp:1,sending vote request to 0
+2021/09/08 16:33:18 id:2,term:409,tp:0,receive vote request from 1(term:410)
+2021/09/08 16:33:18 id:1,term:410,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:18 id:1,term:410,tp:1,starting an election 
+2021/09/08 16:33:18 id:1,term:411,tp:1,sending vote request to 2
+2021/09/08 16:33:18 id:1,term:411,tp:1,sending vote request to 0
+2021/09/08 16:33:18 id:2,term:410,tp:0,receive vote request from 1(term:411)
+2021/09/08 16:33:18 id:1,term:411,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:19 id:1,term:411,tp:1,starting an election 
+2021/09/08 16:33:19 id:1,term:412,tp:1,sending vote request to 2
+2021/09/08 16:33:19 id:1,term:412,tp:1,sending vote request to 0
+2021/09/08 16:33:19 id:2,term:411,tp:0,receive vote request from 1(term:412)
+2021/09/08 16:33:19 id:1,term:412,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:19 id:1,term:412,tp:1,starting an election 
+2021/09/08 16:33:19 id:1,term:413,tp:1,sending vote request to 2
+2021/09/08 16:33:19 id:1,term:413,tp:1,sending vote request to 0
+2021/09/08 16:33:19 id:2,term:412,tp:0,receive vote request from 1(term:413)
+2021/09/08 16:33:19 id:1,term:413,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:20 id:1,term:413,tp:1,starting an election 
+2021/09/08 16:33:20 id:1,term:414,tp:1,sending vote request to 2
+2021/09/08 16:33:20 id:1,term:414,tp:1,sending vote request to 0
+2021/09/08 16:33:20 id:2,term:413,tp:0,receive vote request from 1(term:414)
+2021/09/08 16:33:20 id:1,term:414,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:20 id:1,term:414,tp:1,starting an election 
+2021/09/08 16:33:20 id:1,term:415,tp:1,sending vote request to 2
+2021/09/08 16:33:20 id:1,term:415,tp:1,sending vote request to 0
+2021/09/08 16:33:20 id:2,term:414,tp:0,receive vote request from 1(term:415)
+2021/09/08 16:33:20 id:1,term:415,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:20 id:1,term:415,tp:1,starting an election 
+2021/09/08 16:33:20 id:1,term:416,tp:1,sending vote request to 2
+2021/09/08 16:33:20 id:1,term:416,tp:1,sending vote request to 0
+2021/09/08 16:33:20 id:2,term:415,tp:0,receive vote request from 1(term:416)
+2021/09/08 16:33:20 id:1,term:416,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:21 id:1,term:416,tp:1,starting an election 
+2021/09/08 16:33:21 id:1,term:417,tp:1,sending vote request to 2
+2021/09/08 16:33:21 id:1,term:417,tp:1,sending vote request to 0
+2021/09/08 16:33:21 id:2,term:416,tp:0,receive vote request from 1(term:417)
+2021/09/08 16:33:21 id:1,term:417,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:21 id:1,term:417,tp:1,starting an election 
+2021/09/08 16:33:21 id:1,term:418,tp:1,sending vote request to 2
+2021/09/08 16:33:21 id:1,term:418,tp:1,sending vote request to 0
+2021/09/08 16:33:21 id:2,term:417,tp:0,receive vote request from 1(term:418)
+2021/09/08 16:33:21 id:1,term:418,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:22 id:1,term:418,tp:1,starting an election 
+2021/09/08 16:33:22 id:1,term:419,tp:1,sending vote request to 2
+2021/09/08 16:33:22 id:1,term:419,tp:1,sending vote request to 0
+2021/09/08 16:33:22 id:2,term:418,tp:0,receive vote request from 1(term:419)
+2021/09/08 16:33:22 id:1,term:419,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:22 id:1,term:419,tp:1,starting an election 
+2021/09/08 16:33:22 id:1,term:420,tp:1,sending vote request to 2
+2021/09/08 16:33:22 id:1,term:420,tp:1,sending vote request to 0
+2021/09/08 16:33:22 id:2,term:419,tp:0,receive vote request from 1(term:420)
+2021/09/08 16:33:22 id:1,term:420,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:23 id:1,term:420,tp:1,starting an election 
+2021/09/08 16:33:23 id:1,term:421,tp:1,sending vote request to 2
+2021/09/08 16:33:23 id:1,term:421,tp:1,sending vote request to 0
+2021/09/08 16:33:23 id:2,term:420,tp:0,receive vote request from 1(term:421)
+2021/09/08 16:33:23 id:1,term:421,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:23 id:1,term:421,tp:1,starting an election 
+2021/09/08 16:33:23 id:1,term:422,tp:1,sending vote request to 2
+2021/09/08 16:33:23 id:1,term:422,tp:1,sending vote request to 0
+2021/09/08 16:33:23 id:2,term:421,tp:0,receive vote request from 1(term:422)
+2021/09/08 16:33:23 id:1,term:422,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:24 id:1,term:422,tp:1,starting an election 
+2021/09/08 16:33:24 id:1,term:423,tp:1,sending vote request to 2
+2021/09/08 16:33:24 id:1,term:423,tp:1,sending vote request to 0
+2021/09/08 16:33:24 id:2,term:422,tp:0,receive vote request from 1(term:423)
+2021/09/08 16:33:24 id:1,term:423,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:24 id:1,term:423,tp:1,starting an election 
+2021/09/08 16:33:24 id:1,term:424,tp:1,sending vote request to 2
+2021/09/08 16:33:24 id:1,term:424,tp:1,sending vote request to 0
+2021/09/08 16:33:24 id:2,term:423,tp:0,receive vote request from 1(term:424)
+2021/09/08 16:33:24 id:1,term:424,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:25 id:1,term:424,tp:1,starting an election 
+2021/09/08 16:33:25 id:1,term:425,tp:1,sending vote request to 2
+2021/09/08 16:33:25 id:1,term:425,tp:1,sending vote request to 0
+2021/09/08 16:33:25 id:2,term:424,tp:0,receive vote request from 1(term:425)
+2021/09/08 16:33:25 id:1,term:425,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:26 id:1,term:425,tp:1,starting an election 
+2021/09/08 16:33:26 id:1,term:426,tp:1,sending vote request to 2
+2021/09/08 16:33:26 id:1,term:426,tp:1,sending vote request to 0
+2021/09/08 16:33:26 id:2,term:425,tp:0,receive vote request from 1(term:426)
+2021/09/08 16:33:26 id:1,term:426,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:26 id:1,term:426,tp:1,starting an election 
+2021/09/08 16:33:26 id:1,term:427,tp:1,sending vote request to 2
+2021/09/08 16:33:26 id:1,term:427,tp:1,sending vote request to 0
+2021/09/08 16:33:26 id:2,term:426,tp:0,receive vote request from 1(term:427)
+2021/09/08 16:33:26 id:1,term:427,tp:1,sending vote request to  2,true,grand:true
+2021/09/08 16:33:27 id:1,term:427,tp:1,starting an election 
+2021/09/08 16:33:27 id:1,term:428,tp:1,sending vote request to 2
+2021/09/08 16:33:27 id:1,term:428,tp:1,sending vote request to 0
+2021/09/08 16:33:27 id:2,term:427,tp:0,receive vote request from 1(term:428)
+2021/09/08 16:33:27 id:1,term:428,tp:1,sending vote request to  2,true,grand:true
+signal: interrupt
+FAIL	_/home/han/study/6.824/6.824/src/raft	220.272s

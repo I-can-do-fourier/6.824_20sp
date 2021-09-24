@@ -1,0 +1,860 @@
+Test (2A): initial election ...
+2021/09/08 21:50:52 id:1,term:0,tp:0,starting an election 
+2021/09/08 21:50:52 id:1,term:1,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:52 id:1,term:1,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:52 id:1,term:1,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:52 id:2,term:0,tp:0,receive vote request from 1(term:1)
+2021/09/08 21:50:52 id:0,term:0,tp:0,receive vote request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:1,sending vote request to  2,true,grand:true,round:1
+2021/09/08 21:50:52 id:1,term:1,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/08 21:50:52 id:1,term:1,tp:2,release lock
+2021/09/08 21:50:52 id:1,term:1,tp:2,become a leader
+2021/09/08 21:50:52 id:1,term:1,tp:2,Append
+2021/09/08 21:50:52 id:1,term:1,tp:2,start append
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:52 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,start append
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:52 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,start append
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:52 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,start append
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:52 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,start append
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:52 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:52 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:53 id:1,term:1,tp:2,start append
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:53 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:53 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:1,term:1,tp:2,start append
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:53 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:53 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:53 id:0,term:1,tp:0,starting an election 
+2021/09/08 21:50:53 id:0,term:2,tp:1,finish sending a vote request a round,vote1,round:1//not
+2021/09/08 21:50:53 id:0,term:2,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:53 id:0,term:2,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:53 id:1,term:1,tp:2,receive vote request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:1,sending vote request to  1,true,grand:true,round:1
+2021/09/08 21:50:53 id:1,term:2,tp:0,start append
+2021/09/08 21:50:53 id:1,term:2,tp:0,give up append
+2021/09/08 21:50:53 id:0,term:2,tp:2,release lock
+2021/09/08 21:50:53 id:0,term:2,tp:2,become a leader
+2021/09/08 21:50:53 id:0,term:2,tp:2,Append
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:2,term:1,tp:0,starting an election 
+2021/09/08 21:50:53 id:2,term:2,tp:1,receive vote request from 0(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:1,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:0,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:53 id:2,term:2,tp:0,sending vote request to 1,round:1
+2021/09/08 21:50:53 id:2,term:2,tp:0,sending vote request to 0,round:1
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending vote request to  2,true,grand:false,round:1
+2021/09/08 21:50:53 id:0,term:2,tp:2,receive vote request from 2(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:0,sending vote request to  0,true,grand:false,round:1
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive vote request from 2(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:0,sending vote request to  1,true,grand:false,round:1
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:2,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:2,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:1,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:2,term:2,tp:0,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,start append
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1
+2021/09/08 21:50:53 id:2,term:2,tp:0,starting an election 
+2021/09/08 21:50:53 id:2,term:3,tp:1,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:2,term:3,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:53 id:1,term:2,tp:0,starting an election 
+2021/09/08 21:50:53 id:1,term:3,tp:1,receive append request from 0(term:2)
+2021/09/08 21:50:53 id:1,term:3,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:2,tp:2,sending append request to  1,true
+2021/09/08 21:50:53 id:1,term:3,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:53 id:1,term:3,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:53 id:0,term:3,tp:0,receive vote request from 1(term:3)
+2021/09/08 21:50:53 id:2,term:3,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:53 id:1,term:3,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/08 21:50:53 id:2,term:3,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:53 id:0,term:3,tp:0,receive vote request from 2(term:3)
+2021/09/08 21:50:53 id:2,term:3,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/08 21:50:53 id:2,term:3,tp:1,receive vote request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:1,receive vote request from 2(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,release lock
+2021/09/08 21:50:53 id:1,term:3,tp:2,become a leader
+2021/09/08 21:50:53 id:1,term:3,tp:2,Append
+2021/09/08 21:50:53 id:1,term:3,tp:2,start append
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending vote request to  2,true,grand:false,round:1
+2021/09/08 21:50:53 id:2,term:3,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0
+2021/09/08 21:50:53 id:0,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0,true
+2021/09/08 21:50:53 id:2,term:3,tp:1,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:3,tp:0,start append
+2021/09/08 21:50:53 id:0,term:3,tp:0,give up append
+2021/09/08 21:50:53 id:1,term:3,tp:2,start append
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0
+2021/09/08 21:50:53 id:2,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0,true
+2021/09/08 21:50:53 id:1,term:3,tp:2,start append
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0
+2021/09/08 21:50:53 id:2,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:53 id:0,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:53 id:1,term:3,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:3,tp:2,start append
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:2,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:54 id:0,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:3,tp:2,start append
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:0,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:2,term:3,tp:0,receive append request from 1(term:3)
+2021/09/08 21:50:54 id:1,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:54 id:2,term:3,tp:0,starting an election 
+2021/09/08 21:50:54 id:2,term:4,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:54 id:2,term:4,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:54 id:2,term:4,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:54 id:1,term:3,tp:2,receive vote request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:1,sending vote request to  1,true,grand:true,round:1
+2021/09/08 21:50:54 id:0,term:3,tp:0,receive vote request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/08 21:50:54 id:2,term:4,tp:2,release lock
+2021/09/08 21:50:54 id:2,term:4,tp:2,become a leader
+2021/09/08 21:50:54 id:2,term:4,tp:2,Append
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:1,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:4,tp:0,start append
+2021/09/08 21:50:54 id:1,term:4,tp:0,give up append
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:1,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:2,term:4,tp:2,start append
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:54 id:0,term:4,tp:0,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:54 id:1,term:4,tp:0,starting an election 
+2021/09/08 21:50:54 id:1,term:5,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:54 id:1,term:5,tp:1,receive append request from 2(term:4)
+2021/09/08 21:50:54 id:1,term:5,tp:1,sending vote request to 0,round:1
+--- FAIL: TestInitialElection2A (2.65s)
+    config.go:343: servers disagree on term
+2021/09/08 21:50:54 id:1,term:5,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:54 id:2,term:4,tp:2,sending append request to  1,true
+2021/09/08 21:50:54 id:1,term:5,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:54 id:1,term:5,tp:1,sending vote request to  2,false,grand:false,round:1
+Test (2A): election after network failure ...
+2021/09/08 21:50:54 id:0,term:4,tp:0,starting an election 
+2021/09/08 21:50:54 id:0,term:5,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:54 id:0,term:5,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:54 id:0,term:5,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:54 id:0,term:5,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:54 id:0,term:5,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:54 id:2,term:5,tp:0,start append
+2021/09/08 21:50:54 id:2,term:5,tp:0,give up append
+2021/09/08 21:50:55 id:0,term:5,tp:1,starting an election 
+2021/09/08 21:50:55 id:0,term:6,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:0,term:6,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:55 id:0,term:6,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:0,tp:0,starting an election 
+2021/09/08 21:50:55 id:2,term:1,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:0,term:6,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:55 id:0,term:6,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:1,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:55 id:2,term:1,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:55 id:0,term:0,tp:0,receive vote request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/08 21:50:55 id:1,term:0,tp:0,receive vote request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:1,sending vote request to  1,true,grand:true,round:1
+2021/09/08 21:50:55 id:2,term:5,tp:0,starting an election 
+2021/09/08 21:50:55 id:2,term:6,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:2,term:6,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:55 id:2,term:6,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:6,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:55 id:2,term:6,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:1,tp:2,release lock
+2021/09/08 21:50:55 id:2,term:1,tp:2,become a leader
+2021/09/08 21:50:55 id:2,term:1,tp:2,Append
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:1,term:5,tp:1,starting an election 
+2021/09/08 21:50:55 id:1,term:6,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:1,term:6,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:55 id:1,term:6,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:55 id:1,term:6,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:55 id:1,term:6,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:55 id:0,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:55 id:1,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1,true
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:1,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1,true
+2021/09/08 21:50:55 id:0,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:1,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1,true
+2021/09/08 21:50:55 id:0,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:0,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0,true
+2021/09/08 21:50:55 id:1,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1,true
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:1,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1,true
+2021/09/08 21:50:55 id:0,term:1,tp:0,receive append request from 2(term:1)
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0,false
+2021/09/08 21:50:55 id:1,term:6,tp:1,starting an election 
+2021/09/08 21:50:55 id:1,term:7,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:1,term:7,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:55 id:1,term:7,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:55 id:1,term:7,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:55 id:1,term:7,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:1,tp:2,start append
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:55 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:55 id:0,term:6,tp:1,starting an election 
+2021/09/08 21:50:55 id:0,term:7,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:0,term:7,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:55 id:0,term:7,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:55 id:0,term:7,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:55 id:0,term:7,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:6,tp:1,starting an election 
+2021/09/08 21:50:55 id:2,term:7,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:55 id:2,term:7,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:55 id:2,term:7,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:55 id:2,term:7,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:55 id:2,term:7,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:0,term:1,tp:0,starting an election 
+2021/09/08 21:50:56 id:0,term:2,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:56 id:0,term:2,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:56 id:0,term:2,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:1,term:1,tp:0,starting an election 
+2021/09/08 21:50:56 id:1,term:2,tp:1,receive vote request from 0(term:2)
+2021/09/08 21:50:56 id:0,term:2,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/08 21:50:56 id:1,term:2,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:56 id:1,term:2,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:56 id:1,term:2,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:56 id:0,term:2,tp:1,receive vote request from 1(term:2)
+2021/09/08 21:50:56 id:1,term:2,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:1,term:7,tp:1,starting an election 
+2021/09/08 21:50:56 id:1,term:8,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:56 id:1,term:8,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:56 id:1,term:8,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:56 id:1,term:8,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:56 id:1,term:8,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,start append
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:56 id:2,term:1,tp:2,sending append request to  0,false
+2021/09/08 21:50:56 id:0,term:7,tp:1,starting an election 
+2021/09/08 21:50:56 id:0,term:8,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:0,term:8,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:57 id:0,term:8,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:57 id:0,term:8,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:57 id:0,term:8,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:57 id:2,term:1,tp:2,start append
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:2,term:7,tp:1,starting an election 
+2021/09/08 21:50:57 id:2,term:8,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:2,term:8,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:57 id:2,term:8,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:57 id:2,term:8,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:57 id:2,term:8,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1,false
+2021/09/08 21:50:57 id:2,term:1,tp:2,start append
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:0,term:2,tp:1,starting an election 
+2021/09/08 21:50:57 id:0,term:3,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:0,term:3,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:57 id:0,term:3,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:57 id:2,term:1,tp:2,start append
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:1,term:2,tp:1,receive vote request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:1,sending vote request to  1,true,grand:true,round:1
+2021/09/08 21:50:57 id:0,term:3,tp:2,release lock
+2021/09/08 21:50:57 id:0,term:3,tp:2,become a leader
+2021/09/08 21:50:57 id:0,term:3,tp:2,Append
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,start append
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:1,term:8,tp:1,starting an election 
+2021/09/08 21:50:57 id:1,term:9,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:1,term:9,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:57 id:1,term:9,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:57 id:1,term:9,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:57 id:1,term:9,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:2,term:1,tp:2,start append
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:1,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:2,term:1,tp:2,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  0,false
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:2,term:3,tp:0,start append
+2021/09/08 21:50:57 id:2,term:3,tp:0,give up append
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  1,false
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  0,false
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:2,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:57 id:0,term:8,tp:1,starting an election 
+2021/09/08 21:50:57 id:0,term:9,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:0,term:9,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:57 id:0,term:9,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:57 id:0,term:9,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:57 id:0,term:9,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:57 id:2,term:8,tp:1,starting an election 
+2021/09/08 21:50:57 id:2,term:9,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:2,term:9,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:57 id:2,term:9,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:57 id:2,term:9,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:57 id:2,term:9,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:57 id:0,term:3,tp:2,start append
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  0,false
+2021/09/08 21:50:57 id:2,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  2,true
+2021/09/08 21:50:57 id:1,term:3,tp:0,receive append request from 0(term:3)
+2021/09/08 21:50:57 id:0,term:3,tp:2,sending append request to  1,true
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  0,false
+2021/09/08 21:50:57 id:1,term:3,tp:0,starting an election 
+2021/09/08 21:50:57 id:1,term:4,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:57 id:1,term:4,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:57 id:0,term:3,tp:2,receive vote request from 1(term:4)
+2021/09/08 21:50:57 id:1,term:4,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/08 21:50:57 id:1,term:4,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:57 id:2,term:3,tp:0,sending append request to  0,false
+2021/09/08 21:50:57 id:0,term:4,tp:0,start append
+2021/09/08 21:50:57 id:0,term:4,tp:0,give up append
+2021/09/08 21:50:57 id:2,term:3,tp:0,receive vote request from 1(term:4)
+2021/09/08 21:50:57 id:1,term:4,tp:1,sending vote request to  2,true,grand:true,round:1
+2021/09/08 21:50:57 id:1,term:4,tp:2,release lock
+2021/09/08 21:50:57 id:1,term:4,tp:2,become a leader
+2021/09/08 21:50:57 id:1,term:4,tp:2,Append
+2021/09/08 21:50:57 id:1,term:4,tp:2,start append
+2021/09/08 21:50:57 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:57 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:57 id:2,term:4,tp:0,receive append request from 1(term:4)
+2021/09/08 21:50:57 id:1,term:4,tp:2,sending append request to  2,true
+2021/09/08 21:50:57 id:0,term:4,tp:0,receive append request from 1(term:4)
+2021/09/08 21:50:57 id:1,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:50:58 id:1,term:9,tp:1,starting an election 
+2021/09/08 21:50:58 id:1,term:10,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:1,term:10,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:58 id:1,term:10,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:10,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:58 id:1,term:10,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:2,term:9,tp:1,starting an election 
+2021/09/08 21:50:58 id:2,term:10,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:2,term:10,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:58 id:2,term:10,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:58 id:2,term:10,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:58 id:2,term:10,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:0,term:9,tp:1,starting an election 
+2021/09/08 21:50:58 id:0,term:10,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:0,term:10,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:58 id:0,term:10,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:58 id:0,term:10,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:58 id:0,term:10,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:2,term:4,tp:0,sending append request to  0,false
+2021/09/08 21:50:58 id:0,term:4,tp:0,starting an election 
+2021/09/08 21:50:58 id:0,term:5,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:0,term:5,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:58 id:0,term:5,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:1,term:10,tp:1,starting an election 
+2021/09/08 21:50:58 id:1,term:11,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:1,term:11,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:58 id:1,term:11,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:11,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:58 id:1,term:11,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:2,term:4,tp:0,starting an election 
+2021/09/08 21:50:58 id:2,term:5,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:58 id:2,term:5,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:58 id:2,term:5,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:2,term:5,tp:1,sending append request to  0,false
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:58 id:2,term:5,tp:1,sending append request to  1,false
+2021/09/08 21:50:58 id:1,term:4,tp:2,start append
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:58 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:2,term:10,tp:1,starting an election 
+2021/09/08 21:50:59 id:2,term:11,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:59 id:2,term:5,tp:1,sending append request to  1,false
+2021/09/08 21:50:59 id:2,term:11,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:59 id:2,term:11,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:59 id:2,term:11,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:59 id:2,term:11,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:2,term:5,tp:1,sending append request to  1,false
+2021/09/08 21:50:59 id:0,term:10,tp:1,starting an election 
+2021/09/08 21:50:59 id:0,term:11,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:59 id:0,term:11,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:59 id:0,term:11,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:59 id:0,term:11,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:59 id:0,term:11,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:2,term:5,tp:1,sending append request to  1,false
+2021/09/08 21:50:59 id:1,term:11,tp:1,starting an election 
+2021/09/08 21:50:59 id:1,term:12,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:59 id:2,term:5,tp:1,sending append request to  0,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:12,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:59 id:1,term:12,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:50:59 id:1,term:12,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:59 id:1,term:12,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:2,term:5,tp:1,starting an election 
+2021/09/08 21:50:59 id:2,term:6,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending vote request to 0,round:1
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:59 id:0,term:5,tp:1,starting an election 
+2021/09/08 21:50:59 id:0,term:6,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:50:59 id:0,term:6,tp:1,sending vote request to 1,round:1
+2021/09/08 21:50:59 id:0,term:6,tp:1,sending vote request to 2,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending append request to  1,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:50:59 id:1,term:4,tp:2,start append
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:50:59 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending append request to  1,false
+2021/09/08 21:50:59 id:2,term:6,tp:1,sending append request to  1,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:2,term:11,tp:1,starting an election 
+2021/09/08 21:51:00 id:2,term:12,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:2,term:12,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:00 id:2,term:12,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:00 id:2,term:12,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:00 id:2,term:12,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:00 id:0,term:6,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:2,term:6,tp:1,sending append request to  1,false
+2021/09/08 21:51:00 id:0,term:11,tp:1,starting an election 
+2021/09/08 21:51:00 id:0,term:12,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:0,term:12,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:00 id:0,term:12,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:00 id:0,term:12,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:00 id:0,term:12,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:2,term:6,tp:1,sending append request to  1,false
+2021/09/08 21:51:00 id:0,term:6,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:12,tp:1,starting an election 
+2021/09/08 21:51:00 id:1,term:13,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:13,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:00 id:1,term:13,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:13,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:00 id:1,term:13,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:00 id:2,term:6,tp:1,starting an election 
+2021/09/08 21:51:00 id:2,term:7,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:00 id:2,term:7,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:00 id:2,term:7,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:0,term:6,tp:1,starting an election 
+2021/09/08 21:51:00 id:0,term:7,tp:1,receive vote request from 2(term:7)
+2021/09/08 21:51:00 id:2,term:7,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/08 21:51:00 id:0,term:7,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:00 id:0,term:7,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:00 id:0,term:7,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:00 id:2,term:7,tp:1,receive vote request from 0(term:7)
+2021/09/08 21:51:00 id:0,term:7,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:1,term:4,tp:2,start append
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:00 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:00 id:0,term:7,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:2,term:12,tp:1,starting an election 
+2021/09/08 21:51:01 id:2,term:13,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:01 id:2,term:13,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:01 id:2,term:13,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:01 id:2,term:13,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:01 id:2,term:13,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:2,term:7,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:13,tp:1,starting an election 
+2021/09/08 21:51:01 id:1,term:14,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:01 id:1,term:14,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:01 id:1,term:14,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:01 id:1,term:14,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:01 id:1,term:14,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:01 id:2,term:7,tp:1,sending append request to  1,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:01 id:0,term:7,tp:1,starting an election 
+2021/09/08 21:51:01 id:0,term:8,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:01 id:0,term:8,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:01 id:0,term:8,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:01 id:0,term:8,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:01 id:0,term:12,tp:1,starting an election 
+2021/09/08 21:51:01 id:0,term:13,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:01 id:2,term:7,tp:1,sending append request to  1,false
+2021/09/08 21:51:01 id:0,term:13,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:01 id:0,term:13,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:01 id:0,term:13,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:01 id:0,term:13,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:01 id:2,term:7,tp:1,receive vote request from 0(term:8)
+2021/09/08 21:51:01 id:0,term:8,tp:1,sending vote request to  2,true,grand:true,round:1
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:2,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:01 id:0,term:8,tp:2,release lock
+2021/09/08 21:51:01 id:0,term:8,tp:2,become a leader
+2021/09/08 21:51:01 id:0,term:8,tp:2,Append
+2021/09/08 21:51:01 id:0,term:8,tp:2,start append
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:01 id:2,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2,false
+2021/09/08 21:51:01 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,false
+2021/09/08 21:51:01 id:2,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  1,false
+2021/09/08 21:51:01 id:1,term:4,tp:2,start append
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0
+2021/09/08 21:51:01 id:0,term:8,tp:2,receive append request from 1(term:4)
+2021/09/08 21:51:01 id:1,term:4,tp:2,sending append request to  0,true
+2021/09/08 21:51:01 id:2,term:8,tp:0,receive append request from 1(term:4)
+2021/09/08 21:51:01 id:1,term:8,tp:0,sending append request to  2,true
+2021/09/08 21:51:01 id:0,term:8,tp:2,start append
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:01 id:1,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  1,true
+2021/09/08 21:51:01 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:01 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:01 id:1,term:8,tp:0,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:8,tp:0,sending append request to  2,false
+2021/09/08 21:51:01 id:1,term:8,tp:0,start append
+2021/09/08 21:51:01 id:1,term:8,tp:0,give up append
+2021/09/08 21:51:02 id:0,term:8,tp:2,start append
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:02 id:1,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1,true
+2021/09/08 21:51:02 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:02 id:1,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:02 id:0,term:8,tp:2,start append
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:02 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:02 id:1,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1,true
+2021/09/08 21:51:02 id:1,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:02 id:2,term:8,tp:0,sending append request to  1,false
+2021/09/08 21:51:02 id:1,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:02 id:0,term:8,tp:2,start append
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:02 id:1,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1,true
+2021/09/08 21:51:02 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:02 id:0,term:13,tp:1,starting an election 
+2021/09/08 21:51:02 id:0,term:14,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:02 id:0,term:14,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:02 id:0,term:14,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:02 id:2,term:8,tp:0,sending append request to  0,false
+2021/09/08 21:51:02 id:0,term:14,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:02 id:0,term:14,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:02 id:1,term:14,tp:1,starting an election 
+2021/09/08 21:51:02 id:1,term:15,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:02 id:1,term:15,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:02 id:1,term:15,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:02 id:1,term:15,tp:1,sending vote request to 2,round:1
+2021/09/08 21:51:02 id:1,term:15,tp:1,sending vote request to  2,false,grand:false,round:1
+2021/09/08 21:51:02 id:2,term:13,tp:1,starting an election 
+2021/09/08 21:51:02 id:2,term:14,tp:1,finish sending a vote request a round,vote1,round:1
+2021/09/08 21:51:02 id:2,term:14,tp:1,sending vote request to 0,round:1
+2021/09/08 21:51:02 id:2,term:14,tp:1,sending vote request to  0,false,grand:false,round:1
+2021/09/08 21:51:02 id:2,term:14,tp:1,sending vote request to 1,round:1
+2021/09/08 21:51:02 id:2,term:14,tp:1,sending vote request to  1,false,grand:false,round:1
+2021/09/08 21:51:02 id:0,term:8,tp:2,start append
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1
+2021/09/08 21:51:02 id:2,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2,true
+2021/09/08 21:51:02 id:1,term:8,tp:0,receive append request from 0(term:8)
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  1,true
+2021/09/08 21:51:02 id:0,term:8,tp:2,sending append request to  2,false
+2021/09/08 21:51:02 id:1,term:8,tp:0,sending append request to  0,false
+  ... Passed --   7.6  3  168   32260    0
+FAIL
+exit status 1
+FAIL	_/home/han/study/6.824/6.824/src/raft	10.256s

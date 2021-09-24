@@ -8,12 +8,15 @@ package raft
 // test with the original before submitting.
 //
 
-import "testing"
-import "fmt"
-import "time"
-import "math/rand"
-import "sync/atomic"
-import "sync"
+import (
+	"fmt"
+	"log"
+	"math/rand"
+	"sync"
+	"sync/atomic"
+	"testing"
+	"time"
+)
 
 // The tester generously allows solutions to complete elections in one second
 // (much more than the paper's range of timeouts).
@@ -127,6 +130,7 @@ func TestRPCBytes2B(t *testing.T) {
 	var sent int64 = 0
 	for index := 2; index < iters+2; index++ {
 		cmd := randstring(5000)
+		log.Println("put one")
 		xindex := cfg.one(cmd, servers, false)
 		if xindex != index {
 			t.Fatalf("got index %v but expected %v", xindex, index)
@@ -356,11 +360,13 @@ func TestRejoin2B(t *testing.T) {
 	cfg.disconnect(leader2)
 
 	// old leader connected again
+	log.Println("restart1")
 	cfg.connect(leader1)
 
 	cfg.one(104, 2, true)
 
 	// all together now
+	log.Println("restart2")
 	cfg.connect(leader2)
 
 	cfg.one(105, servers, true)
@@ -394,6 +400,8 @@ func TestBackup2B(t *testing.T) {
 	cfg.disconnect((leader1 + 1) % servers)
 
 	// allow other partition to recover
+
+	log.Println("aaa1")
 	cfg.connect((leader1 + 2) % servers)
 	cfg.connect((leader1 + 3) % servers)
 	cfg.connect((leader1 + 4) % servers)
@@ -403,6 +411,8 @@ func TestBackup2B(t *testing.T) {
 		cfg.one(rand.Int(), 3, true)
 	}
 
+	log.Println("aaa2")
+
 	// now another partitioned leader and one follower
 	leader2 := cfg.checkOneLeader()
 	other := (leader1 + 2) % servers
@@ -411,12 +421,16 @@ func TestBackup2B(t *testing.T) {
 	}
 	cfg.disconnect(other)
 
+	log.Println("aaa3")
+
 	// lots more commands that won't commit
 	for i := 0; i < 50; i++ {
 		cfg.rafts[leader2].Start(rand.Int())
 	}
 
 	time.Sleep(RaftElectionTimeout / 2)
+
+	log.Println("aaa4")
 
 	// bring original leader back to life,
 	for i := 0; i < servers; i++ {
@@ -426,11 +440,13 @@ func TestBackup2B(t *testing.T) {
 	cfg.connect((leader1 + 1) % servers)
 	cfg.connect(other)
 
+	log.Println("aaa5")
 	// lots of successful commands to new group.
 	for i := 0; i < 50; i++ {
 		cfg.one(rand.Int(), 3, true)
 	}
 
+	log.Println("aaa6")
 	// now everyone
 	for i := 0; i < servers; i++ {
 		cfg.connect(i)
@@ -691,6 +707,7 @@ func TestFigure82C(t *testing.T) {
 
 	cfg.one(rand.Int(), 1, true)
 
+	log.Printf("step 1")
 	nup := servers
 	for iters := 0; iters < 1000; iters++ {
 		leader := -1
@@ -702,6 +719,8 @@ func TestFigure82C(t *testing.T) {
 				}
 			}
 		}
+
+		log.Printf("step 11")
 
 		if (rand.Int() % 1000) < 100 {
 			ms := rand.Int63() % (int64(RaftElectionTimeout/time.Millisecond) / 2)
@@ -726,12 +745,16 @@ func TestFigure82C(t *testing.T) {
 		}
 	}
 
+	log.Printf("step 2")
+
 	for i := 0; i < servers; i++ {
 		if cfg.rafts[i] == nil {
 			cfg.start1(i)
 			cfg.connect(i)
 		}
 	}
+
+	log.Printf("step 3")
 
 	cfg.one(rand.Int(), servers, true)
 
@@ -776,8 +799,11 @@ func TestFigure8Unreliable2C(t *testing.T) {
 
 	cfg.one(rand.Int()%10000, 1, true)
 
+	log.Printf("step 1")
 	nup := servers
 	for iters := 0; iters < 1000; iters++ {
+
+		log.Printf("step 11")
 		if iters == 200 {
 			cfg.setlongreordering(true)
 		}
@@ -811,11 +837,15 @@ func TestFigure8Unreliable2C(t *testing.T) {
 		}
 	}
 
+	log.Printf("step 2")
+
 	for i := 0; i < servers; i++ {
 		if cfg.connected[i] == false {
 			cfg.connect(i)
 		}
 	}
+
+	log.Printf("step 3")
 
 	cfg.one(rand.Int()%10000, servers, true)
 

@@ -1,0 +1,203 @@
+Test (2A): initial election ...
+2021/09/09 23:36:18 id:1,term:0,tp:0,starting an election 
+2021/09/09 23:36:18 id:1,term:1,tp:1,sending vote request to 0,round:1
+2021/09/09 23:36:18 id:1,term:1,tp:1,sending vote request to 2,round:1
+2021/09/09 23:36:18 id:0,term:0,tp:0,receive vote request from 1(term:1)
+2021/09/09 23:36:18 id:2,term:0,tp:0,receive vote request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:1,sending vote request to  2,true,grand:true,round:1
+2021/09/09 23:36:18 id:1,term:1,tp:1,sending vote request to  0,true,grand:true,round:1
+2021/09/09 23:36:18 id:1,term:1,tp:2,release lock
+2021/09/09 23:36:18 id:1,term:1,tp:2,become a leader
+2021/09/09 23:36:18 id:1,term:1,tp:2,Append
+2021/09/09 23:36:18 id:1,term:1,tp:2,start append
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:18 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,start append
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:18 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:18 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,start append
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:18 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,start append
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:18 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:18 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,start append
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:19 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:19 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,start append
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:20 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:20 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,start append
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:21 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,start append
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:21 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,start append
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0
+2021/09/09 23:36:21 id:2,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:0,term:1,tp:0,receive append request from 1(term:1)
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  2,true
+2021/09/09 23:36:21 id:1,term:1,tp:2,sending append request to  0,true
+  ... Passed --   3.2  3   56   13816    0
+PASS
+ok  	_/home/han/study/6.824/6.824/src/raft	3.158s

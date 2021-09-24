@@ -8,3 +8,13 @@
 因为go func创建的子线程可能不会被立即执行，而是先创建多个子线程之后
 再开始执行，所以item的值可能会改变。而
 go func(arg T){}()的arg会在func创建时立刻被传递，不会被覆盖。
+
+6. 有一种情况：如果leader能成功发送heartbeat,但是leader
+无法接收到followers的reply，那么整个系统都无法make progress.
+一种解决方法：设置双向heartbeat，如果leader接收不到followers
+的信息，leader退休。使得系统能Make progess.
+
+7.如果Majority的server死了，那么系统无法make progress
+8.timeout的范围要大一些，使得两个先发生timeout的server可以完成一轮选举。
+9.为什么不将具有最长log的peer选为leader
+10. for i in {1..50}; do go test -run TestPersist12C;done >outC.txt   执行多次test

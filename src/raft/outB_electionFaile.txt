@@ -1,0 +1,948 @@
+Test (2B): basic agreement ...
+2021/09/14 23:27:59 cmd is <nil>,false
+2021/09/14 23:27:59 cmd is <nil>,false
+2021/09/14 23:27:59 cmd is <nil>,false
+2021/09/14 23:27:59 id:1,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:2,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:0,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:1,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:2,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:0,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:1,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:2,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:0,term:0,tp:0,reject the client
+2021/09/14 23:27:59 id:1,term:0,tp:0,starting an election 
+2021/09/14 23:27:59 id:1,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:2,term:0,tp:0,starting an election 
+2021/09/14 23:27:59 id:1,term:1,tp:1,sending vote request to 0,round:1
+2021/09/14 23:27:59 id:2,term:1,tp:1,sending vote request to 0,round:1
+2021/09/14 23:27:59 id:1,term:1,tp:1,sending vote request to 2,round:1
+2021/09/14 23:27:59 id:0,term:0,tp:0,starting an election 
+2021/09/14 23:27:59 id:0,term:1,tp:1,receive vote request from 1(term:1)
+2021/09/14 23:27:59 id:1,term:1,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:27:59 id:0,term:1,tp:1,sending vote request to 1,round:1
+2021/09/14 23:27:59 id:0,term:1,tp:1,sending vote request to 2,round:1
+2021/09/14 23:27:59 id:2,term:1,tp:1,sending vote request to 1,round:1
+2021/09/14 23:27:59 id:1,term:1,tp:1,receive vote request from 0(term:1)
+2021/09/14 23:27:59 id:1,term:1,tp:1,receive vote request from 2(term:1)
+2021/09/14 23:27:59 id:2,term:1,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:27:59 id:2,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:2,term:1,tp:1,receive vote request from 1(term:1)
+2021/09/14 23:27:59 id:2,term:1,tp:1,receive vote request from 0(term:1)
+2021/09/14 23:27:59 id:0,term:1,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:27:59 id:1,term:1,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:27:59 id:0,term:1,tp:1,receive vote request from 2(term:1)
+2021/09/14 23:27:59 id:0,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:0,term:1,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:27:59 id:2,term:1,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:27:59 id:1,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:2,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:0,term:1,tp:1,reject the client
+2021/09/14 23:27:59 id:1,term:1,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:1,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:1,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:1,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:1,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:1,tp:1,starting an election 
+2021/09/14 23:28:00 id:0,term:1,tp:1,starting an election 
+2021/09/14 23:28:00 id:0,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:1,tp:1,starting an election 
+2021/09/14 23:28:00 id:1,term:2,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:2,term:2,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:0,term:2,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:0,term:2,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:1,term:2,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:2,term:2,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:2,term:2,tp:1,receive vote request from 0(term:2)
+2021/09/14 23:28:00 id:2,term:2,tp:1,receive vote request from 1(term:2)
+2021/09/14 23:28:00 id:1,term:2,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:2,tp:1,receive vote request from 0(term:2)
+2021/09/14 23:28:00 id:1,term:2,tp:1,receive vote request from 2(term:2)
+2021/09/14 23:28:00 id:0,term:2,tp:1,receive vote request from 1(term:2)
+2021/09/14 23:28:00 id:0,term:2,tp:1,receive vote request from 2(term:2)
+2021/09/14 23:28:00 id:2,term:2,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:0,term:2,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:0,term:2,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:2,term:2,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:2,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:2,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:2,tp:1,starting an election 
+2021/09/14 23:28:00 id:0,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:2,tp:1,starting an election 
+2021/09/14 23:28:00 id:0,term:3,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,receive vote request from 0(term:3)
+2021/09/14 23:28:00 id:0,term:3,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:2,term:2,tp:1,starting an election 
+2021/09/14 23:28:00 id:1,term:3,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:2,term:3,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:0,term:3,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:2,term:3,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:0,term:3,tp:1,receive vote request from 1(term:3)
+2021/09/14 23:28:00 id:0,term:3,tp:1,receive vote request from 2(term:3)
+2021/09/14 23:28:00 id:2,term:3,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,receive vote request from 2(term:3)
+2021/09/14 23:28:00 id:2,term:3,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:2,term:3,tp:1,receive vote request from 0(term:3)
+2021/09/14 23:28:00 id:2,term:3,tp:1,receive vote request from 1(term:3)
+2021/09/14 23:28:00 id:0,term:3,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:3,tp:1,starting an election 
+2021/09/14 23:28:00 id:2,term:3,tp:1,starting an election 
+2021/09/14 23:28:00 id:0,term:3,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:3,tp:1,starting an election 
+2021/09/14 23:28:00 id:2,term:4,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:0,term:4,tp:1,receive vote request from 2(term:4)
+2021/09/14 23:28:00 id:2,term:4,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:4,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:00 id:0,term:4,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:2,term:4,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:00 id:1,term:4,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:0,term:4,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:00 id:1,term:4,tp:1,receive vote request from 0(term:4)
+2021/09/14 23:28:00 id:1,term:4,tp:1,receive vote request from 2(term:4)
+2021/09/14 23:28:00 id:2,term:4,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:0,term:4,tp:1,receive vote request from 1(term:4)
+2021/09/14 23:28:00 id:1,term:4,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:00 id:2,term:4,tp:1,receive vote request from 1(term:4)
+2021/09/14 23:28:00 id:2,term:4,tp:1,receive vote request from 0(term:4)
+2021/09/14 23:28:00 id:0,term:4,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:4,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:0,term:4,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:00 id:1,term:4,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:4,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:4,tp:1,reject the client
+2021/09/14 23:28:00 id:1,term:4,tp:1,reject the client
+2021/09/14 23:28:00 id:2,term:4,tp:1,reject the client
+2021/09/14 23:28:00 id:0,term:4,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:4,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:4,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:4,tp:1,starting an election 
+2021/09/14 23:28:01 id:0,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:4,tp:1,starting an election 
+2021/09/14 23:28:01 id:0,term:5,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:2,term:4,tp:1,starting an election 
+2021/09/14 23:28:01 id:1,term:5,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:2,term:5,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:1,term:5,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:0,term:5,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:2,term:5,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:1,term:5,tp:1,receive vote request from 0(term:5)
+2021/09/14 23:28:01 id:1,term:5,tp:1,receive vote request from 2(term:5)
+2021/09/14 23:28:01 id:2,term:5,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:0,term:5,tp:1,receive vote request from 1(term:5)
+2021/09/14 23:28:01 id:0,term:5,tp:1,receive vote request from 2(term:5)
+2021/09/14 23:28:01 id:2,term:5,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:0,term:5,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:5,tp:1,receive vote request from 1(term:5)
+2021/09/14 23:28:01 id:2,term:5,tp:1,receive vote request from 0(term:5)
+2021/09/14 23:28:01 id:1,term:5,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:5,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:0,term:5,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:5,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:5,tp:1,starting an election 
+2021/09/14 23:28:01 id:0,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:5,tp:1,starting an election 
+2021/09/14 23:28:01 id:1,term:5,tp:1,starting an election 
+2021/09/14 23:28:01 id:0,term:6,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:1,term:6,tp:1,receive vote request from 0(term:6)
+2021/09/14 23:28:01 id:0,term:6,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:6,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:1,term:6,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:0,term:6,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:2,term:6,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:1,term:6,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:0,term:6,tp:1,receive vote request from 2(term:6)
+2021/09/14 23:28:01 id:0,term:6,tp:1,receive vote request from 1(term:6)
+2021/09/14 23:28:01 id:1,term:6,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:6,tp:1,receive vote request from 0(term:6)
+2021/09/14 23:28:01 id:2,term:6,tp:1,receive vote request from 1(term:6)
+2021/09/14 23:28:01 id:1,term:6,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:6,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:0,term:6,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:6,tp:1,receive vote request from 2(term:6)
+2021/09/14 23:28:01 id:2,term:6,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:6,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:6,tp:1,starting an election 
+2021/09/14 23:28:01 id:1,term:6,tp:1,starting an election 
+2021/09/14 23:28:01 id:0,term:7,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,receive vote request from 0(term:7)
+2021/09/14 23:28:01 id:0,term:7,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:6,tp:1,starting an election 
+2021/09/14 23:28:01 id:2,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:7,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:2,term:7,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:2,term:7,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:01 id:0,term:7,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,receive vote request from 2(term:7)
+2021/09/14 23:28:01 id:2,term:7,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:01 id:2,term:7,tp:1,receive vote request from 1(term:7)
+2021/09/14 23:28:01 id:2,term:7,tp:1,receive vote request from 0(term:7)
+2021/09/14 23:28:01 id:0,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:7,tp:1,receive vote request from 1(term:7)
+2021/09/14 23:28:01 id:0,term:7,tp:1,receive vote request from 2(term:7)
+2021/09/14 23:28:01 id:2,term:7,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:0,term:7,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:01 id:1,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:1,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:2,term:7,tp:1,reject the client
+2021/09/14 23:28:01 id:0,term:7,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:7,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:7,tp:1,starting an election 
+2021/09/14 23:28:02 id:2,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:7,tp:1,starting an election 
+2021/09/14 23:28:02 id:2,term:8,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:0,term:8,tp:1,receive vote request from 2(term:8)
+2021/09/14 23:28:02 id:2,term:8,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:7,tp:1,starting an election 
+2021/09/14 23:28:02 id:0,term:8,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:1,term:8,tp:1,receive vote request from 0(term:8)
+2021/09/14 23:28:02 id:0,term:8,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:8,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:0,term:8,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:2,term:8,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:1,term:8,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:0,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:8,tp:1,receive vote request from 1(term:8)
+2021/09/14 23:28:02 id:1,term:8,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:2,term:8,tp:1,receive vote request from 0(term:8)
+2021/09/14 23:28:02 id:2,term:8,tp:1,receive vote request from 1(term:8)
+2021/09/14 23:28:02 id:1,term:8,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:0,term:8,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:8,tp:1,receive vote request from 2(term:8)
+2021/09/14 23:28:02 id:2,term:8,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:8,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:8,tp:1,starting an election 
+2021/09/14 23:28:02 id:1,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:8,tp:1,starting an election 
+2021/09/14 23:28:02 id:0,term:8,tp:1,starting an election 
+2021/09/14 23:28:02 id:1,term:9,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:0,term:9,tp:1,receive vote request from 1(term:9)
+2021/09/14 23:28:02 id:1,term:9,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:0,term:9,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:2,term:9,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:0,term:9,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:2,term:9,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:1,term:9,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:1,term:9,tp:1,receive vote request from 0(term:9)
+2021/09/14 23:28:02 id:1,term:9,tp:1,receive vote request from 2(term:9)
+2021/09/14 23:28:02 id:2,term:9,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:2,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:9,tp:1,receive vote request from 0(term:9)
+2021/09/14 23:28:02 id:2,term:9,tp:1,receive vote request from 1(term:9)
+2021/09/14 23:28:02 id:0,term:9,tp:1,receive vote request from 2(term:9)
+2021/09/14 23:28:02 id:2,term:9,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:0,term:9,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:0,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:9,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:9,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:9,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:9,tp:1,starting an election 
+2021/09/14 23:28:02 id:0,term:9,tp:1,starting an election 
+2021/09/14 23:28:02 id:1,term:9,tp:1,starting an election 
+2021/09/14 23:28:02 id:0,term:10,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:1,term:10,tp:1,receive vote request from 0(term:10)
+2021/09/14 23:28:02 id:0,term:10,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:2,term:10,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:1,term:10,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:02 id:2,term:10,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:02 id:0,term:10,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:1,term:10,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:02 id:0,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:10,tp:1,receive vote request from 2(term:10)
+2021/09/14 23:28:02 id:0,term:10,tp:1,receive vote request from 1(term:10)
+2021/09/14 23:28:02 id:1,term:10,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:10,tp:1,receive vote request from 2(term:10)
+2021/09/14 23:28:02 id:2,term:10,tp:1,receive vote request from 0(term:10)
+2021/09/14 23:28:02 id:2,term:10,tp:1,receive vote request from 1(term:10)
+2021/09/14 23:28:02 id:1,term:10,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:2,term:10,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:02 id:2,term:10,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:02 id:0,term:10,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:02 id:1,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:2,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:0,term:10,tp:1,reject the client
+2021/09/14 23:28:02 id:1,term:10,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:10,tp:1,starting an election 
+2021/09/14 23:28:03 id:2,term:10,tp:1,starting an election 
+2021/09/14 23:28:03 id:2,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:10,tp:1,starting an election 
+2021/09/14 23:28:03 id:0,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:11,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:2,term:11,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:1,term:11,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:2,term:11,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:0,term:11,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:1,term:11,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:2,term:11,tp:1,receive vote request from 0(term:11)
+2021/09/14 23:28:03 id:2,term:11,tp:1,receive vote request from 1(term:11)
+2021/09/14 23:28:03 id:1,term:11,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:11,tp:1,receive vote request from 0(term:11)
+2021/09/14 23:28:03 id:1,term:11,tp:1,receive vote request from 2(term:11)
+2021/09/14 23:28:03 id:0,term:11,tp:1,receive vote request from 2(term:11)
+2021/09/14 23:28:03 id:0,term:11,tp:1,receive vote request from 1(term:11)
+2021/09/14 23:28:03 id:1,term:11,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:11,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:11,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:2,term:11,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:2,term:11,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:11,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:11,tp:1,starting an election 
+2021/09/14 23:28:03 id:0,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:11,tp:1,starting an election 
+2021/09/14 23:28:03 id:1,term:11,tp:1,starting an election 
+2021/09/14 23:28:03 id:1,term:12,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:2,term:12,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:0,term:12,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:0,term:12,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:2,term:12,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:1,term:12,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:0,term:12,tp:1,receive vote request from 1(term:12)
+2021/09/14 23:28:03 id:0,term:12,tp:1,receive vote request from 2(term:12)
+2021/09/14 23:28:03 id:2,term:12,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:2,term:12,tp:1,receive vote request from 0(term:12)
+2021/09/14 23:28:03 id:2,term:12,tp:1,receive vote request from 1(term:12)
+2021/09/14 23:28:03 id:1,term:12,tp:1,receive vote request from 0(term:12)
+2021/09/14 23:28:03 id:1,term:12,tp:1,receive vote request from 2(term:12)
+2021/09/14 23:28:03 id:2,term:12,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:12,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:12,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:12,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:12,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:12,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:12,tp:1,starting an election 
+2021/09/14 23:28:03 id:1,term:12,tp:1,starting an election 
+2021/09/14 23:28:03 id:2,term:12,tp:1,starting an election 
+2021/09/14 23:28:03 id:2,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:13,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,receive vote request from 0(term:13)
+2021/09/14 23:28:03 id:0,term:13,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:2,term:13,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:2,term:13,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:0,term:13,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:2,term:13,tp:1,receive vote request from 1(term:13)
+2021/09/14 23:28:03 id:2,term:13,tp:1,receive vote request from 0(term:13)
+2021/09/14 23:28:03 id:0,term:13,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,receive vote request from 2(term:13)
+2021/09/14 23:28:03 id:2,term:13,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:13,tp:1,receive vote request from 1(term:13)
+2021/09/14 23:28:03 id:0,term:13,tp:1,receive vote request from 2(term:13)
+2021/09/14 23:28:03 id:1,term:13,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:2,term:13,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:1,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:13,tp:1,reject the client
+2021/09/14 23:28:03 id:2,term:13,tp:1,starting an election 
+2021/09/14 23:28:03 id:0,term:13,tp:1,starting an election 
+2021/09/14 23:28:03 id:1,term:13,tp:1,starting an election 
+2021/09/14 23:28:03 id:0,term:14,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:2,term:14,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:1,term:14,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:03 id:1,term:14,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:2,term:14,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:03 id:0,term:14,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:03 id:2,term:14,tp:1,receive vote request from 1(term:14)
+2021/09/14 23:28:03 id:2,term:14,tp:1,receive vote request from 0(term:14)
+2021/09/14 23:28:03 id:0,term:14,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:14,tp:1,receive vote request from 0(term:14)
+2021/09/14 23:28:03 id:1,term:14,tp:1,receive vote request from 2(term:14)
+2021/09/14 23:28:03 id:2,term:14,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:14,tp:1,reject the client
+2021/09/14 23:28:03 id:0,term:14,tp:1,receive vote request from 2(term:14)
+2021/09/14 23:28:03 id:0,term:14,tp:1,receive vote request from 1(term:14)
+2021/09/14 23:28:03 id:1,term:14,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:03 id:0,term:14,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:03 id:2,term:14,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:03 id:1,term:14,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:14,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:14,tp:1,starting an election 
+2021/09/14 23:28:04 id:2,term:14,tp:1,starting an election 
+2021/09/14 23:28:04 id:2,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:15,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:0,term:14,tp:1,starting an election 
+2021/09/14 23:28:04 id:0,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:15,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:0,term:15,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:1,term:15,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:2,term:15,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:0,term:15,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:0,term:15,tp:1,receive vote request from 1(term:15)
+2021/09/14 23:28:04 id:0,term:15,tp:1,receive vote request from 2(term:15)
+2021/09/14 23:28:04 id:2,term:15,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:15,tp:1,receive vote request from 1(term:15)
+2021/09/14 23:28:04 id:2,term:15,tp:1,receive vote request from 0(term:15)
+2021/09/14 23:28:04 id:1,term:15,tp:1,receive vote request from 0(term:15)
+2021/09/14 23:28:04 id:1,term:15,tp:1,receive vote request from 2(term:15)
+2021/09/14 23:28:04 id:2,term:15,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:15,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:15,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:0,term:15,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:0,term:15,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:15,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:15,tp:1,starting an election 
+2021/09/14 23:28:04 id:0,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:15,tp:1,starting an election 
+2021/09/14 23:28:04 id:0,term:16,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:1,term:15,tp:1,starting an election 
+2021/09/14 23:28:04 id:2,term:16,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:1,term:16,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:0,term:16,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:1,term:16,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:2,term:16,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:0,term:16,tp:1,receive vote request from 2(term:16)
+2021/09/14 23:28:04 id:0,term:16,tp:1,receive vote request from 1(term:16)
+2021/09/14 23:28:04 id:1,term:16,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:16,tp:1,receive vote request from 0(term:16)
+2021/09/14 23:28:04 id:1,term:16,tp:1,receive vote request from 2(term:16)
+2021/09/14 23:28:04 id:2,term:16,tp:1,receive vote request from 0(term:16)
+2021/09/14 23:28:04 id:2,term:16,tp:1,receive vote request from 1(term:16)
+2021/09/14 23:28:04 id:1,term:16,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:16,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:0,term:16,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:16,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:0,term:16,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:1,term:16,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:16,tp:1,starting an election 
+2021/09/14 23:28:04 id:1,term:16,tp:1,starting an election 
+2021/09/14 23:28:04 id:0,term:17,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:1,term:17,tp:1,receive vote request from 0(term:17)
+2021/09/14 23:28:04 id:0,term:17,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:16,tp:1,starting an election 
+2021/09/14 23:28:04 id:2,term:17,tp:1,reject the client
+2021/09/14 23:28:04 id:2,term:17,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:1,term:17,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:04 id:0,term:17,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:1,term:17,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:04 id:2,term:17,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:04 id:1,term:17,tp:1,receive vote request from 2(term:17)
+2021/09/14 23:28:04 id:2,term:17,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:17,tp:1,receive vote request from 0(term:17)
+2021/09/14 23:28:04 id:2,term:17,tp:1,receive vote request from 1(term:17)
+2021/09/14 23:28:04 id:0,term:17,tp:1,reject the client
+2021/09/14 23:28:04 id:0,term:17,tp:1,receive vote request from 2(term:17)
+2021/09/14 23:28:04 id:0,term:17,tp:1,receive vote request from 1(term:17)
+2021/09/14 23:28:04 id:1,term:17,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:04 id:0,term:17,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:1,term:17,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:04 id:2,term:17,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:17,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:17,tp:1,starting an election 
+2021/09/14 23:28:05 id:2,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:17,tp:1,starting an election 
+2021/09/14 23:28:05 id:1,term:17,tp:1,starting an election 
+2021/09/14 23:28:05 id:2,term:18,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,receive vote request from 2(term:18)
+2021/09/14 23:28:05 id:2,term:18,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:18,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:1,term:18,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:2,term:18,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:2,term:18,tp:1,receive vote request from 0(term:18)
+2021/09/14 23:28:05 id:2,term:18,tp:1,receive vote request from 1(term:18)
+2021/09/14 23:28:05 id:1,term:18,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:18,tp:1,receive vote request from 1(term:18)
+2021/09/14 23:28:05 id:1,term:18,tp:1,receive vote request from 0(term:18)
+2021/09/14 23:28:05 id:1,term:18,tp:1,receive vote request from 2(term:18)
+2021/09/14 23:28:05 id:1,term:18,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:18,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:2,term:18,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:18,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:18,tp:1,starting an election 
+2021/09/14 23:28:05 id:0,term:18,tp:1,starting an election 
+2021/09/14 23:28:05 id:1,term:18,tp:1,starting an election 
+2021/09/14 23:28:05 id:0,term:19,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,receive vote request from 0(term:19)
+2021/09/14 23:28:05 id:0,term:19,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:2,term:19,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:0,term:19,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:2,term:19,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:2,term:19,tp:1,receive vote request from 0(term:19)
+2021/09/14 23:28:05 id:2,term:19,tp:1,receive vote request from 1(term:19)
+2021/09/14 23:28:05 id:1,term:19,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,receive vote request from 2(term:19)
+2021/09/14 23:28:05 id:0,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:19,tp:1,receive vote request from 1(term:19)
+2021/09/14 23:28:05 id:0,term:19,tp:1,receive vote request from 2(term:19)
+2021/09/14 23:28:05 id:2,term:19,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:19,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:2,term:19,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:1,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:19,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:19,tp:1,starting an election 
+2021/09/14 23:28:05 id:0,term:19,tp:1,starting an election 
+2021/09/14 23:28:05 id:0,term:20,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:20,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:0,term:20,tp:1,receive vote request from 2(term:20)
+2021/09/14 23:28:05 id:2,term:20,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:19,tp:1,starting an election 
+2021/09/14 23:28:05 id:0,term:20,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:1,term:20,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:05 id:1,term:20,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:0,term:20,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:05 id:2,term:20,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:05 id:2,term:20,tp:1,receive vote request from 1(term:20)
+2021/09/14 23:28:05 id:2,term:20,tp:1,receive vote request from 0(term:20)
+2021/09/14 23:28:05 id:0,term:20,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:20,tp:1,receive vote request from 0(term:20)
+2021/09/14 23:28:05 id:1,term:20,tp:1,receive vote request from 2(term:20)
+2021/09/14 23:28:05 id:2,term:20,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:20,tp:1,receive vote request from 1(term:20)
+2021/09/14 23:28:05 id:1,term:20,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:05 id:0,term:20,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:20,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:05 id:1,term:20,tp:1,reject the client
+2021/09/14 23:28:05 id:2,term:20,tp:1,reject the client
+2021/09/14 23:28:05 id:0,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:20,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:20,tp:1,starting an election 
+2021/09/14 23:28:06 id:0,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:20,tp:1,starting an election 
+2021/09/14 23:28:06 id:1,term:20,tp:1,starting an election 
+2021/09/14 23:28:06 id:2,term:21,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:0,term:21,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:1,term:21,tp:1,receive vote request from 0(term:21)
+2021/09/14 23:28:06 id:0,term:21,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:21,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:0,term:21,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:1,term:21,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:2,term:21,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:2,term:21,tp:1,receive vote request from 0(term:21)
+2021/09/14 23:28:06 id:2,term:21,tp:1,receive vote request from 1(term:21)
+2021/09/14 23:28:06 id:1,term:21,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:21,tp:1,receive vote request from 2(term:21)
+2021/09/14 23:28:06 id:0,term:21,tp:1,receive vote request from 2(term:21)
+2021/09/14 23:28:06 id:0,term:21,tp:1,receive vote request from 1(term:21)
+2021/09/14 23:28:06 id:1,term:21,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:0,term:21,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:21,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:21,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:21,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:21,tp:1,starting an election 
+2021/09/14 23:28:06 id:1,term:21,tp:1,starting an election 
+2021/09/14 23:28:06 id:0,term:21,tp:1,starting an election 
+2021/09/14 23:28:06 id:0,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:22,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:0,term:22,tp:1,receive vote request from 2(term:22)
+2021/09/14 23:28:06 id:2,term:22,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:0,term:22,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:1,term:22,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:0,term:22,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:2,term:22,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:1,term:22,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:1,term:22,tp:1,receive vote request from 0(term:22)
+2021/09/14 23:28:06 id:1,term:22,tp:1,receive vote request from 2(term:22)
+2021/09/14 23:28:06 id:2,term:22,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:0,term:22,tp:1,receive vote request from 1(term:22)
+2021/09/14 23:28:06 id:1,term:22,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:22,tp:1,receive vote request from 0(term:22)
+2021/09/14 23:28:06 id:2,term:22,tp:1,receive vote request from 1(term:22)
+2021/09/14 23:28:06 id:0,term:22,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:0,term:22,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:22,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:1,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:22,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:22,tp:1,starting an election 
+2021/09/14 23:28:06 id:0,term:23,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:22,tp:1,starting an election 
+2021/09/14 23:28:06 id:1,term:22,tp:1,starting an election 
+2021/09/14 23:28:06 id:0,term:23,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:1,term:23,tp:1,receive vote request from 0(term:23)
+2021/09/14 23:28:06 id:0,term:23,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:23,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:1,term:23,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:06 id:0,term:23,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:1,term:23,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:06 id:2,term:23,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:06 id:0,term:23,tp:1,receive vote request from 2(term:23)
+2021/09/14 23:28:06 id:0,term:23,tp:1,receive vote request from 1(term:23)
+2021/09/14 23:28:06 id:1,term:23,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:23,tp:1,receive vote request from 0(term:23)
+2021/09/14 23:28:06 id:2,term:23,tp:1,receive vote request from 1(term:23)
+2021/09/14 23:28:06 id:1,term:23,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:2,term:23,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:06 id:0,term:23,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:23,tp:1,receive vote request from 2(term:23)
+2021/09/14 23:28:06 id:2,term:23,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:06 id:1,term:23,tp:1,reject the client
+2021/09/14 23:28:06 id:2,term:23,tp:1,reject the client
+2021/09/14 23:28:06 id:0,term:23,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:23,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:23,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:23,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:23,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:23,tp:1,starting an election 
+2021/09/14 23:28:07 id:2,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:23,tp:1,starting an election 
+2021/09/14 23:28:07 id:2,term:24,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:0,term:24,tp:1,receive vote request from 2(term:24)
+2021/09/14 23:28:07 id:2,term:24,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:24,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:2,term:24,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:0,term:24,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:1,term:23,tp:1,starting an election 
+2021/09/14 23:28:07 id:1,term:24,tp:1,receive vote request from 0(term:24)
+2021/09/14 23:28:07 id:0,term:24,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:24,tp:1,receive vote request from 2(term:24)
+2021/09/14 23:28:07 id:2,term:24,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:24,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:1,term:24,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:2,term:24,tp:1,receive vote request from 0(term:24)
+2021/09/14 23:28:07 id:2,term:24,tp:1,receive vote request from 1(term:24)
+2021/09/14 23:28:07 id:1,term:24,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:24,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:24,tp:1,receive vote request from 1(term:24)
+2021/09/14 23:28:07 id:1,term:24,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:24,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:24,tp:1,starting an election 
+2021/09/14 23:28:07 id:2,term:25,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:2,term:25,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:1,term:24,tp:1,starting an election 
+2021/09/14 23:28:07 id:1,term:25,tp:1,receive vote request from 2(term:25)
+2021/09/14 23:28:07 id:0,term:24,tp:1,starting an election 
+2021/09/14 23:28:07 id:0,term:25,tp:1,receive vote request from 2(term:25)
+2021/09/14 23:28:07 id:2,term:25,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:2,term:25,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:25,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:0,term:25,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:1,term:25,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:0,term:25,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:2,term:25,tp:1,receive vote request from 1(term:25)
+2021/09/14 23:28:07 id:2,term:25,tp:1,receive vote request from 0(term:25)
+2021/09/14 23:28:07 id:0,term:25,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:25,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:25,tp:1,receive vote request from 1(term:25)
+2021/09/14 23:28:07 id:1,term:25,tp:1,receive vote request from 0(term:25)
+2021/09/14 23:28:07 id:1,term:25,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:25,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:25,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:25,tp:1,starting an election 
+2021/09/14 23:28:07 id:2,term:25,tp:1,starting an election 
+2021/09/14 23:28:07 id:2,term:26,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:0,term:26,tp:1,receive vote request from 2(term:26)
+2021/09/14 23:28:07 id:2,term:26,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:25,tp:1,starting an election 
+2021/09/14 23:28:07 id:1,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:26,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:1,term:26,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:07 id:2,term:26,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:07 id:0,term:26,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:1,term:26,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:07 id:2,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:26,tp:1,receive vote request from 0(term:26)
+2021/09/14 23:28:07 id:2,term:26,tp:1,receive vote request from 1(term:26)
+2021/09/14 23:28:07 id:1,term:26,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:26,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:26,tp:1,receive vote request from 1(term:26)
+2021/09/14 23:28:07 id:0,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:26,tp:1,receive vote request from 0(term:26)
+2021/09/14 23:28:07 id:1,term:26,tp:1,receive vote request from 2(term:26)
+2021/09/14 23:28:07 id:1,term:26,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:07 id:0,term:26,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:2,term:26,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:07 id:1,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:2,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:0,term:26,tp:1,reject the client
+2021/09/14 23:28:07 id:1,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:26,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:26,tp:1,starting an election 
+2021/09/14 23:28:08 id:2,term:27,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:2,term:27,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:1,term:26,tp:1,starting an election 
+2021/09/14 23:28:08 id:1,term:27,tp:1,receive vote request from 2(term:27)
+2021/09/14 23:28:08 id:0,term:26,tp:1,starting an election 
+2021/09/14 23:28:08 id:0,term:27,tp:1,receive vote request from 2(term:27)
+2021/09/14 23:28:08 id:2,term:27,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:2,term:27,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:27,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:0,term:27,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:1,term:27,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:0,term:27,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:1,term:27,tp:1,receive vote request from 0(term:27)
+2021/09/14 23:28:08 id:0,term:27,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:2,term:27,tp:1,receive vote request from 1(term:27)
+2021/09/14 23:28:08 id:2,term:27,tp:1,receive vote request from 0(term:27)
+2021/09/14 23:28:08 id:1,term:27,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:27,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:27,tp:1,receive vote request from 1(term:27)
+2021/09/14 23:28:08 id:1,term:27,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:27,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:27,tp:1,starting an election 
+2021/09/14 23:28:08 id:1,term:27,tp:1,starting an election 
+2021/09/14 23:28:08 id:1,term:28,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:2,term:28,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:1,term:28,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:2,term:28,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:0,term:27,tp:1,starting an election 
+2021/09/14 23:28:08 id:0,term:28,tp:1,receive vote request from 1(term:28)
+2021/09/14 23:28:08 id:0,term:28,tp:1,receive vote request from 2(term:28)
+2021/09/14 23:28:08 id:2,term:28,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:28,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:28,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:0,term:28,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:2,term:28,tp:1,receive vote request from 1(term:28)
+2021/09/14 23:28:08 id:2,term:28,tp:1,receive vote request from 0(term:28)
+2021/09/14 23:28:08 id:0,term:28,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:28,tp:1,receive vote request from 2(term:28)
+2021/09/14 23:28:08 id:1,term:28,tp:1,receive vote request from 0(term:28)
+2021/09/14 23:28:08 id:1,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:28,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:2,term:28,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:28,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:28,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:28,tp:1,starting an election 
+2021/09/14 23:28:08 id:1,term:28,tp:1,starting an election 
+2021/09/14 23:28:08 id:1,term:29,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:29,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:1,term:29,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:08 id:1,term:29,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:2,term:29,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:0,term:28,tp:1,starting an election 
+2021/09/14 23:28:08 id:0,term:29,tp:1,receive vote request from 2(term:29)
+2021/09/14 23:28:08 id:2,term:29,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:29,tp:1,receive vote request from 1(term:29)
+2021/09/14 23:28:08 id:1,term:29,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:29,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:08 id:0,term:29,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:08 id:2,term:29,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:29,tp:1,receive vote request from 1(term:29)
+2021/09/14 23:28:08 id:2,term:29,tp:1,receive vote request from 0(term:29)
+2021/09/14 23:28:08 id:0,term:29,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:29,tp:1,receive vote request from 2(term:29)
+2021/09/14 23:28:08 id:1,term:29,tp:1,receive vote request from 0(term:29)
+2021/09/14 23:28:08 id:0,term:29,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:1,term:29,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:08 id:2,term:29,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:08 id:0,term:29,tp:1,reject the client
+2021/09/14 23:28:08 id:1,term:29,tp:1,reject the client
+2021/09/14 23:28:08 id:2,term:29,tp:1,reject the client
+2021/09/14 23:28:08 id:0,term:29,tp:1,reject the client
+2021/09/14 23:28:09 id:1,term:29,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:29,tp:1,reject the client
+2021/09/14 23:28:09 id:0,term:29,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:29,tp:1,starting an election 
+2021/09/14 23:28:09 id:1,term:29,tp:1,starting an election 
+2021/09/14 23:28:09 id:1,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:30,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:09 id:1,term:30,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:09 id:2,term:30,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:09 id:0,term:29,tp:1,starting an election 
+2021/09/14 23:28:09 id:0,term:30,tp:1,receive vote request from 2(term:30)
+2021/09/14 23:28:09 id:2,term:30,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:09 id:0,term:30,tp:1,receive vote request from 1(term:30)
+2021/09/14 23:28:09 id:1,term:30,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:09 id:0,term:30,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:09 id:1,term:30,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:09 id:0,term:30,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:09 id:2,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:30,tp:1,receive vote request from 1(term:30)
+2021/09/14 23:28:09 id:2,term:30,tp:1,receive vote request from 0(term:30)
+2021/09/14 23:28:09 id:0,term:30,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:09 id:1,term:30,tp:1,receive vote request from 2(term:30)
+2021/09/14 23:28:09 id:1,term:30,tp:1,receive vote request from 0(term:30)
+2021/09/14 23:28:09 id:0,term:30,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:09 id:1,term:30,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:09 id:2,term:30,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:09 id:0,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:1,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:0,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:1,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:0,term:30,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:30,tp:1,starting an election 
+2021/09/14 23:28:09 id:0,term:30,tp:1,starting an election 
+2021/09/14 23:28:09 id:2,term:31,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,receive vote request from 2(term:31)
+2021/09/14 23:28:09 id:2,term:31,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:09 id:1,term:30,tp:1,starting an election 
+2021/09/14 23:28:09 id:1,term:31,tp:1,reject the client
+2021/09/14 23:28:09 id:1,term:31,tp:1,sending vote request to 0,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:09 id:1,term:31,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,sending vote request to 2,round:1
+2021/09/14 23:28:09 id:2,term:31,tp:1,sending vote request to 1,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,receive vote request from 1(term:31)
+2021/09/14 23:28:09 id:1,term:31,tp:1,sending vote request to  0,true,grand:false,round:1
+2021/09/14 23:28:09 id:2,term:31,tp:1,reject the client
+2021/09/14 23:28:09 id:2,term:31,tp:1,receive vote request from 0(term:31)
+2021/09/14 23:28:09 id:2,term:31,tp:1,receive vote request from 1(term:31)
+2021/09/14 23:28:09 id:1,term:31,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:09 id:1,term:31,tp:1,receive vote request from 0(term:31)
+2021/09/14 23:28:09 id:1,term:31,tp:1,receive vote request from 2(term:31)
+2021/09/14 23:28:09 id:0,term:31,tp:1,sending vote request to  2,true,grand:false,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:09 id:2,term:31,tp:1,sending vote request to  1,true,grand:false,round:1
+2021/09/14 23:28:09 id:0,term:31,tp:1,reject the client
+--- FAIL: TestBasicAgree2B (10.06s)
+    config.go:486: one(100) failed to reach agreement
+FAIL
+exit status 1
+FAIL	_/home/han/study/6.824/6.824/src/raft	10.064s

@@ -134,6 +134,8 @@ func (m *Master) assignTask(reply *StateReply) {
 
 			if task == m.ReduceHead { //一开始我写成了MapHead
 
+				//此时已经将task分配了一圈，等待
+				//一段时间，让worker执行任务
 				time.Sleep(50 * time.Millisecond)
 
 				//m.cond.Wait()

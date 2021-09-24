@@ -14,8 +14,11 @@ import (
 	"plugin"
 	"sort"
 
+	"../haha"
 	"../mr"
 )
+
+var m haha.Ha
 
 // for sorting by key.
 type ByKey []mr.KeyValue

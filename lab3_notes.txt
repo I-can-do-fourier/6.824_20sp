@@ -1,0 +1,1 @@
+1.linearizable：不能让client看到过时的数据。

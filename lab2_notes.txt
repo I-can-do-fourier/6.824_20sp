@@ -1,0 +1,34 @@
+1. figure2中的任何描述都是在特定的term下进行的。一旦term发生变化
+进行的操作会有所不同。
+2. 当一个entry被认为committed了，那么它之前的entry也一定被
+commited了。
+3. figure2 appendEntry receiver #3不是一步完成的，而是通过appEntry
+的rpc一步步类进行对比完成的。主要用到prevLogIndex和prevLogTerm。
+详见Page 7
+4. up-to-date log
+5.新当选的leader在收到新的client发来的request之前都要只发送
+heartbeat。这样避免已经commited的entry被抹去，导致新leader
+和followers的执行情况不一致。figure 8。原理：保证最新committed的
+entry处在最新的term和index，不会被future leader抹去，造成
+不一致问题。如果没有committed，抹不抹去都无所谓。
+6.某个entry被commited了，那么它之前的entry一定被committed了
+7.除了第0个term,之后的每个term在选举完后，voteFor都会确定。这样，进度靠后的service即使
+申请candidate，也不会有人给他投票。
+
+2a
+1. startElection 要改一下锁和等待机制
+2.如果一个peer挂了，对他自己来说是发不出去没有回应。对于给他发消息
+的其它peer来说，也是没有反应。没有反应和返回false好像不是一回事
+3.要注意figure2执行流程的顺序。AppendEntries RPC的AppendEntries RPC中，第三项是在第二项判断
+完之后才会发生。也就是说如果说prelogindex和term match上了receiver的log，第三项及之后
+才会发生
+4.heartbeat和一般的appendEntry rpc要分开
+5.要对每个peer单独开一个goroutine发送消息，在每个goroutine中进行循环
+6.在更新entry、发送applymsg、更新matchIndex时，不要忘记将leader的也更新了
+7.heartbeat和一般的appendEntry不能分别发送。必须保证“先更新log,再更新commitIndex(figure2)”,
+不能出现改变了commitIndex但log没有更新的情况。
+8.通过channel和timer清理超时的rpc call(修改labrpc的call)//不可以了，因为这样的processReq
+也要改。。。而且labrpc理论上是不能改的
+9.问题好像出现在wsl2的性能上，需要将timeout和heartbeat间隔调高
+10.TestFigure8Unreliable2C死也过不去
+11.appendEntry 的定时原来是建一个新的routine，为了减少线程数，我才用了网上channel+timer的方法
