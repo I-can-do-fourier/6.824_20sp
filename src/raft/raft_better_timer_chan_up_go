@@ -1,6 +1,6 @@
 package raft
 
-//使用channel+timer
+//改进了appendentry，使得没有新entry的情况下(startappend==false)不进行搜索
 // this is an outline of the API that raft must expose to
 // the service (or tester). see comments below for
 // each of these functions for more details.
@@ -243,6 +243,8 @@ type RequestAppendArgs struct {
 	Entries []Log
 
 	LeaderCommit int
+
+	StartAppend bool
 }
 
 type RequestAppendReply struct {
@@ -649,26 +651,33 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 		reply.Success = false
 
 		//fast roll back
+		if args.StartAppend {
 
-		if args.PrevLogIndex >= len(rf.log) {
+			if args.PrevLogIndex >= len(rf.log) {
 
-			reply.Miss = true
-			reply.Len = len(rf.log)
-			log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),miss,my length is:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, len(rf.log))
+				reply.Miss = true
+				reply.Len = len(rf.log)
+				log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),miss,my length is:%v\n",
+					rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, len(rf.log))
+
+			} else {
+
+				reply.TermConflict = rf.log[args.PrevLogIndex].Term
+				reply.TermStart = rf.findEntry(args.PrevLogIndex)
+
+				log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),conflict,firt index for term is:%v\n",
+					rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, reply.TermStart)
+
+			}
+
+			log.Printf("id:%v,term:%v,tp:%v,reject appended from %v(term:%v),my log is:%v\n",
+				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.log)
 
 		} else {
 
-			reply.TermConflict = rf.log[args.PrevLogIndex].Term
-			reply.TermStart = rf.findEntry(args.PrevLogIndex)
-
-			log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),conflict,firt index for term is:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, reply.TermStart)
+			reply.TermConflict = -1
 
 		}
-
-		log.Printf("id:%v,term:%v,tp:%v,reject appended from %v(term:%v),my log is:%v\n",
-			rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.log)
 
 		rf.resetTime()
 		rf.mu.Unlock()
@@ -868,172 +877,172 @@ func (rf *Raft) startElection() {
 }
 
 //send append request or heartbeat
-func (rf *Raft) Append() {
+// func (rf *Raft) Append() {
 
-	log.Printf("id:%v,term:%v,tp:%v,Append\n",
-		rf.me, rf.currentTerm, rf.tp)
+// 	log.Printf("id:%v,term:%v,tp:%v,Append\n",
+// 		rf.me, rf.currentTerm, rf.tp)
 
-	termTemp := rf.currentTerm
+// 	termTemp := rf.currentTerm
 
-	for {
+// 	for {
 
-		rf.mu.Lock()
+// 		rf.mu.Lock()
 
-		log.Printf("id:%v,term:%v,tp:%v,start append\n",
-			rf.me, rf.currentTerm, rf.tp)
+// 		log.Printf("id:%v,term:%v,tp:%v,start append\n",
+// 			rf.me, rf.currentTerm, rf.tp)
 
-		if rf.tp != 2 {
+// 		if rf.tp != 2 {
 
-			log.Printf("id:%v,term:%v,tp:%v,give up append\n",
-				rf.me, rf.currentTerm, rf.tp)
-			// go func() {
+// 			log.Printf("id:%v,term:%v,tp:%v,give up append\n",
+// 				rf.me, rf.currentTerm, rf.tp)
+// 			// go func() {
 
-			// 	rf.oscillator()
+// 			// 	rf.oscillator()
 
-			// }()
-			rf.mu.Unlock()
-			return
-		}
+// 			// }()
+// 			rf.mu.Unlock()
+// 			return
+// 		}
 
-		for index, _ := range rf.peers {
+// 		for index, _ := range rf.peers {
 
-			if index == rf.me {
+// 			if index == rf.me {
 
-				continue
-			}
+// 				continue
+// 			}
 
-			go func(server int) {
+// 			go func(server int) {
 
-				rf.mu.Lock()
-				entries := rf.log[rf.nextIndex[server]:] //?
-				args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1,
-					rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex}
+// 				rf.mu.Lock()
+// 				entries := rf.log[rf.nextIndex[server]:] //?
+// 				args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1,
+// 					rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex}
 
-				rf.mu.Unlock()
+// 				rf.mu.Unlock()
 
-				log.Printf("id:%v,term:%v,tp:%v,sending append request to %v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
-				reply := &RequestAppendReply{}
+// 				log.Printf("id:%v,term:%v,tp:%v,sending append request to %v,commitIndex:%v\n",
+// 					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
+// 				reply := &RequestAppendReply{}
 
-				ok := rf.sendAppendEntries(server, args, reply)
+// 				ok := rf.sendAppendEntries(server, args, reply)
 
-				log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok, rf.commitIndex)
+// 				log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,commitIndex:%v\n",
+// 					rf.me, rf.currentTerm, rf.tp, server, ok, rf.commitIndex)
 
-				if termTemp < rf.currentTerm {
+// 				if termTemp < rf.currentTerm {
 
-				} else if ok && reply.Term > rf.currentTerm {
+// 				} else if ok && reply.Term > rf.currentTerm {
 
-					rf.termUpdate(reply.Term, 0, -1)
-					rf.resetTime()
+// 					rf.termUpdate(reply.Term, 0, -1)
+// 					rf.resetTime()
 
-					go func() {
+// 					go func() {
 
-						rf.oscillator()
+// 						rf.oscillator()
 
-					}()
+// 					}()
 
-				} else if ok && reply.Success == false {
+// 				} else if ok && reply.Success == false {
 
-					rf.nextIndex[server] = rf.nextIndex[server] - 1
+// 					rf.nextIndex[server] = rf.nextIndex[server] - 1
 
-				} else if ok && reply.Success == true {
+// 				} else if ok && reply.Success == true {
 
-				}
+// 				}
 
-				return
+// 				return
 
-			}(index)
+// 			}(index)
 
-		}
+// 		}
 
-		rf.mu.Unlock()
+// 		rf.mu.Unlock()
 
-		time.Sleep(time.Duration(100) * time.Millisecond)
+// 		time.Sleep(time.Duration(100) * time.Millisecond)
 
-	}
+// 	}
 
-}
+// }
 
-func (rf *Raft) heartbeat() {
+// func (rf *Raft) heartbeat() {
 
-	termTemp := rf.currentTerm
+// 	termTemp := rf.currentTerm
 
-	for {
+// 	for {
 
-		rf.mu.Lock()
+// 		rf.mu.Lock()
 
-		if rf.tp != 2 {
+// 		if rf.tp != 2 {
 
-			log.Printf("id:%v,term:%v,tp:%v,give up heartbeat\n",
-				rf.me, rf.currentTerm, rf.tp)
-			// go func() {
+// 			log.Printf("id:%v,term:%v,tp:%v,give up heartbeat\n",
+// 				rf.me, rf.currentTerm, rf.tp)
+// 			// go func() {
 
-			// 	rf.oscillator()
+// 			// 	rf.oscillator()
 
-			// }()
-			rf.mu.Unlock()
-			return
-		}
+// 			// }()
+// 			rf.mu.Unlock()
+// 			return
+// 		}
 
-		log.Printf("id:%v,term:%v,tp:%v,start heartbeat\n",
-			rf.me, rf.currentTerm, rf.tp)
+// 		log.Printf("id:%v,term:%v,tp:%v,start heartbeat\n",
+// 			rf.me, rf.currentTerm, rf.tp)
 
-		for index, _ := range rf.peers {
+// 		for index, _ := range rf.peers {
 
-			if index == rf.me {
+// 			if index == rf.me {
 
-				continue
-			}
+// 				continue
+// 			}
 
-			go func(server int) {
+// 			go func(server int) {
 
-				rf.mu.Lock()
-				entries := []Log{} //?
-				args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1,
-					rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex}
+// 				rf.mu.Lock()
+// 				entries := []Log{} //?
+// 				args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1,
+// 					rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex}
 
-				rf.mu.Unlock()
+// 				rf.mu.Unlock()
 
-				log.Printf("id:%v,term:%v,tp:%v,sending heartbeat to  %v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
-				reply := &RequestAppendReply{}
+// 				log.Printf("id:%v,term:%v,tp:%v,sending heartbeat to  %v,commitIndex:%v\n",
+// 					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
+// 				reply := &RequestAppendReply{}
 
-				ok := rf.sendAppendEntries(server, args, reply)
+// 				ok := rf.sendAppendEntries(server, args, reply)
 
-				rf.mu.Lock()
-				log.Printf("id:%v,term:%v,tp:%v,sending hearbeat to  %v,%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok)
+// 				rf.mu.Lock()
+// 				log.Printf("id:%v,term:%v,tp:%v,sending hearbeat to  %v,%v\n",
+// 					rf.me, rf.currentTerm, rf.tp, server, ok)
 
-				if termTemp < rf.currentTerm {
+// 				if termTemp < rf.currentTerm {
 
-				} else if ok && reply.Term > rf.currentTerm {
+// 				} else if ok && reply.Term > rf.currentTerm {
 
-					rf.termUpdate(reply.Term, 0, -1)
-					rf.resetTime()
-					go func() {
+// 					rf.termUpdate(reply.Term, 0, -1)
+// 					rf.resetTime()
+// 					go func() {
 
-						rf.oscillator()
+// 						rf.oscillator()
 
-					}()
+// 					}()
 
-				}
+// 				}
 
-				rf.mu.Unlock()
+// 				rf.mu.Unlock()
 
-				return
+// 				return
 
-			}(index)
+// 			}(index)
 
-		}
+// 		}
 
-		rf.mu.Unlock()
+// 		rf.mu.Unlock()
 
-		time.Sleep(time.Duration(100) * time.Millisecond)
+// 		time.Sleep(time.Duration(100) * time.Millisecond)
 
-	}
+// 	}
 
-}
+// }
 
 //one goroutine for a peer
 func (rf *Raft) Append2(server int) {
@@ -1100,7 +1109,7 @@ func (rf *Raft) Append2(server int) {
 			// log.Printf("id:%v,term:%v,tp:%v,to %v,prevLogIndex:%v\n",
 			// 	rf.me, rf.currentTerm, rf.tp, server, rf.nextIndex[server]-1)
 			args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1,
-				rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex}
+				rf.log[rf.nextIndex[server]-1].Term, entries, rf.commitIndex, rf.startAppend}
 
 			log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,commitIndex:%v\n",
 				rf.me, rf.currentTerm, rf.tp, server, entries, rf.commitIndex)
@@ -1135,17 +1144,17 @@ func (rf *Raft) Append2(server int) {
 
 			}
 
-			if rf.startAppend == false {
+			// if rf.startAppend == false {
 
-				log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,%v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok, entries, rf.commitIndex)
+			// 	log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,%v,commitIndex:%v\n",
+			// 		rf.me, rf.currentTerm, rf.tp, server, ok, entries, rf.commitIndex)
 
-				return
+			// 	return
 
-			}
+			// }
 
 			rf.mu.Lock()
-			if rf.startAppend == false {
+			if rf.startAppend == false || reply.TermConflict == -1 {
 
 				log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,%v,commitIndex:%v,not ready to append\n",
 					rf.me, rf.currentTerm, rf.tp, server, ok, entries, rf.commitIndex)
