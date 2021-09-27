@@ -33,3 +33,5 @@ entry处在最新的term和index，不会被future leader抹去，造成
 10.TestFigure8Unreliable2C死也过不去
 11.appendEntry 的定时原来是建一个新的routine，为了减少线程数，我才用了网上channel+timer的方法
 12.僵尸线程太多，主要在call上
+13.使用channel+timer来进行append的同步(之前是用go func+sleep+broadcast),减小新建线程
+的额外开销
