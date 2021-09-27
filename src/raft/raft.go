@@ -712,7 +712,7 @@ func (rf *Raft) resetTime() {
 
 		离谱的bug
 	*/
-	rf.timeout = 700 + rand.Intn(400)
+	rf.timeout = 1500 + rand.Intn(500)
 	rf.timePassed = 0
 
 }
@@ -1243,7 +1243,7 @@ func (rf *Raft) Append2(server int) {
 		}(server)
 
 		rf.mu.Unlock()
-		t := time.NewTimer(time.Duration(150) * time.Millisecond)
+		t := time.NewTimer(time.Duration(500) * time.Millisecond)
 
 		log.Printf("timer1")
 		select {

@@ -18,3 +18,30 @@ go func(arg T){}()的arg会在func创建时立刻被传递，不会被覆盖。
 8.timeout的范围要大一些，使得两个先发生timeout的server可以完成一轮选举。
 9.为什么不将具有最长log的peer选为leader
 10. for i in {1..50}; do go test -run TestPersist12C;done >outC.txt   执行多次test
+9.zookeeper最重要的特点：它是一个通用性的框架。zookeeper read到的
+数据可能是stale的。write是order的。
+10.由于zookeeper会读到stale的data那么这就会造成数据额错误例如：
+x=get("a");
+put("a",x+1);
+由于x可能是过时的data，没有保证原子性，累加额数据可能会发生错误。
+解决方法：使用version number(有点像test and set)
+11.zookeeper适合储存configuration类型的数据，不太适合
+储存很多的旧数据
+12.herd effect:时间复杂度o(n)
+13.zookeeper如何避免herd effect。Simple Locks without Herd Effect：每个thread只需要
+等到前一个sequence file发来的信号，因此每次有个thread释放锁之后，只有一个thread得到通知
+并采取行动。时间复杂度;o(1)
+14.zookeeper的lock不能保证原子性：应为如果一个thread获得了lock，但是它中途崩溃了，
+其它的线程会使用中间的一些辣鸡数据
+15.zookeeper soft -lock的使用场景：mr task的分配，master election
+16.craq的 config manager可能是基于paxos raft zookeeper(这些可以防止split brain)来设计的
+除了config manager之外的server可能是使用chain来设计的
+
+17.sql事务：主要是借助log来进行redo和undo。在write时，事务需要使用log。但在读取时，直接从
+数据的page里读
+
+18.aurora的quorum策略：write时一定是需要的，read时可以不需要，因为server可以找一个
+具有最新log的replica read数据
+
+19.shard
+20.aurora视频没看完

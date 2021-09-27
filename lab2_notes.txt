@@ -32,3 +32,4 @@ entry处在最新的term和index，不会被future leader抹去，造成
 9.问题好像出现在wsl2的性能上，需要将timeout和heartbeat间隔调高
 10.TestFigure8Unreliable2C死也过不去
 11.appendEntry 的定时原来是建一个新的routine，为了减少线程数，我才用了网上channel+timer的方法
+12.僵尸线程太多，主要在call上
