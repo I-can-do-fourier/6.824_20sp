@@ -1,6 +1,6 @@
 package raft
 
-//增加了appc,大幅度提升速度。修复了，installsnapshot、append2中的一些bug
+//在start中使用chan和broadcast来快速通知append2去append,有bug
 // this is an outline of the API that raft must expose to
 // the service (or tester). see comments below for
 // each of these functions for more details.
@@ -20,7 +20,6 @@ package raft
 import (
 	"bytes"
 	"log"
-	"sort"
 	"strconv"
 	"sync"
 	"sync/atomic"
@@ -29,7 +28,6 @@ import (
 	"math/rand"
 
 	"../haha"
-	//"golang.org/x/tools/godoc/util"
 	//"../kvraft"
 	"../labgob"
 	"../labrpc"
@@ -120,7 +118,9 @@ type Raft struct {
 
 	Noop bool //是否开启noop,lab2开启，后面的不开启
 
-	apps []chan int
+	//app []chan int
+
+	conds []sync.Cond
 }
 
 //SnapShot
@@ -253,7 +253,7 @@ func (rf *Raft) persistV2(ss SnapShot) {
 	e1.Encode(ss)
 
 	snapdata := w1.Bytes()
-	DPrintf("id:%v,term:%v,tp:%v,check 7", rf.me, rf.currentTerm, rf.tp)
+	// log.Printf("id:%v,term:%v,tp:%v,check 7", rf.me, rf.currentTerm, rf.tp)
 	rf.persister.SaveStateAndSnapshot(statedata, snapdata)
 
 	rf.mu.Unlock()
@@ -363,8 +363,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 
 	rf.mu.Lock()
 
-	DPrintf("id:%v,term:%v,tp:%v,receive vote request from %v(term:%v),my log:%v\n",
-		rf.me, rf.currentTerm, rf.tp, args.CandidateId, args.Term, rf.log)
+	// log.Printf("id:%v,term:%v,tp:%v,receive vote request from %v(term:%v),my log:%v\n",
+	// 	rf.me, rf.currentTerm, rf.tp, args.CandidateId, args.Term, rf.log)
 
 	reply.Term = rf.currentTerm
 
@@ -486,8 +486,8 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	}
 	if rf.tp != 2 {
 
-		DPrintf("id:%v,term:%v,tp:%v,reject the client\n",
-			rf.me, rf.currentTerm, rf.tp)
+		// log.Printf("id:%v,term:%v,tp:%v,reject the client\n",
+		// 	rf.me, rf.currentTerm, rf.tp)
 		rf.mu.Unlock()
 		return index, term, false
 	}
@@ -502,8 +502,8 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 
 	rf.startAppend = true
 
-	DPrintf("id:%v,term:%v,tp:%v,receive a log from client,%v\n",
-		rf.me, rf.currentTerm, rf.tp, command)
+	// log.Printf("id:%v,term:%v,tp:%v,receive a log from client,%v\n",
+	// 	rf.me, rf.currentTerm, rf.tp, command)
 
 	// for i := 0; i < len(rf.peers); i++ {
 
@@ -521,75 +521,28 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 
 	rf.mu.Unlock()
 
-	for index, item := range rf.apps {
+	for index, _ := range rf.conds {
 
-		if index != rf.me && len(item) == 0 {
+		if index != rf.me {
 
-			item <- 1
+			rf.conds[index].Broadcast()
+
 		}
+
 	}
+
+	// for index, item := range rf.app {
+
+	// 	if index != rf.me {
+
+	// 		item <- 1
+	// 		log.Printf("give")
+	// 	}
+
+	// }
+
 	return index, term, isLeader
 }
-
-// func (rf *Raft) Start2(command interface{}, mp map[int][]chan Op) (int, int, bool) {
-// 	index := -1
-// 	term := -1
-// 	isLeader := true
-
-// 	// Your code here (2B).
-
-// 	//rf.mu.Lock()
-
-// 	if rf.killed() {
-
-// 		return 0, 0, false
-// 	}
-// 	if rf.tp != 2 {
-
-// 		DPrintf("id:%v,term:%v,tp:%v,reject the client\n",
-// 			rf.me, rf.currentTerm, rf.tp)
-// 		rf.mu.Unlock()
-// 		return index, term, false
-// 	}
-// 	term = rf.currentTerm
-
-// 	rf.log = append(rf.log, Log{command, rf.currentTerm})
-
-// 	rf.persist()
-
-// 	index = len(rf.log) - 1 + rf.snapshotIndex
-// 	rf.matchIndex[rf.me] = len(rf.log) - 1 + rf.snapshotIndex
-
-// 	rf.startAppend = true
-
-// 	DPrintf("id:%v,term:%v,tp:%v,receive a log from client,%v\n",
-// 		rf.me, rf.currentTerm, rf.tp, command)
-
-// 	// for i := 0; i < len(rf.peers); i++ {
-
-// 	// 	if i != rf.me {
-
-// 	// 		go func(server int) {
-
-// 	// 			rf.Append2(server)
-
-// 	// 		}(i)
-
-// 	// 	}
-
-// 	// }
-
-// 	//rf.mu.Unlock()
-
-// 	for index, item := range rf.apps {
-
-// 		if index != rf.me && len(item) == 0 {
-
-// 			item <- 1
-// 		}
-// 	}
-// 	return index, term, isLeader
-// }
 
 //
 // the tester doesn't halt goroutines created by Raft after each test,
@@ -652,7 +605,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	rf.persist()
 
-	DPrintf("id:%v,term:%v,votedFor:%v,log:%v", rf.me, rf.currentTerm, rf.votedFor, rf.log)
+	// log.Printf("id:%v,term:%v,votedFor:%v,log:%v", rf.me, rf.currentTerm, rf.votedFor, rf.log)
 
 	rf.nextIndex = make([]int, len(peers))  //有问题
 	rf.matchIndex = make([]int, len(peers)) //有问题
@@ -662,8 +615,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		rf.matchIndex[i] = 0 //应该不需要
 
 	}
-
-	rf.matchIndex[me] = len(rf.log) - 1 + rf.snapshotIndex
 
 	rf.readSnapRaft(rf.persister.ReadSnapshot())
 
@@ -676,16 +627,23 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	rf.appC = sync.NewCond(&rf.mu)
 
+	//rf.app = make([]chan int, len(peers))
+
+	// for index, _ := range rf.app {
+
+	// 	rf.app[index] = make(chan int, 1)
+
+	// }
 	// initialize from state persisted before a crash
 	//rf.readPersist(persister.ReadRaftState())
 
 	//rf.Ss = make(chan SnapShot)
 
-	rf.apps = make([]chan int, len(peers))
+	rf.conds = make([]sync.Cond, len(peers))
 
-	for index, _ := range rf.apps {
+	for index, _ := range rf.conds {
 
-		rf.apps[index] = make(chan int, 1)
+		rf.conds[index] = *sync.NewCond(&rf.mu)
 
 	}
 
@@ -704,14 +662,14 @@ func Make(peers []*labrpc.ClientEnd, me int,
 			}
 
 			//rf.mu.Lock()
-			DPrintf("id:%v,term:%v,tp:%v,check 8", rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,check 8", rf.me, rf.currentTerm, rf.tp)
 			sss := <-rf.Ss
 
-			start := time.Now()
+			// start := time.Now()
 			rf.persistV2(sss)
-			DPrintf("id:%v,term:%v,tp:%v,persistV2 spend:%v\n",
-				rf.me, rf.currentTerm, rf.tp, time.Since(start))
-			DPrintf("id:%v,term:%v,tp:%v,check 6", rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,persistV2 spend:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, time.Since(start))
+			// log.Printf("id:%v,term:%v,tp:%v,check 6", rf.me, rf.currentTerm, rf.tp)
 			rf.SnapSync <- true
 			//rf.mu.Unlock()
 		}
@@ -740,7 +698,7 @@ func (rf *Raft) oscillator() {
 
 	//rf.timeout = 300 + rand.Intn(400)
 
-	inc := 10 //for sleep
+	inc := 20 //for sleep
 
 	for {
 
@@ -756,7 +714,7 @@ func (rf *Raft) oscillator() {
 
 		}
 
-		// DPrintf("id:%v,term:%v,tp:%v,strike\n",
+		// log.Printf("id:%v,term:%v,tp:%v,strike\n",
 		// 	rf.me, rf.currentTerm, rf.tp)
 
 		if rf.timePassed >= rf.timeout {
@@ -791,7 +749,7 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 
 	rf.mu.Lock()
 
-	start := time.Now()
+	// start := time.Now()
 
 	reply.Term = rf.currentTerm
 
@@ -825,14 +783,12 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 
 		reply.Success = true
 
-		DPrintf("id:%v,term:%v,tp:%v,receive heartbeat %v(term:%v),commitIndex:%v,lastIndex:%v,log:%v\n",
-			rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.commitIndex, rf.snapshotIndex, rf.log)
+		// log.Printf("id:%v,term:%v,tp:%v,receive heartbeat %v(term:%v),commitIndex:%v,lastIndex:%v,log:%v\n",
+		// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.commitIndex, rf.snapshotIndex, rf.log)
 
 		//return
 
-	}
-
-	if args.PrevLogIndex > rf.snapshotIndex && args.PrevLogIndex < len(rf.log)+rf.snapshotIndex && args.PrevLogTerm == rf.log[args.PrevLogIndex-rf.snapshotIndex].Term {
+	} else if args.PrevLogIndex > rf.snapshotIndex && args.PrevLogIndex < len(rf.log)+rf.snapshotIndex && args.PrevLogTerm == rf.log[args.PrevLogIndex-rf.snapshotIndex].Term {
 
 		reply.Success = true
 		//delete(rf.log,)
@@ -848,9 +804,6 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 			//break
 		} else if lastIndex < len(rf.log)-1+rf.snapshotIndex && rf.log[lastIndex-rf.snapshotIndex].Term == args.Term {
 
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,already have1:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
-
 		} else {
 
 			temp := rf.log[0 : args.PrevLogIndex+1-rf.snapshotIndex]
@@ -861,8 +814,8 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 
 		if len(args.Entries) != 0 {
 
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,append result:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
+			// log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,append result:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
 			//rf.log = append(rf.log[0:args.PrevLogIndex+1], args.Entries...)
 
 		}
@@ -872,39 +825,18 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 		reply.Success = true
 		//delete(rf.log,)
 
-		lastIndex := len(args.Entries) + args.PrevLogIndex
-
-		if rf.snapshotIndex-args.PrevLogIndex > len(args.Entries)-1 {
-
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,already have2:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
-
-		} else if lastIndex >= len(rf.log)-1+rf.snapshotIndex {
+		if rf.snapshotIndex-args.PrevLogIndex <= len(args.Entries)-1 {
 
 			rf.log = append([]Log{{Term: 0}}, args.Entries[rf.snapshotIndex-args.PrevLogIndex:]...)
-			//rf.log = append(temp, args.Entries...)
-			rf.persist()
-
-			//break
-		} else if lastIndex < len(rf.log)-1+rf.snapshotIndex && rf.log[lastIndex-rf.snapshotIndex].Term == args.Term {
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,already have3:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
-
-		} else {
-
-			rf.log = append([]Log{{Term: 0}}, args.Entries[rf.snapshotIndex-args.PrevLogIndex:]...)
-			rf.persist()
 
 		}
-
-		//rf.log = append([]Log{{Term: 0}}, args.Entries[rf.snapshotIndex-args.PrevLogIndex:]...)
 
 		rf.persist()
 
 		if len(args.Entries) != 0 {
 
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v)(ahead),lastIndex:%v,append result:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
+			// log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v)(ahead),lastIndex:%v,append result:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, rf.log)
 			//rf.log = append(rf.log[0:args.PrevLogIndex+1], args.Entries...)
 
 		}
@@ -919,8 +851,8 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 
 			reply.Miss = true
 			reply.Len = len(rf.log) + rf.snapshotIndex
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),miss,my length is:%v,lastIndex:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, len(rf.log)+rf.snapshotIndex, rf.snapshotIndex)
+			// log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),miss,my length is:%v,lastIndex:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, len(rf.log)+rf.snapshotIndex, rf.snapshotIndex)
 
 		} else {
 
@@ -930,23 +862,23 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 
 			// if reply.TermStart <= rf.snapshotIndex+2 {
 
-			// 	DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),need install%v\n",
+			// 	log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),need install%v\n",
 			// 		rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, reply.TermStart)
 
 			// }
 
-			DPrintf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,conflict,firt index for term is:%v\n",
-				rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, reply.TermStart)
+			// log.Printf("id:%v,term:%v,tp:%v,appended from %v(term:%v),lastIndex:%v,conflict,firt index for term is:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.snapshotIndex, reply.TermStart)
 
 		}
 
-		DPrintf("id:%v,term:%v,tp:%v,reject appended from %v(term:%v),my log is:%v\n",
-			rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.log)
+		// log.Printf("id:%v,term:%v,tp:%v,reject appended from %v(term:%v),my log is:%v\n",
+		// 	rf.me, rf.currentTerm, rf.tp, args.LeaderId, args.Term, rf.log)
 
 		rf.resetTime()
 		rf.mu.Unlock()
 
-		DPrintf("id:%v,append spend1:%v\n", rf.me, time.Since(start))
+		// log.Printf("id:%v,append spend1:%v\n", rf.me, time.Since(start))
 
 		return
 
@@ -967,10 +899,7 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 		}
 
 		for i := pre + 1 - rf.snapshotIndex; i <= rf.commitIndex-rf.snapshotIndex; i++ {
-			DPrintf("id:%v,term:%v,tp:%v,apply log:%v", rf.me, rf.currentTerm, rf.tp, rf.log[i].Command)
-			rf.applych <- ApplyMsg{true, rf.log[i].Command, i + rf.snapshotIndex}
-
-			log.Printf("id:%v,term:%v,tp:%v,apply log:%v", rf.me, rf.currentTerm, rf.tp, rf.log[i].Command)
+			// log.Printf("id:%v,term:%v,tp:%v,check 9", rf.me, rf.currentTerm, rf.tp)
 			rf.applych <- ApplyMsg{true, rf.log[i].Command, i + rf.snapshotIndex}
 
 		}
@@ -980,8 +909,7 @@ func (rf *Raft) AppendEntries(args *RequestAppendArgs, reply *RequestAppendReply
 	rf.resetTime()
 
 	rf.mu.Unlock()
-	DPrintf("id:%v,append spend2:%v\n", rf.me, time.Since(start))
-	//DPrintf("haha")
+	// log.Printf("id:%v,append spend1:%v\n", rf.me, time.Since(start))
 	return
 
 }
@@ -991,7 +919,7 @@ func (rf *Raft) resetTime() {
 
 		离谱的bug
 	*/
-	rf.timeout = 600 + rand.Intn(600)
+	rf.timeout = 400 + rand.Intn(300)
 	rf.timePassed = 0
 
 }
@@ -1000,8 +928,8 @@ func (rf *Raft) startElection() {
 
 	rf.mu.Lock()
 
-	DPrintf("id:%v,term:%v,tp:%v,starting an election \n",
-		rf.me, rf.currentTerm, rf.tp)
+	// log.Printf("id:%v,term:%v,tp:%v,starting an election \n",
+	// rf.me, rf.currentTerm, rf.tp)
 
 	rf.currentTerm++
 	//rf.persist()
@@ -1049,8 +977,8 @@ func (rf *Raft) startElection() {
 
 			args := &RequestVoteArgs{termTemp, rf.me, len(rf.log) - 1 + rf.snapshotIndex, termLast}
 			reply := &RequestVoteReply{}
-			DPrintf("id:%v,term:%v,tp:%v,sending vote request to %v,round:%v,args:%v\n",
-				rf.me, rf.currentTerm, rf.tp, server, round, args)
+			// log.Printf("id:%v,term:%v,tp:%v,sending vote request to %v,round:%v,args:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, server, round, args)
 
 			rf.mu.Unlock()
 			ok := rf.sendRequestVote(server, args, reply)
@@ -1060,8 +988,8 @@ func (rf *Raft) startElection() {
 				return
 			}
 
-			DPrintf("id:%v,term:%v,tp:%v,sending vote request to  %v,%v,grand:%v,round:%v\n",
-				rf.me, rf.currentTerm, rf.tp, server, ok, reply.VoteGranted, round)
+			// log.Printf("id:%v,term:%v,tp:%v,sending vote request to  %v,%v,grand:%v,round:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, server, ok, reply.VoteGranted, round)
 			rf.mu.Lock()
 			if rf.currentTerm > termTemp {
 			} else if ok && reply.Term > rf.currentTerm {
@@ -1100,7 +1028,7 @@ func (rf *Raft) startElection() {
 			return
 		}
 
-		// DPrintf("id:%v,term:%v,tp:%v,finish sending a vote request a round,vote%v,round:%v\n",
+		// log.Printf("id:%v,term:%v,tp:%v,finish sending a vote request a round,vote%v,round:%v\n",
 		// 	rf.me, rf.currentTerm, rf.tp, rf.voteCount, round)
 		rf.mu.Lock()
 		if rf.voteCount > len(rf.peers)/2 { //此处有race，但不影响
@@ -1111,8 +1039,8 @@ func (rf *Raft) startElection() {
 			}
 
 			rf.tp = 2
-			DPrintf("id:%v,term:%v,tp:%v,become a leader\n",
-				rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,become a leader\n",
+			// 	rf.me, rf.currentTerm, rf.tp)
 
 			for index, _ := range rf.nextIndex {
 
@@ -1139,7 +1067,7 @@ func (rf *Raft) startElection() {
 
 			}
 
-			// DPrintf("id:%v,term:%v,tp:%v,release lock\n",
+			// log.Printf("id:%v,term:%v,tp:%v,release lock\n",
 			// 	rf.me, rf.currentTerm, rf.tp)
 			rf.mu.Unlock()
 
@@ -1168,8 +1096,8 @@ func (rf *Raft) startElection() {
 //send append request or heartbeat
 func (rf *Raft) Append() {
 
-	DPrintf("id:%v,term:%v,tp:%v,Append\n",
-		rf.me, rf.currentTerm, rf.tp)
+	// log.Printf("id:%v,term:%v,tp:%v,Append\n",
+	// 	rf.me, rf.currentTerm, rf.tp)
 
 	termTemp := rf.currentTerm
 
@@ -1177,13 +1105,13 @@ func (rf *Raft) Append() {
 
 		rf.mu.Lock()
 
-		DPrintf("id:%v,term:%v,tp:%v,start append\n",
-			rf.me, rf.currentTerm, rf.tp)
+		// log.Printf("id:%v,term:%v,tp:%v,start append\n",
+		// 	rf.me, rf.currentTerm, rf.tp)
 
 		if rf.tp != 2 {
 
-			DPrintf("id:%v,term:%v,tp:%v,give up append\n",
-				rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,give up append\n",
+			// 	rf.me, rf.currentTerm, rf.tp)
 			// go func() {
 
 			// 	rf.oscillator()
@@ -1209,14 +1137,14 @@ func (rf *Raft) Append() {
 
 				rf.mu.Unlock()
 
-				DPrintf("id:%v,term:%v,tp:%v,sending append request to %v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,sending append request to %v,commitIndex:%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
 				reply := &RequestAppendReply{}
 
 				ok := rf.sendAppendEntries(server, args, reply)
 
-				DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok, rf.commitIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,commitIndex:%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, ok, rf.commitIndex)
 
 				if termTemp < rf.currentTerm {
 
@@ -1263,8 +1191,8 @@ func (rf *Raft) heartbeat() {
 
 		if rf.tp != 2 {
 
-			DPrintf("id:%v,term:%v,tp:%v,give up heartbeat\n",
-				rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,give up heartbeat\n",
+			// 	rf.me, rf.currentTerm, rf.tp)
 			// go func() {
 
 			// 	rf.oscillator()
@@ -1274,8 +1202,8 @@ func (rf *Raft) heartbeat() {
 			return
 		}
 
-		DPrintf("id:%v,term:%v,tp:%v,start heartbeat\n",
-			rf.me, rf.currentTerm, rf.tp)
+		// log.Printf("id:%v,term:%v,tp:%v,start heartbeat\n",
+		// 	rf.me, rf.currentTerm, rf.tp)
 
 		for index, _ := range rf.peers {
 
@@ -1293,15 +1221,15 @@ func (rf *Raft) heartbeat() {
 
 				rf.mu.Unlock()
 
-				DPrintf("id:%v,term:%v,tp:%v,sending heartbeat to  %v,commitIndex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,sending heartbeat to  %v,commitIndex:%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, rf.commitIndex)
 				reply := &RequestAppendReply{}
 
 				ok := rf.sendAppendEntries(server, args, reply)
 
 				rf.mu.Lock()
-				DPrintf("id:%v,term:%v,tp:%v,sending hearbeat to  %v,%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok)
+				// log.Printf("id:%v,term:%v,tp:%v,sending hearbeat to  %v,%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, ok)
 
 				if termTemp < rf.currentTerm {
 
@@ -1336,7 +1264,7 @@ func (rf *Raft) heartbeat() {
 //one goroutine for a peer
 func (rf *Raft) Append2(server int) {
 
-	// DPrintf("id:%v,term:%v,tp:%v,Append to %v\n",
+	// log.Printf("id:%v,term:%v,tp:%v,Append to %v\n",
 	// 	rf.me, rf.currentTerm, rf.tp, server)
 
 	termTemp := rf.currentTerm
@@ -1352,7 +1280,7 @@ func (rf *Raft) Append2(server int) {
 
 	for {
 
-		DPrintf("id:%v,term:%v,tp:%v,check 1", rf.me, rf.currentTerm, rf.tp)
+		// log.Printf("id:%v,term:%v,tp:%v,check 1", rf.me, rf.currentTerm, rf.tp)
 
 		rf.mu.Lock()
 
@@ -1366,10 +1294,10 @@ func (rf *Raft) Append2(server int) {
 
 		// }
 
-		// DPrintf("id:%v,term:%v,tp:%v,Append to %v\n",
+		// log.Printf("id:%v,term:%v,tp:%v,Append to %v\n",
 		// 	rf.me, rf.currentTerm, rf.tp, server)
 
-		// DPrintf("id:%v,term:%v,tp:%v,start append\n",
+		// log.Printf("id:%v,term:%v,tp:%v,start append\n",
 		// 	rf.me, rf.currentTerm, rf.tp)
 
 		if rf.killed() {
@@ -1379,8 +1307,8 @@ func (rf *Raft) Append2(server int) {
 
 		if rf.tp != 2 {
 
-			DPrintf("id:%v,term:%v,tp:%v,give up append\n",
-				rf.me, rf.currentTerm, rf.tp)
+			// log.Printf("id:%v,term:%v,tp:%v,give up append\n",
+			// 	rf.me, rf.currentTerm, rf.tp)
 
 			go func() {
 
@@ -1394,17 +1322,17 @@ func (rf *Raft) Append2(server int) {
 
 		//done := false
 		//var wake1 chan time.Time
-		wake := make(chan int, 1)
+		//wake := make(chan int, 1)
 
 		//install snapshot
 
 		if rf.nextIndex[server] <= 0 {
 
-			//start := time.Now()
+			// start := time.Now()
 
 			go func(server int) {
 
-				DPrintf("id:%v,term:%v,tp:%v,check 2", rf.me, rf.currentTerm, rf.tp)
+				// log.Printf("id:%v,term:%v,tp:%v,check 2", rf.me, rf.currentTerm, rf.tp)
 				rf.mu.Lock()
 
 				count++
@@ -1412,10 +1340,24 @@ func (rf *Raft) Append2(server int) {
 				args := SnapArg{rf.currentTerm, rf.me, rf.snapshotIndex, rf.snapshotTerm, rf.persister.snapshot}
 				reply := SnapReply{}
 
-				DPrintf("id:%v,term:%v,tp:%v,install snapshot to  %v,snapindex:%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,install snapshot to  %v,snapindex:%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex)
 
 				countTemp := count
+
+				go func(cc int) {
+					countTemp := cc
+					time.Sleep(time.Duration(100) * time.Millisecond)
+
+					if count == countTemp {
+						log.Printf("id:%v,term:%v,tp:%v,timeout,%v", rf.me, rf.currentTerm, rf.tp, server)
+						rf.conds[server].Broadcast()
+
+					}
+
+					//c.Broadcast()
+
+				}(count)
 
 				rf.mu.Unlock()
 
@@ -1453,36 +1395,48 @@ func (rf *Raft) Append2(server int) {
 
 				}
 
-				DPrintf("id:%v,term:%v,tp:%v, %v,snap reply from %v(term:%v) ", rf.me, rf.currentTerm, rf.tp, ok, server, reply.Term)
+				// log.Printf("id:%v,term:%v,tp:%v, %v,snap reply from %v(term:%v) ", rf.me, rf.currentTerm, rf.tp, ok, server, reply.Term)
 				//c.Broadcast()
-				DPrintf("id:%v,term:%v,tp:%v,check 3", rf.me, rf.currentTerm, rf.tp)
-				wake <- 1
+				// log.Printf("id:%v,term:%v,tp:%v,check 3", rf.me, rf.currentTerm, rf.tp)
+				//wake <- 1
+
+				if count == countTemp {
+					// log.Printf("id:%v,term:%v,tp:%v,receive append reply from %v(term:%v),lastIndex:%v", rf.me, rf.currentTerm, rf.tp, server, reply.Term, rf.snapshotIndex)
+					// //c.Broadcast()
+					// log.Printf("id:%v,term:%v,tp:%v,check 10", rf.me, rf.currentTerm, rf.tp)
+					//wake <- 1
+
+					rf.conds[server].Broadcast()
+
+				}
 
 				rf.mu.Unlock()
 
 			}(server)
 
+			rf.conds[server].Wait()
+
 			rf.mu.Unlock()
 
-			t := time.NewTimer(time.Duration(100) * time.Millisecond)
+			// t := time.NewTimer(time.Duration(100) * time.Millisecond)
 
-			//DPrintf("timer1")
-			select {
+			// // log.Printf("timer1")
+			// select {
 
-			case <-t.C:
-				DPrintf("id:%v,term:%v,tp:%v,timeout install,%v", rf.me, rf.currentTerm, rf.tp, server)
-				t.Stop()
-				break
-			case <-wake:
+			// case <-t.C:
+			// 	// log.Printf("id:%v,term:%v,tp:%v,timeout install,%v", rf.me, rf.currentTerm, rf.tp, server)
+			// 	t.Stop()
+			// 	break
+			// case <-wake:
 
-				t.Stop()
-				//time.Sleep(30 * time.Millisecond)
-				break
+			// 	t.Stop()
+			// 	//time.Sleep(30 * time.Millisecond)
+			// 	break
 
-			}
-			//DPrintf("timer2")
+			// }
+			// log.Printf("timer2")
 
-			// DPrintf("id:%v,term:%v,tp:%v,request install spend:%v\n",
+			// log.Printf("id:%v,term:%v,tp:%v,request install spend:%v\n",
 			// 	rf.me, rf.currentTerm, rf.tp, time.Since(start))
 
 			continue
@@ -1491,16 +1445,12 @@ func (rf *Raft) Append2(server int) {
 
 		go func(server int) {
 
-			start := time.Now()
+			// start := time.Now()
 
 			rf.mu.Lock()
 
 			count++
 
-			// log.Printf("id:%v,term:%v,tp:%v, to  %v,lastindex:%v,commitIndex:%v,count:%v\n",
-			// 	rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex, rf.commitIndex, count)
-
-			//不用会有bug
 			if rf.nextIndex[server] <= 0 {
 
 				rf.mu.Unlock()
@@ -1517,7 +1467,7 @@ func (rf *Raft) Append2(server int) {
 
 			entries := rf.log[rf.nextIndex[server]:] //?
 
-			// DPrintf("id:%v,term:%v,tp:%v,to %v,prevLogIndex:%v\n",
+			// log.Printf("id:%v,term:%v,tp:%v,to %v,prevLogIndex:%v\n",
 			// 	rf.me, rf.currentTerm, rf.tp, server, rf.nextIndex[server]-1)
 
 			var argTerm int
@@ -1535,25 +1485,25 @@ func (rf *Raft) Append2(server int) {
 			args := &RequestAppendArgs{rf.currentTerm, rf.me, rf.nextIndex[server] - 1 + rf.snapshotIndex,
 				argTerm, entries, rf.commitIndex}
 
-			DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,lastindex:%v,%v,commitIndex:%v\n",
-				rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex, entries, rf.commitIndex)
+			// log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,lastindex:%v,%v,commitIndex:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex, entries, rf.commitIndex)
 			reply := &RequestAppendReply{}
 			rf.mu.Unlock()
 
 			countTemp := count
-			// go func(cc int) {
-			// 	countTemp := cc
-			// 	time.Sleep(time.Duration(200) * time.Millisecond)
+			go func(cc int) {
+				countTemp := cc
+				time.Sleep(time.Duration(100) * time.Millisecond)
 
-			// 	if count == countTemp {
-			// 		DPrintf("id:%v,term:%v,tp:%v,timeout,%v", rf.me, rf.currentTerm, rf.tp, server)
-			// 		c.Broadcast()
+				if count == countTemp {
+					log.Printf("id:%v,term:%v,tp:%v,timeout,%v", rf.me, rf.currentTerm, rf.tp, server)
+					rf.conds[server].Broadcast()
 
-			// 	}
+				}
 
-			// 	//c.Broadcast()
+				//c.Broadcast()
 
-			// }(count)
+			}(count)
 
 			ok := rf.sendAppendEntries(server, args, reply)
 
@@ -1570,7 +1520,7 @@ func (rf *Raft) Append2(server int) {
 
 			// if rf.startAppend == false {
 
-			// 	DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,%v,commitIndex:%v\n",
+			// 	log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,%v,commitIndex:%v\n",
 			// 		rf.me, rf.currentTerm, rf.tp, server, ok, entries, rf.commitIndex)
 
 			// 	return
@@ -1580,11 +1530,11 @@ func (rf *Raft) Append2(server int) {
 			rf.mu.Lock()
 			if rf.startAppend == false {
 
-				DPrintf("id:%v,term:%v,tp:%v,%v,heartbeat spend1  ,%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
+				// log.Printf("id:%v,term:%v,tp:%v,%v,heartbeat spend1  ,%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
 
-				DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,lastIndex:%v,%v,commitIndex:%v,not ready to append\n",
-					rf.me, rf.currentTerm, rf.tp, server, ok, rf.snapshotIndex, entries, rf.commitIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,lastIndex:%v,%v,commitIndex:%v,not ready to append\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, ok, rf.snapshotIndex, entries, rf.commitIndex)
 
 				rf.mu.Unlock()
 
@@ -1592,8 +1542,8 @@ func (rf *Raft) Append2(server int) {
 
 			}
 
-			DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,lastIndex:%v,%v,commitIndex:%v\n",
-				rf.me, rf.currentTerm, rf.tp, server, ok, rf.snapshotIndex, entries, rf.commitIndex)
+			// log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,%v,lastIndex:%v,%v,commitIndex:%v\n",
+			// 	rf.me, rf.currentTerm, rf.tp, server, ok, rf.snapshotIndex, entries, rf.commitIndex)
 
 			// if flag == true {
 
@@ -1645,8 +1595,8 @@ func (rf *Raft) Append2(server int) {
 
 					// }
 
-					DPrintf("id:%v,term:%v,tp:%v,sending append request to  %v,lastIndex:%v,commitIndex:%v,nextIndex:%v\n,  pre:%v   %v",
-						rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex, rf.commitIndex, rf.nextIndex[server], args.PrevLogIndex, rf.log)
+					// log.Printf("id:%v,term:%v,tp:%v,sending append request to  %v,lastIndex:%v,commitIndex:%v,nextIndex:%v\n,  pre:%v   %v",
+					// 	rf.me, rf.currentTerm, rf.tp, server, rf.snapshotIndex, rf.commitIndex, rf.nextIndex[server], args.PrevLogIndex, rf.log)
 
 				}
 
@@ -1655,18 +1605,9 @@ func (rf *Raft) Append2(server int) {
 				//
 				if rf.nextIndex[server]+rf.snapshotIndex == args.PrevLogIndex+1 && len(args.Entries) > 0 {
 
-					//pr := rf.matchIndex[server]
-
-					matchTemp := rf.nextIndex[server] - 1 + len(entries) + rf.snapshotIndex
-					if matchTemp > rf.matchIndex[server] {
-
-						rf.matchIndex[server] = rf.nextIndex[server] - 1 + len(entries) + rf.snapshotIndex
-					}
-
+					rf.matchIndex[server] = rf.nextIndex[server] - 1 + len(entries) + rf.snapshotIndex
 					rf.nextIndex[server] = rf.nextIndex[server] + len(entries) //snap next
 					//for i:=args.PrevLogIndex+1;i<=                          //prev   1    2   next
-
-					//if rf.matchIndex[server]>pre
 
 					rf.updateCommit()
 
@@ -1674,26 +1615,26 @@ func (rf *Raft) Append2(server int) {
 
 			}
 
-			rf.updateCommit()
-
-			if len(args.Entries) > 0 { //|| rf.nextIndex[server] < len(rf.log)-1 {
+			if len(args.Entries) > 0 {
 
 				if count == countTemp {
-					DPrintf("id:%v,term:%v,tp:%v,receive append reply from %v(term:%v),lastIndex:%v", rf.me, rf.currentTerm, rf.tp, server, reply.Term, rf.snapshotIndex)
-					//c.Broadcast()
-					//DPrintf("id:%v,term:%v,tp:%v,check 10", rf.me, rf.currentTerm, rf.tp)
-					wake <- 1
+					// log.Printf("id:%v,term:%v,tp:%v,receive append reply from %v(term:%v),lastIndex:%v", rf.me, rf.currentTerm, rf.tp, server, reply.Term, rf.snapshotIndex)
+					// //c.Broadcast()
+					// log.Printf("id:%v,term:%v,tp:%v,check 10", rf.me, rf.currentTerm, rf.tp)
+					//wake <- 1
+
+					rf.conds[server].Broadcast()
 
 				}
 
-				DPrintf("id:%v,term:%v,tp:%v,%v,append cost  ,%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
+				// log.Printf("id:%v,term:%v,tp:%v,%v,append cost  ,%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
 
 			} else {
 
-				DPrintf("id:%v,term:%v,tp:%v,%v,heartbeat spend2  ,%v\n",
-					rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
-				DPrintf("id:%v,term:%v,tp:%v,hearbeat ok from %v(term:%v),lastIndex:%v", rf.me, rf.currentTerm, rf.tp, server, reply.Term, rf.snapshotIndex)
+				// log.Printf("id:%v,term:%v,tp:%v,%v,heartbeat spend2  ,%v\n",
+				// 	rf.me, rf.currentTerm, rf.tp, server, time.Since(start))
+				// log.Printf("id:%v,term:%v,tp:%v,hearbeat ok from %v(term:%v),lastIndex:%v", rf.me, rf.currentTerm, rf.tp, server, reply.Term, rf.snapshotIndex)
 
 			}
 
@@ -1703,26 +1644,30 @@ func (rf *Raft) Append2(server int) {
 
 		}(server)
 
+		//t := time.NewTimer(time.Duration(100) * time.Millisecond)
+
+		rf.conds[server].Wait()
+
 		rf.mu.Unlock()
-		t := time.NewTimer(time.Duration(100) * time.Millisecond)
 
-		//DPrintf("timer1")
-		select {
+		// log.Printf("timer1")
+		// select {
 
-		case <-t.C:
-			DPrintf("id:%v,term:%v,tp:%v,timeout,%v", rf.me, rf.currentTerm, rf.tp, server)
-			t.Stop()
-			break
-		case <-wake:
+		// case <-t.C:
+		// 	// log.Printf("id:%v,term:%v,tp:%v,timeout,%v", rf.me, rf.currentTerm, rf.tp, server)
+		// 	t.Stop()
+		// 	break
+		// case <-wake:
 
-			t.Stop()
-			//time.Sleep(20 * time.Millisecond)
-			break
-		case <-rf.apps[server]:
-			t.Stop()
-			break
-		}
-		//DPrintf("timer2")
+		// 	t.Stop()
+		// 	//time.Sleep(30 * time.Millisecond)
+		// 	break
+		// case <-rf.app[server]:
+		// 	t.Stop()
+		// 	log.Printf("get")
+		// 	break
+		// }
+		// log.Printf("timer2")
 
 		//c.Wait()
 
@@ -1744,82 +1689,46 @@ func (rf *Raft) updateCommit() {
 
 	// }
 
-	// pre := rf.commitIndex
-
-	// DPrintf("id:%v,term:%v,tp:%v,updateing commit index,lastIndex:%v,logs:%v,commitIndex,%v,matchIndex,%v\n",
-	// 	rf.me, rf.currentTerm, rf.tp, rf.snapshotIndex, rf.log, pre, rf.matchIndex)
-
-	// for i := len(rf.log) - 1; i > rf.commitIndex-rf.snapshotIndex; i-- {
-
-	// 	count := 0
-
-	// 	for j := 0; j < len(rf.matchIndex); j++ {
-
-	// 		if rf.matchIndex[j]-rf.snapshotIndex >= i {
-
-	// 			count++
-
-	// 		}
-
-	// 	}
-
-	// 	if count > len(rf.peers)/2 && rf.log[i].Term == rf.currentTerm {
-
-	// 		rf.commitIndex = i + rf.snapshotIndex
-
-	// 		for k := pre + 1 - rf.snapshotIndex; k <= rf.commitIndex-rf.snapshotIndex; k++ {
-	// 			DPrintf("id:%v,term:%v,tp:%v,check 11", rf.me, rf.currentTerm, rf.tp)
-	// 			rf.applych <- ApplyMsg{true, rf.log[k].Command, k + rf.snapshotIndex}
-	// 			DPrintf("id:%v,term:%v,tp:%v,send back log:%v \n",
-	// 				rf.me, rf.currentTerm, rf.tp, rf.log[k].Command)
-	// 		}
-
-	// 		return
-
-	// 	}
-
-	// }
-
-	// rf.appendFlag = false
-
-	// DPrintf("id:%v,term:%v,tp:%v,new commitIndex %v\n",
-	// 	rf.me, rf.currentTerm, rf.tp, rf.commitIndex)
-
 	pre := rf.commitIndex
 
-	ps := make([]int, len(rf.peers))
+	// log.Printf("id:%v,term:%v,tp:%v,updateing commit index,lastIndex:%v,logs:%v,commitIndex,%v,matchIndex,%v\n",
+	// 	rf.me, rf.currentTerm, rf.tp, rf.snapshotIndex, rf.log, pre, rf.matchIndex)
 
-	for index, _ := range rf.peers {
+	for i := len(rf.log) - 1; i > rf.commitIndex-rf.snapshotIndex; i-- {
 
-		ps[index] = index
-	}
+		count := 0
 
-	sort.SliceStable(ps, func(i, j int) bool {
+		for j := 0; j < len(rf.matchIndex); j++ {
 
-		return rf.matchIndex[ps[i]] < rf.matchIndex[ps[j]]
+			if rf.matchIndex[j]-rf.snapshotIndex >= i {
 
-	})
+				count++
 
-	temp := rf.matchIndex[ps[len(rf.peers)/2]]
+			}
 
-	if temp > pre {
+		}
 
-		rf.commitIndex = temp
-	}
+		if count > len(rf.peers)/2 && rf.log[i].Term == rf.currentTerm {
 
-	if pre >= rf.snapshotIndex {
+			rf.commitIndex = i + rf.snapshotIndex
 
-		for k := pre + 1 - rf.snapshotIndex; k <= rf.commitIndex-rf.snapshotIndex; k++ {
-			DPrintf("id:%v,term:%v,tp:%v,check 11", rf.me, rf.currentTerm, rf.tp)
-			rf.applych <- ApplyMsg{true, rf.log[k].Command, k + rf.snapshotIndex}
-			DPrintf("id:%v,term:%v,tp:%v,send back log:%v \n",
-				rf.me, rf.currentTerm, rf.tp, rf.log[k].Command)
+			for k := pre + 1 - rf.snapshotIndex; k <= rf.commitIndex-rf.snapshotIndex; k++ {
+				// log.Printf("id:%v,term:%v,tp:%v,check 11", rf.me, rf.currentTerm, rf.tp)
+				rf.applych <- ApplyMsg{true, rf.log[k].Command, k + rf.snapshotIndex}
+				// log.Printf("id:%v,term:%v,tp:%v,send back log:%v \n",
+				// 	rf.me, rf.currentTerm, rf.tp, rf.log[k].Command)
+			}
 
-			log.Printf("id:%v,term:%v,tp:%v,send back log:%v \n",
-				rf.me, rf.currentTerm, rf.tp, rf.log[k].Command)
+			return
+
 		}
 
 	}
+
+	rf.appendFlag = false
+
+	// log.Printf("id:%v,term:%v,tp:%v,new commitIndex %v\n",
+	// 	rf.me, rf.currentTerm, rf.tp, rf.commitIndex)
 
 	//rf.mu.Unlock()
 
@@ -1880,14 +1789,9 @@ type SnapReply struct {
 	Term int
 }
 
-/*
-
-和 raft paper的实现有一些差异
-
-*/
 func (rf *Raft) InstallSnapshot(args *SnapArg, reply *SnapReply) {
 
-	start := time.Now()
+	// start := time.Now()
 
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
@@ -1895,8 +1799,8 @@ func (rf *Raft) InstallSnapshot(args *SnapArg, reply *SnapReply) {
 	reply.Term = rf.currentTerm
 
 	if args.Term < rf.currentTerm {
-		DPrintf("id:%v,term:%v,tp:%v,install spend0:%v\n",
-			rf.me, rf.currentTerm, rf.tp, time.Since(start))
+		// log.Printf("id:%v,term:%v,tp:%v,install spend0:%v\n",
+		// 	rf.me, rf.currentTerm, rf.tp, time.Since(start))
 
 		return
 
@@ -1936,57 +1840,34 @@ func (rf *Raft) InstallSnapshot(args *SnapArg, reply *SnapReply) {
 
 	}
 
-	//rf.persister.mu.Lock()
-
-	//rf.persister.mu.Unlock()
+	rf.persister.snapshot = args.Data
 	//不一定对
-
-	/*
-
-		不管哪种情况都要改变state machine,不然会出现linear bug
-
-	*/
-
 	if len(rf.log)-1+rf.snapshotIndex >= args.LastIncludedIndex && rf.log[args.LastIncludedIndex-rf.snapshotIndex].Term == args.LastIncludedTerm {
 
 		rf.log = rf.log[args.LastIncludedIndex+1-rf.snapshotIndex:]
 		rf.log = append([]Log{{Term: 0}}, rf.log...)
-		//rf.persist()
-
-		DPrintf("id:%v,term:%v,tp:%v,install spend1:%v\n",
-			rf.me, rf.currentTerm, rf.tp, time.Since(start))
-		//return
-
-	} else {
-
-		rf.log = []Log{{Term: 0}}
 		rf.persist()
-		DPrintf("id:%v,term:%v,tp:%v,install spend3:%v\n",
-			rf.me, rf.currentTerm, rf.tp, time.Since(start))
+		// log.Printf("id:%v,term:%v,tp:%v,install spend1:%v\n",
+		// 	rf.me, rf.currentTerm, rf.tp, time.Since(start))
+		return
+
 	}
 
-	w := new(bytes.Buffer)
-	e := labgob.NewEncoder(w)
-	e.Encode(rf.currentTerm)
-	e.Encode(rf.votedFor)
-	e.Encode(rf.log)
-	statedata := w.Bytes()
-
-	//更新snapshot的时候一定要和其它raft state绑在一起原子操作
-	rf.persister.SaveStateAndSnapshot(statedata, args.Data)
+	rf.log = []Log{{Term: 0}}
+	rf.persist()
 
 	//install snapshot to state machine
 	rf.snapshotIndex = args.LastIncludedIndex
 	rf.snapshotTerm = args.LastIncludedTerm
-	DPrintf("id:%v,term:%v,tp:%v,check 5", rf.me, rf.currentTerm, rf.tp)
+	// log.Printf("id:%v,term:%v,tp:%v,check 5", rf.me, rf.currentTerm, rf.tp)
 	rf.applych <- ApplyMsg{CommandValid: false, Command: args.Data}
 
 	//目前来看，这个地方应该不需要等待server端 install snapshot 完成
 	//好像要等
-	DPrintf("id:%v,term:%v,tp:%v,check 4", rf.me, rf.currentTerm, rf.tp)
+	// log.Printf("id:%v,term:%v,tp:%v,check 4", rf.me, rf.currentTerm, rf.tp)
 	<-rf.SnapSync2
-	DPrintf("id:%v,term:%v,tp:%v,install spend2:%v\n",
-		rf.me, rf.currentTerm, rf.tp, time.Since(start))
+	// log.Printf("id:%v,term:%v,tp:%v,install spend2:%v\n",
+	// 	rf.me, rf.currentTerm, rf.tp, time.Since(start))
 
 	return
 
@@ -2015,5 +1896,26 @@ func (rf *Raft) readSnapRaft(data []byte) {
 func (rf *Raft) GetPersister() *Persister {
 
 	return rf.persister
+
+}
+
+func (rf *Raft) Neo() {
+
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+
+	pre := rf.commitIndex
+
+	if rf.commitIndex > rf.lastApplied {
+
+		rf.lastApplied = rf.commitIndex
+
+		for i := pre + 1; i <= rf.lastApplied; i++ {
+
+			rf.applych <- ApplyMsg{true, rf.log[i-rf.snapshotIndex].Command, i}
+
+		}
+
+	}
 
 }

@@ -1,17 +1,20 @@
 package kvraft
 
-import "../porcupine"
-import "../models"
-import "testing"
-import "strconv"
-import "time"
-import "math/rand"
-import "log"
-import "strings"
-import "sync"
-import "sync/atomic"
-import "fmt"
-import "io/ioutil"
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"math/rand"
+	"strconv"
+	"strings"
+	"sync"
+	"sync/atomic"
+	"testing"
+	"time"
+
+	"../models"
+	"../porcupine"
+)
 
 // The tester generously allows solutions to complete elections in one second
 // (much more than the paper's range of timeouts).
@@ -48,6 +51,11 @@ func run_client(t *testing.T, cfg *config, me int, ca chan bool, fn func(me int,
 	ok := false
 	defer func() { ca <- ok }()
 	ck := cfg.makeClient(cfg.All())
+	/**
+		给client编号
+
+	**/
+	//ck.me=me
 	fn(me, ck, t)
 	ok = true
 	cfg.deleteClient(ck)
@@ -211,7 +219,7 @@ func GenericTest(t *testing.T, part string, nclients int, unreliable bool, crash
 					last = NextValue(last, nv)
 					j++
 				} else {
-					// log.Printf("%d: client new get %v\n", cli, key)
+					log.Printf("%d: client new get %v\n", cli, key)
 					v := Get(cfg, myck, key)
 					if v != last {
 						log.Fatalf("get wrong value, key %v, wanted:\n%v\n, got\n%v\n", key, last, v)
@@ -219,6 +227,8 @@ func GenericTest(t *testing.T, part string, nclients int, unreliable bool, crash
 				}
 			}
 		})
+
+		log.Printf("partition 1")
 
 		if partitions {
 			// Allow the clients to perform some operations without interruption
@@ -229,6 +239,8 @@ func GenericTest(t *testing.T, part string, nclients int, unreliable bool, crash
 
 		atomic.StoreInt32(&done_clients, 1)     // tell clients to quit
 		atomic.StoreInt32(&done_partitioner, 1) // tell partitioner to quit
+
+		log.Printf("partition 2")
 
 		if partitions {
 			// log.Printf("wait for partitioner\n")
@@ -258,6 +270,7 @@ func GenericTest(t *testing.T, part string, nclients int, unreliable bool, crash
 			cfg.ConnectAll()
 		}
 
+		log.Printf("wait for clients")
 		// log.Printf("wait for clients\n")
 		for i := 0; i < nclients; i++ {
 			// log.Printf("read from clients %d\n", i)
@@ -279,6 +292,9 @@ func GenericTest(t *testing.T, part string, nclients int, unreliable bool, crash
 				t.Fatalf("logs were not trimmed (%v > 8*%v)", sz, maxraftstate)
 			}
 		}
+
+		log.Printf("maxraftstate < 0")
+
 		if maxraftstate < 0 {
 			// Check that snapshots are not used
 			ssz := cfg.SnapshotSize()
@@ -370,6 +386,8 @@ func GenericTestLinearizability(t *testing.T, part string, nclients int, nserver
 			}
 		})
 
+		log.Printf("partition 1")
+
 		if partitions {
 			// Allow the clients to perform some operations without interruption
 			time.Sleep(1 * time.Second)
@@ -379,6 +397,8 @@ func GenericTestLinearizability(t *testing.T, part string, nclients int, nserver
 
 		atomic.StoreInt32(&done_clients, 1)     // tell clients to quit
 		atomic.StoreInt32(&done_partitioner, 1) // tell partitioner to quit
+
+		log.Printf("partition 2")
 
 		if partitions {
 			// log.Printf("wait for partitioner\n")
@@ -409,6 +429,7 @@ func GenericTestLinearizability(t *testing.T, part string, nclients int, nserver
 		}
 
 		// wait for clients.
+		log.Printf("wait for clients ")
 		for i := 0; i < nclients; i++ {
 			<-clnts[i]
 		}
@@ -617,6 +638,9 @@ func TestPersistPartitionUnreliableLinearizable3A(t *testing.T) {
 // even if minority doesn't respond.
 //
 func TestSnapshotRPC3B(t *testing.T) {
+
+	start := time.Now()
+
 	const nservers = 3
 	maxraftstate := 1000
 	cfg := make_config(t, nservers, false, maxraftstate)
@@ -629,6 +653,8 @@ func TestSnapshotRPC3B(t *testing.T) {
 	Put(cfg, ck, "a", "A")
 	check(cfg, t, ck, "a", "A")
 
+	log.Printf("TestSnapshotRPC3B s1 %v\n", time.Since(start))
+
 	// a bunch of puts into the majority partition.
 	cfg.partition([]int{0, 1}, []int{2})
 	{
@@ -640,6 +666,7 @@ func TestSnapshotRPC3B(t *testing.T) {
 		Put(cfg, ck1, "b", "B")
 	}
 
+	log.Printf("TestSnapshotRPC3B s2 %v\n", time.Since(start))
 	// check that the majority partition has thrown away
 	// most of its log entries.
 	sz := cfg.LogSize()
@@ -647,6 +674,7 @@ func TestSnapshotRPC3B(t *testing.T) {
 		t.Fatalf("logs were not trimmed (%v > 8*%v)", sz, maxraftstate)
 	}
 
+	log.Printf("TestSnapshotRPC3B s3 %v\n", time.Since(start))
 	// now make group that requires participation of
 	// lagging server, so that it has to catch up.
 	cfg.partition([]int{0, 2}, []int{1})
@@ -660,6 +688,7 @@ func TestSnapshotRPC3B(t *testing.T) {
 		check(cfg, t, ck1, "49", "49")
 	}
 
+	log.Printf("TestSnapshotRPC3B s4 %v\n", time.Since(start))
 	// now everybody
 	cfg.partition([]int{0, 1, 2}, []int{})
 
@@ -668,12 +697,16 @@ func TestSnapshotRPC3B(t *testing.T) {
 	check(cfg, t, ck, "e", "E")
 	check(cfg, t, ck, "1", "1")
 
+	log.Printf("TestSnapshotRPC3B s5 %v\n", time.Since(start))
+
 	cfg.end()
 }
 
 // are the snapshots not too huge? 500 bytes is a generous bound for the
 // operations we're doing here.
 func TestSnapshotSize3B(t *testing.T) {
+
+	start := time.Now()
 	const nservers = 3
 	maxraftstate := 1000
 	maxsnapshotstate := 500
@@ -691,17 +724,23 @@ func TestSnapshotSize3B(t *testing.T) {
 		check(cfg, t, ck, "x", "1")
 	}
 
+	log.Printf("TestSnapshotSize3B s1 %v\n", time.Since(start))
+
 	// check that servers have thrown away most of their log entries
 	sz := cfg.LogSize()
 	if sz > 8*maxraftstate {
 		t.Fatalf("logs were not trimmed (%v > 8*%v)", sz, maxraftstate)
 	}
 
+	log.Printf("TestSnapshotSize3B s2 %v\n", time.Since(start))
+
 	// check that the snapshots are not unreasonably large
 	ssz := cfg.SnapshotSize()
 	if ssz > maxsnapshotstate {
 		t.Fatalf("snapshot too large (%v > %v)", ssz, maxsnapshotstate)
 	}
+
+	log.Printf("TestSnapshotSize3B s3 %v\n", time.Since(start))
 
 	cfg.end()
 }

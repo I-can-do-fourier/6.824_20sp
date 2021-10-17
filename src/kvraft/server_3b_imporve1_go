@@ -1,7 +1,5 @@
 package kvraft
 
-//完成了lab3ab,修复了raft提速后产生的一系列bug。
-
 import (
 	"bytes"
 	"log"
@@ -16,23 +14,10 @@ import (
 
 const Debug = 0
 
+//在start中使用chan和broadcast来快速通知append2去append,有bug
+
 // var CliMap map[uint64]ClientInfo = make(map[uint64]ClientInfo)
 // var muCli sync.Mutex
-
-type Op struct {
-	// Your definitions here.
-	// Field names must start with capital letters,
-	// otherwise RPC will break.
-
-	Id int //client id
-
-	Num int //the number of the request
-
-	Type  int //0:get 1:put 2:append -1:not such key
-	Key   string
-	Value string //if string=="",then op==get
-
-}
 
 type ClientInfo struct {
 	Num     int  //the lastest request num
@@ -47,6 +32,21 @@ func DPrintf(format string, a ...interface{}) (n int, err error) {
 		log.Printf(format, a...)
 	}
 	return
+}
+
+type Op struct {
+	// Your definitions here.
+	// Field names must start with capital letters,
+	// otherwise RPC will break.
+
+	Id int //client id
+
+	Num int //the number of the request
+
+	Type  int //0:get 1:put 2:append -1:not such key
+	Key   string
+	Value string //if string=="",then op==get
+
 }
 
 type KVServer struct {
@@ -69,7 +69,7 @@ type KVServer struct {
 
 	clientNum map[uint64]int //每个client请求的最新值
 
-	ClientCh map[int][]chan Op //applier和client-server rpc的channel。一个index,可能有多个client在等。需优化(踢掉之前等待的client)
+	ClientCh map[int][]chan Op //key:index,value ch
 	mucli    sync.Mutex
 
 	//latestApplied int //最新applied的Index
@@ -81,8 +81,6 @@ type KVServer struct {
 
 	snapshotIndex int
 	snapshotTerm  int
-
-	persister *raft.Persister
 }
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
@@ -105,7 +103,7 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	// if ok && num >= args.Num {
 
 	// 	reply.Err = "ErrWrongLeader"
-	// 	DPrintf("kvserver %v:already submit the request:%v\n", kv.me, command)
+	// 	log.Printf("kvserver %v:already submit the request:%v\n", kv.me, command)
 	// 	kv.mu.Unlock()
 	// 	return
 
@@ -119,14 +117,14 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		return
 	}
 
-	DPrintf("kvserver %v:check 1\n", kv.me)
+	// log.Printf("kvserver %v:check 1\n", kv.me)
 
 	index, _, isLeader := kv.rf.Start(command)
 
 	if !isLeader {
 
 		reply.Err = "ErrWrongLeader"
-		DPrintf("kvserver %v:get fail,not a leader,command:%v\n", kv.me, command)
+		// log.Printf("kvserver %v:get fail,not a leader,command:%v\n", kv.me, command)
 		//kv.mu.Unlock()
 		return
 
@@ -141,36 +139,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		kv.mucli.Lock()
 
 		//index = index + kv.snapshotIndex
-		DPrintf("kvserver %v:into the unknown1 :%v\n", kv.me, command)
-
-		kv.mumap.Lock()
-		info, okk := kv.CliMap[args.ClientId]
-		DPrintf("kvserver %v:into the unknown2 :%v\n", kv.me, command)
-		kv.mumap.Unlock()
-		DPrintf("kvserver %v:into the unknown3 :%v\n", kv.me, command)
-
-		/**
-
-		必要的检查，因为这个是有server可能已经apply这个command
-
-		**/
-		if okk && info >= args.Num {
-
-			reply.Err = "OK"
-
-			kv.mumap.Lock()
-			reply.Value = kv.mp[args.Key]
-			kv.mumap.Unlock()
-
-			DPrintf("kvserver %v:command has been used :%v\n", kv.me, command)
-
-			kv.mucli.Unlock()
-			return
-			//reply.Value = cm.Value
-
-		}
-
-		DPrintf("kvserver %v:create ch :%v\n", kv.me, command)
 
 		item, ok := kv.ClientCh[index]
 
@@ -187,35 +155,16 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		//kv.ClientCh[index] = ch
 		kv.mucli.Unlock()
 
-		DPrintf("kvserver %v:prepare get,rank:%v,index:%v,command %v\n", kv.me, len(kv.consumers)-1, index, command)
+		// log.Printf("kvserver %v:prepare get,rank:%v,index:%v,command %v\n", kv.me, len(kv.consumers)-1, index, command)
 
 		//kv.mu.Unlock()
-		DPrintf("kvserver %v:check 2\n", kv.me)
+		// log.Printf("kvserver %v:check 2\n", kv.me)
 		cm := <-ch
 
 		if kv.killed() {
 
 			return
 		}
-
-		// if cm.Type == -3 {
-
-		// 	kv.mumap.Lock()
-
-		// 	info, okk := kv.CliMap[args.ClientId]
-
-		// 	kv.mumap.Unlock()
-
-		// 	if okk && info >= args.Num {
-
-		// 		reply.Err = "OK"
-
-		// 	} else {
-
-		// 		reply.Err = "discarded"
-		// 	}
-
-		// }
 
 		if cm.Type == -1 {
 
@@ -259,13 +208,13 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 
 		return
 	}
-	DPrintf("kvserver %v:check 3\n", kv.me)
+	// log.Printf("kvserver %v:check 3\n", kv.me)
 	index, _, isLeader := kv.rf.Start(command)
 
 	if !isLeader {
 
 		reply.Err = "ErrWrongLeader"
-		DPrintf("kvserver %v:PutAppend fail,not a leader,command:%v\n", kv.me, command)
+		// log.Printf("kvserver %v:PutAppend fail,not a leader,command:%v\n", kv.me, command)
 		//kv.mu.Unlock()
 		return
 
@@ -277,28 +226,6 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		//kv.consumers = append(kv.consumers, ch)
 
 		kv.mucli.Lock()
-
-		kv.mumap.Lock()
-		info, okk := kv.CliMap[args.ClientId]
-		kv.mumap.Unlock()
-
-		/**
-
-		必要的检查，因为这个是有server可能已经apply这个command
-
-		**/
-
-		if okk && info >= args.Num {
-
-			reply.Err = "OK"
-			DPrintf("kvserver %v:command has been used append:%v\n", kv.me, command)
-			kv.mucli.Unlock()
-			return
-			//reply.Value = cm.Value
-
-		}
-
-		DPrintf("kvserver %v:create ch :%v\n", kv.me, command)
 
 		//index = index + kv.snapshotIndex
 
@@ -318,36 +245,15 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		kv.mucli.Unlock()
 		//kv.consumers2 <- ch
 
-		DPrintf("kvserver %v:prepare putAppend,rank:%v,index:%v,command %v\n", kv.me, len(kv.consumers)-1, index, command)
-		//kv.mu.Unlock()
+		// log.Printf("kvserver %v:prepare putAppend,rank:%v,index:%v,command %v\n", kv.me, len(kv.consumers)-1, index, command)
+		// //kv.mu.Unlock()
 
-		DPrintf("kvserver %v:check 4,index:%v\n", kv.me, index)
+		// log.Printf("kvserver %v:check 4\n", kv.me)
 		cm := <-ch
-		DPrintf("kvserver %v:append receive,%v\n", kv.me, cm)
+
 		if kv.killed() {
 
 			return
-		}
-
-		if cm.Type == -3 {
-
-			kv.mumap.Lock()
-
-			info, okk := kv.CliMap[args.ClientId]
-
-			kv.mumap.Unlock()
-
-			if okk && info >= args.Num {
-
-				reply.Err = "OK"
-
-			} else {
-
-				reply.Err = "discarded"
-			}
-
-			return
-
 		}
 
 		if cm.Type != command.Type || cm.Id != args.ClientId || cm.Num != args.Num {
@@ -407,7 +313,6 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv := new(KVServer)
 	kv.me = me
 	kv.maxraftstate = maxraftstate
-	kv.persister = persister
 
 	// You may need initialization code here.
 
@@ -457,13 +362,13 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 
 			if kv.maxraftstate != -1 && persister.RaftStateSize() > kv.maxraftstate/3*2 {
 
-				DPrintf("kvserver %v:start discard\n", kv.me)
+				// log.Printf("kvserver %v:start discard\n", kv.me)
 
-				start := time.Now()
+				//start := time.Now()
 
 				kv.mumap.Lock()
 
-				DPrintf("kvserver %v:check 20\n", kv.me)
+				// log.Printf("kvserver %v:check 20\n", kv.me)
 
 				//kv.snapshotIndex = kv.lastApplied
 
@@ -493,7 +398,7 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 					return
 				}
 
-				DPrintf("kvserver %v:check 21\n", kv.me)
+				// log.Printf("kvserver %v:check 21\n", kv.me)
 
 				ss <- raft.SnapShot{Mp: mmap, CliMap: climap, LastIndex: kv.lastApplied}
 
@@ -508,21 +413,21 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 
 					return
 				}
-				DPrintf("kvserver %v:check 22\n", kv.me)
+				// log.Printf("kvserver %v:check 22\n", kv.me)
 				<-snapsync
 
 				//kv.mumap.Unlock() 放在这会🤣死锁
 
-				DPrintf("kvserver %v:server snap:%v\n", kv.me, time.Since(start))
+				// log.Printf("kvserver %v:server snap:%v\n", kv.me, time.Since(start))
 			}
 
-			time.Sleep(40 * time.Millisecond)
+			time.Sleep(200 * time.Millisecond)
 
 		}
 
 	}()
 
-	DPrintf("kvserver %v:init\n", kv.me)
+	// log.Printf("kvserver %v:init\n", kv.me)
 
 	return kv
 }
@@ -536,15 +441,15 @@ func (kv *KVServer) Applier() {
 			return
 		}
 
-		DPrintf("kvserver %v:check 5\n", kv.me)
+		// log.Printf("kvserver %v:check 5\n", kv.me)
 		msg := <-kv.applyCh
 		//var cm Op
 
 		if !msg.CommandValid {
 
-			start := time.Now()
+			//start := time.Now()
 
-			DPrintf("kvserver %v:install snapshot%v\n", kv.me, msg)
+			// log.Printf("kvserver %v:install snapshot%v\n", kv.me, msg)
 
 			sn := msg.Command.([]byte)
 
@@ -564,7 +469,7 @@ func (kv *KVServer) Applier() {
 				kv.lastApplied = snapshot.LastIndex
 
 			}
-			DPrintf("kvserver %v:check 11\n", kv.me)
+			// log.Printf("kvserver %v:check 11\n", kv.me)
 			kv.mucli.Lock()
 
 			for k, v := range kv.ClientCh {
@@ -573,23 +478,21 @@ func (kv *KVServer) Applier() {
 
 					for _, c := range v {
 
-						//if kv.CliMap
-						DPrintf("kvserver %v:fuck an entry%v,%v\n", kv.me, msg, k)
-						c <- Op{Id: -2, Type: -3}
+						c <- Op{Id: -1, Type: -2}
 
 					}
 				}
 
 			}
 
-			DPrintf("kvserver %v:check 6\n", kv.me)
+			// log.Printf("kvserver %v:check 6\n", kv.me)
 			kv.mucli.Unlock()
 
 			kv.rf.SnapSync2 <- true
 
-			DPrintf("kvserver %v:check 12\n", kv.me)
+			// log.Printf("kvserver %v:check 12\n", kv.me)
 
-			DPrintf("kvserver %v:server get snap:%v\n", kv.me, time.Since(start))
+			// log.Printf("kvserver %v:server get snap:%v\n", kv.me, time.Since(start))
 
 			continue
 
@@ -602,23 +505,23 @@ func (kv *KVServer) Applier() {
 		case string:
 
 			cm = Op{Id: -1, Type: -2}
-			DPrintf("kvserver %v:get a no-op%v\n", kv.me, t)
+			log.Printf("kvserver %v:get a no-op%v\n", kv.me, t)
 		case Op:
 			cm = msg.Command.(Op)
 			//continue
 
 		}
 
-		DPrintf("kvserver %v:try to apply a command%v\n", kv.me, msg)
+		// log.Printf("kvserver %v:try to apply a command%v\n", kv.me, msg)
 
 		// if cm.Id == -1 {
 
-		// 	DPrintf("kvserver %v:get a no-op%v\n", kv.me, msg)
+		// 	log.Printf("kvserver %v:get a no-op%v\n", kv.me, msg)
 		// }
 
 		//muCli.Lock()
 
-		DPrintf("kvserver %v:check 7\n", kv.me)
+		// log.Printf("kvserver %v:check 7\n", kv.me)
 
 		kv.mumap.Lock()
 
@@ -643,13 +546,11 @@ func (kv *KVServer) Applier() {
 
 			}
 
-			kv.CliMap[cm.Id] = cm.Num
-
 		} else if cm.Type == 1 {
 
 			if okk && info >= cm.Num {
 
-				DPrintf("kvserver %v:already executed%v\n", kv.me, msg)
+				// log.Printf("kvserver %v:already executed%v\n", kv.me, msg)
 
 			} else {
 
@@ -663,7 +564,7 @@ func (kv *KVServer) Applier() {
 
 			if okk && info >= cm.Num {
 
-				DPrintf("kvserver %v:already executed%v\n", kv.me, msg)
+				// log.Printf("kvserver %v:already executed%v\n", kv.me, msg)
 
 			} else {
 
@@ -686,9 +587,9 @@ func (kv *KVServer) Applier() {
 
 		}
 
-		DPrintf("kvserver %v:print map:%v\n", kv.me, kv.mp)
+		// log.Printf("kvserver %v:print map:%v\n", kv.me, kv.mp)
 
-		DPrintf("kvserver %v:check 8\n", kv.me)
+		// log.Printf("kvserver %v:check 8\n", kv.me)
 		kv.mumap.Unlock()
 
 		if kv.killed() {
@@ -696,7 +597,7 @@ func (kv *KVServer) Applier() {
 			return
 		}
 
-		DPrintf("kvserver %v:check 9,index:%v\n", kv.me, msg.CommandIndex)
+		// log.Printf("kvserver %v:check 9\n", kv.me)
 		kv.mucli.Lock()
 
 		chs, ok := kv.ClientCh[msg.CommandIndex]
@@ -710,9 +611,7 @@ func (kv *KVServer) Applier() {
 					return
 				}
 
-				DPrintf("kvserver %v:give to client1,%v,index:%v\n", kv.me, cm, msg.CommandIndex)
 				ch <- cm
-				DPrintf("kvserver %v:give to client2,%v,index:%v\n", kv.me, cm, msg.CommandIndex)
 			}
 
 			//ch <- cm
@@ -720,7 +619,7 @@ func (kv *KVServer) Applier() {
 
 		}
 
-		DPrintf("kvserver %v:check 10\n", kv.me)
+		// log.Printf("kvserver %v:check 10\n", kv.me)
 		kv.mucli.Unlock()
 
 		// if len(kv.consumers2) > 0 {
@@ -770,9 +669,9 @@ func (kv *KVServer) checkSnapBytes() {
 
 	if kv.maxraftstate != -1 && kv.rf.GetPersister().RaftStateSize() > kv.maxraftstate/3*2 {
 
-		DPrintf("kvserver %v:start discard\n", kv.me)
+		// log.Printf("kvserver %v:start discard\n", kv.me)
 
-		start := time.Now()
+		//start := time.Now()
 
 		kv.mumap.Lock()
 
@@ -783,24 +682,7 @@ func (kv *KVServer) checkSnapBytes() {
 
 		kv.mumap.Unlock()
 
-		DPrintf("kvserver %v:server snap:%v\n", kv.me, time.Since(start))
+		// log.Printf("kvserver %v:server snap:%v\n", kv.me, time.Since(start))
 	}
 
 }
-
-// func (kv *KVServer) saveStates() {
-
-// 	kv.mumap.Lock()
-// 	defer kv.mumap.Unlock()
-
-// 	ss := raft.SnapShot{Mp: kv.mp, CliMap: kv.CliMap, LastIndex: kv.lastApplied}
-
-// 	w1 := new(bytes.Buffer)
-// 	e1 := labgob.NewEncoder(w1)
-// 	e1.Encode(ss)
-
-// 	snapdata := w1.Bytes()
-// 	// DPrintf("id:%v,term:%v,tp:%v,check 7", rf.me, rf.currentTerm, rf.tp)
-// 	// rf.persister.SaveStateAndSnapshot(statedata, snapdata)
-
-// }

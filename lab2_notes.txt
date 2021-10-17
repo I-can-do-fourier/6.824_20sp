@@ -35,3 +35,8 @@ entry处在最新的term和index，不会被future leader抹去，造成
 12.僵尸线程太多，主要在call上
 13.使用channel+timer来进行append的同步(之前是用go func+sleep+broadcast),减小新建线程
 的额外开销
+14.是不是heartbeat太快了
+16.尝试在append wake channel返回处添加延时
+17.要调wake的sleep time、heartbeat的间隔，以及resettime
+18.最终。。。找到了问题的关键：appendEntry中，append的速度太慢了。
+仔细理解raft的append机制和figure2后，可以将代码改进成现在的样子

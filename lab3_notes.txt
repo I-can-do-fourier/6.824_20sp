@@ -1,1 +1,76 @@
 1.linearizable：不能让client看到过时的数据。
+2.kvserver和raft交流时，要使用一个loop处理applied command，
+而不是把处理权交给client-server rpc
+3.发生了four-way lock
+https://thesquareplanet.com/blog/students-guide-to-raft/
+解决方案：1.使用"buffered channel"来使client-kvserver rpc和
+applier进行通信，避免使用kv的锁
+解决方法：2.使用与kv本身的不一样的锁
+
+4.利用term和index来判断某个entry是否过时
+5.防止re-execute 的方法
+ (1) 直接避免相同的request加到leader的log中
+    这种方法较为复杂，需要去看rf.log的具体情况。然而rf.log是需要上锁的，容易造成死锁。
+从逻辑上来说，这种方法也是复杂的多
+ (2) 相同的request可以加到log中，但是要避免被再次execute
+    command 需要包含用户的id以及request序列号Num(client specific),每个kvkerver需要
+维护一个CliMap,用来储存每个client的最新的已经applied的Num号，一旦某个command被
+applied(不考虑get command)，就将该client的Num号更新。一旦后面在出现相同client的相同
+Num号(因为Num是自增的，而且client只有在成功执行request后才会发送下一个request),就无视
+这一条command，不进行applied。
+
+6.client-server rpc和applier的通信。之前是时间使用channel进行通信。但假如说
+某个leader刚刚上任，之前term的command还有一些没被commit。这时如果client-server rpc
+发一个channel过去，那么此时client-server rpc会收到一个之前term的command，发生错误。
+因此我维护了一个map[index]chan Op,也就是按照entry的index放置channel。每当client-server rpc
+上交了一个command那么就在map中的相应Index加入一个channel(因为每个index最多会有一个client在等)
+。applier会查看committed command的index，如果在map中发现该index上有一个channel在等着。
+就说明此时有一个client-server rpc在等待该command返回，因此applier将command传到这个channel中
+并在map中删除这个index项。(注意，这个map是log index和channel的映射，不是client id和channel的映射)
+
+7.发现了一个bug,和student guide中Re-appearing indices有关
+8.3a的倒数第二个test过不去的原因：
+  1)client-server rpc中，即使applied回来的id和之前是相同的，也不能断定这就是
+  我们想要的结果(某个client给一个leader server发了一些request，server收到并加到了log中
+  但是在某一时刻network failure,这个client又去将新的请求发送到另一个被partition的leader，并把
+  request 加到了与之前leader不同的index p上，p小于刚在发的一系列index.等到partition结束，真正的leader会同化
+  partition leader，导致partition leader可能会在p上返回一个id相同的command,但实际上
+  编号并不相同)
+  2)guide中re-appearing indices的问题
+
+9.由kv server决定是否使用raft library来进行snapshot
+10.使用no-op
+11.问题：如果persistent state在写的时候出错了怎么办
+
+SnapShot
+
+12.难点：
+      1)引入snapshot后，log会发生变化，nextIndex等参数需要改变
+      2)如果一边发送InstallSnapShot rpc一边append entry，也许会发生一些问题.(方案：
+        不单独发送InstallSnapShot rpc, 将其融合在appendEntry rpc中即可)
+
+13.InstallSnapShot rpc是不是也需要更新接受者的term和leader状态
+14.为了保证lab2运行结果正确，从raft library applyCh 返回的index要保证准确性(不能加no-op,
+  snapShot后要返回决定的index，即snapShotLastIndex+index).no-op对于lab3是必要的，否则通不过
+  因此可以在返回index的时候将实际的index减去该log的term，这样就相当于applych的接收端(主要是客户)
+  感知不到no-op的存在
+15.两个问题:fugure 13收到rpc后要不要更新一下apply。由于每个server都要snapshot，不同
+server之间会有偏差，每个server都要注意保存snapShotLastIndex。两个raft peer通信时，要利用snapshotIndex将
+index恢复成绝对的index，而不是目前log的相对index
+
+16.commitIndex和matchIndex要设置成绝对值
+
+18.kv.mumap和rf.mu之间会发生死锁
+19.persistv2中对ss的encode会和server中的map操作发生冲突,目前能想到的方法就是deep copy
+20.如果installsnapshot和persistv2同时发生，且persistv2稍慢，有可能出现
+snaplastindex更新了，导致persistv2中的lastIndex实际上时落后的。在这种情况下
+persistv2不应该继续snapshot
+21.append和install snapshot的地方都有可能出现数据丢失的问题，一定要小心，
+注意及时保存snap和persist state
+22.在leader append时，要时刻警惕自己是否已经被撤职了
+23.待优化，3b的速度(收到消息后立刻通知append2)，3a的cpu time(appendEntry消耗，
+updateCommit消耗等)
+24.server 调用start后，要立刻给这个index安排一个clientch
+25.snapshot更新时一定要和其它的raftstate绑定在一起
+26.当系统运行的速度变快，rpc appendEntry rpc运行的频率增高时，bug会增多
+27.server和raft library中有些地方需要用到类似于单例模式的锁的运用

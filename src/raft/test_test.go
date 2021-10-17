@@ -857,6 +857,7 @@ func internalChurn(t *testing.T, unreliable bool) {
 	servers := 5
 	cfg := make_config(t, servers, unreliable)
 	defer cfg.cleanup()
+	log.Printf("step 1")
 
 	if unreliable {
 		cfg.begin("Test (2C): unreliable churn")
@@ -866,6 +867,7 @@ func internalChurn(t *testing.T, unreliable bool) {
 
 	stop := int32(0)
 
+	log.Printf("step 2")
 	// create concurrent clients
 	cfn := func(me int, ch chan []int) {
 		var ret []int
@@ -913,6 +915,8 @@ func internalChurn(t *testing.T, unreliable bool) {
 		ret = values
 	}
 
+	log.Printf("step 3")
+
 	ncli := 3
 	cha := []chan []int{}
 	for i := 0; i < ncli; i++ {
@@ -948,6 +952,8 @@ func internalChurn(t *testing.T, unreliable bool) {
 		time.Sleep((RaftElectionTimeout * 7) / 10)
 	}
 
+	log.Printf("step 4")
+
 	time.Sleep(RaftElectionTimeout)
 	cfg.setunreliable(false)
 	for i := 0; i < servers; i++ {
@@ -958,6 +964,7 @@ func internalChurn(t *testing.T, unreliable bool) {
 	}
 
 	atomic.StoreInt32(&stop, 1)
+	log.Printf("step 5")
 
 	values := []int{}
 	for i := 0; i < ncli; i++ {
@@ -969,8 +976,12 @@ func internalChurn(t *testing.T, unreliable bool) {
 	}
 
 	time.Sleep(RaftElectionTimeout)
+	log.Printf("step t")
+	ss := rand.Int()
+	log.Printf("step %v", ss)
+	lastIndex := cfg.one(ss, servers, true)
 
-	lastIndex := cfg.one(rand.Int(), servers, true)
+	log.Printf("step 6")
 
 	really := make([]int, lastIndex+1)
 	for index := 1; index <= lastIndex; index++ {
@@ -981,6 +992,8 @@ func internalChurn(t *testing.T, unreliable bool) {
 			t.Fatalf("not an int")
 		}
 	}
+
+	log.Printf("step 7")
 
 	for _, v1 := range values {
 		ok := false
